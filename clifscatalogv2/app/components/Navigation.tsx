@@ -21,7 +21,7 @@ export const Navigation = () => {
             </div>
             <ul>
                 <li>Pick For Me</li>
-                <li>My Sous-chef vercel ai</li>
+                <li>My Sous-chef</li>
                 <li>My favorites</li>
                 <li>Something Here</li>
                 <li>Sign Up/In</li>
