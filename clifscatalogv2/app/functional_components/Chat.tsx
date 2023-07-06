@@ -22,7 +22,7 @@ export default function Chat() {
         </div>}
         {messages.map((message) => (
           <div key={message.id} className={ChatStyles.messages}>
-            {message.role}: {message.content}
+            <p className={ChatStyles.role}>{message.role}:</p> <p className={ChatStyles.content}>{message.content}</p>
           </div>
         ))}
       </div>
@@ -35,6 +35,7 @@ export default function Chat() {
           placeholder="Start typing here..."
           id="inputGPT"
           value={input}
+          autoComplete="off"
           onChange={handleInputChange}
         />
       </form>
