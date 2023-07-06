@@ -1,6 +1,8 @@
 # ClifsCatalogV2
 Starting from scratch with new technologies, this will be a more up-to-date version of Clif's Catalog
 
+More to come here in the Read Me **soon**
+
 ### Previously : 
 
 # Clif's Catalog 🍎🍔
