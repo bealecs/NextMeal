@@ -1,0 +1,33 @@
+.mainDiv {
+    text-align: center;
+    align-items: center;
+}
+.container {
+ min-height: 75vh;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+    padding: 2rem;
+}
+.searchBar {
+    padding: 1rem;
+    margin: 1rem;
+}
+.button {
+    border-radius: 1rem;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+}
+.formDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+.formDiv input {
+    width: 10%;
+}

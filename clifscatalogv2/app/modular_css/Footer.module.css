@@ -1,0 +1,10 @@
+.container {
+    background-color: white;
+    display: flex;
+}
+.imageDiv {
+    margin: auto;
+}
+.mainDiv {
+    margin: auto;
+}
