@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    background-color: whitesmoke;
+    min-height: 70vh;
+    margin: auto;
+    padding-top: 1rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.noMessages {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    transition: all ease 1s;
+}
+.messages {
+    width: 95%;
+    background-color: white;
+    line-height: 2rem;
+    padding: 0.75rem;
+    transition: all ease 1s;
+}
+.messagesContainer {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 60vh;
+    max-height: 60vh;
+    width: 60%;
+    margin: auto;
+    background-color: white;
+    border: 1px solid grey;
+    border-right: none;
+    border-radius: 1rem;
+    transition: all ease 1s;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 3rem auto;
+}
+.form input {
+    width: 60%;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin: 2rem auto;
+}
+.form label {
+    font-weight: bolder;
+    font-size: 1.1rem;
+    width: 60%;
+    margin: auto;
+}
+.emojis {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style: none;
+}
+.emojis li {
+    font-size: 4rem;
+}
