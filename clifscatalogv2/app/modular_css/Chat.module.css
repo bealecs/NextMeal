@@ -10,14 +10,14 @@
     text-align: center;
     width: 80%;
     margin: auto;
-    transition: all ease 1s;
+    transition: all ease 0.3s;
 }
 .messages {
     width: 95%;
     background-color: white;
     line-height: 2rem;
     padding: 0.5rem;
-    transition: all ease 1s;
+    transition: all ease 0.3s;
     display: flex;
     flex-direction: column;
 }
@@ -41,7 +41,7 @@
     border-radius: 1rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    transition: all ease 1s;
+    transition: all ease 0.3s;
 }
 .form {
     display: flex;

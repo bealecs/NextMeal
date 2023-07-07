@@ -8,7 +8,7 @@ export const Footer = () => {
     return (
         <section className={FooterStyles.container}>
             <div className={FooterStyles.imageDiv}>
-                <Image width={150} height={150} alt="Clif Catalog logo" src="/next.svg"/>
+                <Image width={80} height={80} style={{borderRadius:"50%"}} alt="Clif Catalog logo" src="/logo.svg"/>
             </div>
             <div className={FooterStyles.mainDiv}>
                 <h1>Footer Content</h1>

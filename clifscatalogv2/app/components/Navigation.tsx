@@ -3,6 +3,7 @@ import Image from "next/image"
 import NavigationStyles from '../modular_css/Navigation.module.css';
 import '../globalStyles.css';
 import { useState } from "react";
+import Link from "next/link";
 
 export const Navigation = () => {
     //state for navbar icon theme toggle
@@ -17,14 +18,30 @@ export const Navigation = () => {
     return (
         <section className={NavigationStyles.container}>
             <div className={NavigationStyles.imageDiv}>
-                <Image width={80} height={80} alt="Clif Catalog logo" src="/next.svg"/>
+                <Image width={80} height={80} style={{borderRadius:"50%"}} alt="Clif Catalog logo" src="/logo.svg"/>
             </div>
             <ul>
-                <li>Pick For Me</li>
-                <li>My Sous-chef</li>
-                <li>My favorites</li>
-                <li>Something Here</li>
-                <li>Sign Up/In</li>
+                <li className={NavigationStyles.navItem}>
+                    <Link href="pick">
+                        Pick For Me
+                    </Link>
+                </li>
+                <li className={NavigationStyles.navItem}>
+                <Link href="pick">My Sous-chef
+                </Link>
+                </li>
+                <li className={NavigationStyles.navItem}>
+                <Link href="pick">My Favorites
+                </Link>
+                </li>
+                <li className={NavigationStyles.navItem}>
+                <Link href="pick">Something here
+                </Link>
+                </li>
+                <li className={NavigationStyles.navItem}>
+                <Link href="pick">Sign Up/In
+                </Link>
+                </li>
                 <button className={NavigationStyles.themer} onClick={handleToggle}>{themeClicked ? "⛅" : "🌛"}</button>
             </ul>
         </section>

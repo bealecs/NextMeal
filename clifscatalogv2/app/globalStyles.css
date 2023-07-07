@@ -5,3 +5,7 @@ body {
     margin: 0;
     padding: 0;
 }
+.main-content {
+    background-image: url("/Hero.png");
+    background-size: cover;
+}
