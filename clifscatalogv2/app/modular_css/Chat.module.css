@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    background-color: whitesmoke;
+    background-color: transparent;
     min-height: 70vh;
     margin: auto;
     padding-top: 1rem;
@@ -14,7 +14,6 @@
 }
 .messages {
     width: 95%;
-    background-color: white;
     line-height: 2rem;
     padding: 0.5rem;
     transition: all ease 0.3s;

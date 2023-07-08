@@ -1,12 +1,10 @@
 import { Footer } from "./components/Footer"
-import { HeroSection } from "./components/HeroSection"
-import { Navigation } from "./components/Navigation"
+import { Main } from "./components/Main"
 
 export default function Home() {
   return (
     <main className="main-content">
-      <Navigation />
-      <HeroSection />
+      <Main />
       <Footer />
     </main>
   )

@@ -22,24 +22,24 @@ export const Navigation = () => {
             </div>
             <ul>
                 <li className={NavigationStyles.navItem}>
-                    <Link href="pick">
+                    <Link href="#">
                         Pick For Me
                     </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="pick">My Sous-chef
+                <Link href="#">My Sous-chef
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="pick">My Favorites
+                <Link href="#">My Favorites
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="pick">Something here
+                <Link href="#">Something here
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="pick">Sign Up/In
+                <Link href="#">Sign Up/In
                 </Link>
                 </li>
                 <button className={NavigationStyles.themer} onClick={handleToggle}>{themeClicked ? "⛅" : "🌛"}</button>
