@@ -4,7 +4,7 @@ import Image from "next/image";
 async function getRandomMeal() {
   const res = await fetch(
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
-    { next: { revalidate: 300 } }
+    { next: { revalidate: 10 } }
   ); //revalidates cache every 5 mins (300s)
 
   if (!res.ok) {
@@ -17,16 +17,25 @@ async function getRandomMeal() {
 }
 
 //This is going to be the component for the random meal generator
+//after this component, render a component for similar recipes that the user might like
 export default async function RandomMealGenerator() {
   const data = await getRandomMeal();
+
+  //regex function to remove html elements from the returned json response
+  function removeTags(string: string) {
+    return string.replace(/<[^>]*>/g, ' ')
+               .replace(/\s{2,}/g, ' ')
+               .trim();
+  }
 
   return data.recipes.map((recipe) => {
   const { image, id, title, summary, /*spoonacularSourceUrl*/ } = recipe;
 
     return (
-      <section key={id}>
+      <section key={id} style={{textAlign:"center",width:"70%",margin:"auto"}}>
         <h3>{title}</h3>
-        <Image src={image} width={200} height={200} alt={summary} />
+        <p>{removeTags(summary)}</p>
+        <Image src={image} width={300} height={300} alt={summary} style={{marginTop:"2rem",borderRadius:"2rem"}}/>
       </section>
     );
   });
