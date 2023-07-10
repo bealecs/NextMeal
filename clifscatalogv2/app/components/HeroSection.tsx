@@ -5,7 +5,7 @@ import HeroSectionStyles from "../modular_css/HeroSection.module.css";
 export const HeroSection = () => {
   return (
     <main className={HeroSectionStyles.container}>
-      <Chat />
+      {/* set a conditional here for whether the user is logged in or not for the hero message */}
     </main>    
   );
 };
