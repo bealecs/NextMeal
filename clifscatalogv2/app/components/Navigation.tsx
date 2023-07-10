@@ -35,7 +35,7 @@ export const Navigation = () => {
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="#">Something here
+                <Link href="#">Search Recipes
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
