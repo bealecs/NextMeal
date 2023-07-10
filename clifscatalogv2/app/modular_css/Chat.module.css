@@ -1,10 +1,13 @@
 .container {
-    width: 100%;
-    background-color: transparent;
-    min-height: 70vh;
-    margin: auto;
-    padding-top: 1rem;
+    width: 25%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 6.2rem;
+    font-size: 0.8rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 1rem;
 }
 .noMessages {
     text-align: center;
@@ -13,7 +16,7 @@
     transition: all ease 0.3s;
 }
 .messages {
-    width: 95%;
+    width: 80%;
     line-height: 2rem;
     padding: 0.5rem;
     transition: all ease 0.3s;
@@ -27,31 +30,23 @@
 .messagesContainer {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-    min-height: 60vh;
-    max-height: 60vh;
-    width: 60%;
+    min-height: 45vh;
+    max-height: 45vh;
     margin: auto;
-    background-color: white;
-    border: 1px solid transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    border-right: none;
-    border-radius: 1rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
     transition: all ease 0.3s;
 }
 .form {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 3rem auto;
+    margin: 1rem auto;
 }
 .form input {
     width: 60%;
     margin: auto;
-    padding: 0.5rem;
+    padding: 1rem;
     border-radius: 1rem;
     margin: 2rem auto;
 }
