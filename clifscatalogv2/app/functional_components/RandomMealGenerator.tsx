@@ -4,7 +4,7 @@ import Image from "next/image";
 async function getRandomMeal() {
   const res = await fetch(
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
-    { next: { revalidate: 10 } }
+    { next: { revalidate: 3000 } }
   ); //revalidates cache every 5 mins (300s)
 
   if (!res.ok) {
@@ -35,7 +35,7 @@ export default async function RandomMealGenerator() {
       <section key={id} style={{textAlign:"center",width:"70%",margin:"auto"}}>
         <h3>{title}</h3>
         <p>{removeTags(summary)}</p>
-        <Image src={image} width={300} height={300} alt={summary} style={{marginTop:"2rem",borderRadius:"2rem"}}/>
+        <Image src={image} width={300} height={300} alt={summary} style={{marginTop:"2rem",borderRadius:"1rem"}}/>
       </section>
     );
   });
