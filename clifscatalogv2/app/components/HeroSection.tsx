@@ -27,7 +27,7 @@ export const HeroSection = () => {
       )}
       {showChat && (
         <div className={HeroSectionStyles.chatbotDiv}>
-          <button onClick={handleClick}>Close</button>
+          <button onClick={handleClick}>❌</button>
           <Chat />
         </div>
       )}

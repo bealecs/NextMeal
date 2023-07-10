@@ -5,13 +5,14 @@
     position: fixed;
     bottom: 0;
     right: 0;
+    width: 25%;
 }
 .chatbotDiv button {
     background-color: white;
     width: 90%;
     border: 1px solid white;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0.4rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
