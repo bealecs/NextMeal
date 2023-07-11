@@ -5,7 +5,7 @@ export const SearchBar = () => {
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
-        Main Content
+        <h2>Search for your favorite meals here</h2>
         <form className={SearchBarStyles.form}>
           <h3>Filter Search</h3>
           <div className={SearchBarStyles.formDiv}>
