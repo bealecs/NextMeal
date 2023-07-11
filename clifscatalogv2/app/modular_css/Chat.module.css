@@ -7,7 +7,7 @@
     border-radius: 1rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 5px 9px 5px 4px rgba(0,0,0,0.3);
 }
 .noMessages {
     text-align: center;

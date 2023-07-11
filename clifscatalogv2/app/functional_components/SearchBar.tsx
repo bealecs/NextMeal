@@ -2,10 +2,8 @@ import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 
 export const SearchBar = () => {
-
-
-    return (
-        <section className={SearchBarStyles.container}>
+  return (
+    <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
         Main Content
         <form className={SearchBarStyles.form}>
@@ -34,5 +32,5 @@ export const SearchBar = () => {
         </form>
       </div>
     </section>
-    );
-}
+  );
+};
