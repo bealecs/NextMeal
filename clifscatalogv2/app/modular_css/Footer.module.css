@@ -1,7 +1,7 @@
 .container {
     display: flex;
-    background-color: rgba(0,0,0,0.2);
-    color: white;
+    background-color: white;
+    color: black;
     transition: all ease 0.4s;
 }
 .container:hover {

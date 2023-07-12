@@ -1,9 +1,38 @@
 .container {
-    min-height: 100vh;
+  min-height: 100vh;
+}
+.chatbotDiv {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+}
+.chatbotDiv button {
+  background-color: white;
+  width: fit-content;
+  border: 1px solid white;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 0.4rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer;
 }
 .chatbotImage {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  cursor: pointer;
+}
+.closeSectionDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.closeSectionDiv h3 {
+  margin: auto;
 }
