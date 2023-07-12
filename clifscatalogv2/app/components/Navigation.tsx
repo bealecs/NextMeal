@@ -4,6 +4,7 @@ import NavigationStyles from '../modular_css/Navigation.module.css';
 import '../globalStyles.css';
 import { useState } from "react";
 import Link from "next/link";
+import { SignIn } from "../functional_components/SignIn";
 
 export const Navigation = () => {
     //state for navbar icon theme toggle
@@ -39,8 +40,7 @@ export const Navigation = () => {
                 </Link>
                 </li>
                 <li className={NavigationStyles.navItem}>
-                <Link href="#">Sign Up/In
-                </Link>
+                <SignIn />
                 </li>
                 <button className={NavigationStyles.themer} onClick={handleToggle}>{themeClicked ? "⛅" : "🌛"}</button>
             </ul>
