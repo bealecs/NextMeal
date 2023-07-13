@@ -1,7 +1,6 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
-import { SignUp } from "./SignUp";
 
 export const SignIn = () => {
   const { data: session } = useSession();
@@ -16,8 +15,7 @@ export const SignIn = () => {
   }
   return (
     <div>
-      <button onClick={() => signIn()}>Sign In</button>
-      <SignUp />
+      <button onClick={() => signIn()}>Sign Up/In</button>
     </div>
   );
 };

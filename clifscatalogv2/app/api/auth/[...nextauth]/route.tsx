@@ -1,5 +1,6 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -25,7 +26,7 @@ const handler = NextAuth({
             password: credentials?.password,
           }),
         });
-        
+
         const user = await res.json();
 
         if (user) {
@@ -40,10 +41,19 @@ const handler = NextAuth({
       },
     }),
   ],
-  // callbacks: {
+   callbacks: {
+      async redirect({ url, baseUrl }) {
+        // Allows relative callback URLs
+        if (url.startsWith("/")) return `${baseUrl}${url}`
+        // Allows callback URLs on the same origin
+        else if (new URL(url).origin === baseUrl) return url
+        return baseUrl
+      }
+    }
   //   async jwt({ token, user }) {
   //     return { ...token, ...user };
   //   },
+
 
   //   async session({ session, token }) {
   //     session.user = token as any;
