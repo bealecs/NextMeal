@@ -1,7 +1,7 @@
 # Clifs Catalog V2
 ### Starting from scratch with new technologies, this will be a more up-to-date version of Clif's Catalog
 
-I have decided to pair with *__Jason Vallery__* to tag team this project
+I have decided to pair with [Jason Vallery](https://github.com/JVSONV) to tag team this project
 
 #### Technologies that are being leveraged:
 - React/Next.js/TypeScript
