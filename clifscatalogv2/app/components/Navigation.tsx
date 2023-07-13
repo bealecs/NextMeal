@@ -44,7 +44,7 @@ export const Navigation = () => {
         <li className={NavigationStyles.navItem}>
           {!session && <Link href="/signin">Sign In</Link>}
           {session && (
-            <div>
+            <div className={NavigationStyles.userHolder}>
               <Link href="/">Welcome, {session.user.name}</Link>
               <button onClick={() => signOut()}>Sign Out</button>
             </div>
