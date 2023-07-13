@@ -19,11 +19,13 @@ export async function GET(
   const userFavorites = await prisma.favorites.findMany({
     where: { userId: +params.id }, //comparing userId of the favorites model in the DB to the params id
     include: {
-        user: {
-            select: {
-                name: true,
-            }
-        }
+      user: {
+        select: {
+          name: true,
+        },
+      },
     },
   });
+
+  return new Response(JSON.stringify(userFavorites));
 }
