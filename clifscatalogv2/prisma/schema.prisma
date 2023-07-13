@@ -14,5 +14,13 @@ model User {
   email String  @unique
   name  String?
   password  String
+  favorites  Favorites[]
 }
-
+model Favorites {
+  id        Int     @id @default(autoincrement())
+  title     String
+  summary   String?
+  user    User    @relation(fields: [userId], references: [id])
+  userId  Int
+  mealId    Int
+}
