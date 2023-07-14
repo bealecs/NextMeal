@@ -15,15 +15,25 @@ export const HeroSection = () => {
   return (
     <main className={HeroSectionStyles.container}>
       {/* set a conditional here for whether the user is logged in or not for the hero message */}
-      <Image
-        src="/chef_kiss.svg"
-        width={100}
-        height={100}
-        alt="something"
-        onClick={handleClick}
-        className={HeroSectionStyles.chatbotImage}
-      />
-      {showChat && <Chat />}
+      {!showChat && (
+        <Image
+          src="/chef_kiss.svg"
+          width={100}
+          height={100}
+          alt="something"
+          onClick={handleClick}
+          className={HeroSectionStyles.chatbotImage}
+        />
+      )}
+      {showChat && (
+        <div className={HeroSectionStyles.chatbotDiv}>
+          <div className={HeroSectionStyles.closeSectionDiv}>
+            <button onClick={handleClick}>❌</button>
+            <h3>My Sous-chef</h3>
+          </div>
+          <Chat />
+        </div>
+      )}
     </main>
   );
 };

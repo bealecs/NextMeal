@@ -1,33 +1,39 @@
 .mainDiv {
-    text-align: center;
-    align-items: center;
+  text-align: center;
+  align-items: center;
+  padding-top: 1rem;
 }
 .container {
- min-height: 75vh;
+  min-height: 95vh;
+  background-image: url("/searchBackground2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: whitesmoke;
 }
 .form {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: auto;
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  padding: 2rem;
+padding-top: 8rem;
 }
 .searchBar {
-    padding: 1rem;
-    margin: 1rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 .button {
-    border-radius: 1rem;
-    width: fit-content;
-    margin: auto;
-    padding: 1rem;
+  border-radius: 1rem;
+  width: fit-content;
+  margin: auto;
+  padding: 1rem;
 }
 .formDiv {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: auto;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
 }
 .formDiv input {
-    width: 10%;
+  width: 10%;
 }

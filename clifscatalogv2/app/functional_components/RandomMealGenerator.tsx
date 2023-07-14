@@ -32,7 +32,7 @@ export default async function RandomMealGenerator() {
   const { image, id, title, summary, /*spoonacularSourceUrl*/ } = recipe;
 
     return (
-      <section key={id} style={{textAlign:"center",width:"70%",margin:"auto"}}>
+      <section key={id} >
         <h3>{title}</h3>
         <p>{removeTags(summary)}</p>
         <Image src={image} width={300} height={300} alt={summary} style={{marginTop:"2rem",borderRadius:"1rem"}}/>
