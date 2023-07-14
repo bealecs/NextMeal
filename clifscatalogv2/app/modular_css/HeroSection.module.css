@@ -1,9 +1,28 @@
 .container {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 .chatbotImage {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    cursor: pointer;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  animation: chefShake 30s ease-in-out infinite forwards;
+}
+
+@keyframes chefShake {
+  45.6% {
+    transform: translate(0px);
+  }
+
+  46.2% {
+    transform: translate(-3px);
+  }
+
+  47% {
+    transform: translate(3px);
+  }
+
+  47.6% {
+    transform: translate(0px);
+  }
 }
