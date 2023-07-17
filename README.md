@@ -2,6 +2,8 @@
 
 ### Starting from scratch with new technologies, this will be a more up-to-date version of Clif's Catalog
 
+#### View the build preview of the main branch [here](https://clifs-catalog-v2.vercel.app/) and follow along as we build
+
 **[Jason Vallery](https://github.com/JVSONV) and [Clif Beale](https://github.com/bealecs) are tag teaming this project**
 
 __The name of the project is to be changed, seeing as Jason and Clif are co owning this project__
