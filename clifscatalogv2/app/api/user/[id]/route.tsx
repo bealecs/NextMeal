@@ -29,6 +29,6 @@ export async function GET(
       },
     },
   });
-
-  return new Response(JSON.stringify(userFavorites));
+  
+  return new Response(JSON.stringify([userFavorites]));
 }
