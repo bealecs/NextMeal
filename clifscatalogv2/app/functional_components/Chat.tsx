@@ -12,8 +12,8 @@ export default function Chat() {
         {messages.length < 1 && 
         <div className={ChatStyles.noMessages}>
           <h4>Enter anything below...</h4>
-          <p>Example: "Give me a list of 5 Mexican
-          dishes that do not contain dairy"</p>
+          <p>Example: Give me a list of 5 Mexican
+          dishes that do not contain dairy</p>
           <ul className={ChatStyles.emojis}>
             <li>🍎</li>
             <li>🍔</li>
