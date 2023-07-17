@@ -44,3 +44,15 @@
     cursor: pointer;
     font-size: 2rem;
 }
+.userHolder {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.userHolder button {
+    width: fit-content;
+    margin: 0 2rem;
+    border-radius: 1rem;
+    padding: 0.4rem;
+}

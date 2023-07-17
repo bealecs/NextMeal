@@ -1,0 +1,74 @@
+"use client";
+import { useState } from "react";
+import { signIn } from "next-auth/react";
+import "../globalStyles.css";
+import SignUpStyles from "../modular_css/SignUp.module.css";
+import Link from "next/link";
+
+export default function SignUp() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch("/api/user", {
+      method: "POST",
+      body: JSON.stringify({ email, password, name }),
+      headers: { "Content-Type": "application/json" },
+    });
+    if (res.ok) {
+      await signIn("credentials", {
+        email,
+        password,
+        callbackUrl: "http://localhost:3000",
+        redirect: true,
+      });
+    }
+  };
+
+  return (
+    <section className={SignUpStyles.container}>
+      <Link href="/" className={SignUpStyles.back}>← Back to home</Link>
+      <div className={SignUpStyles.formDiv}>
+        <h3>Create your account below</h3>
+        <form onSubmit={handleSubmit} className={SignUpStyles.form}>
+          <label>
+            First Name
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button type="submit">Sign Up</button>
+        </form>
+        <div className={SignUpStyles.alternate}>
+          <p>
+            Already have an account?
+            <Link href="/signin">Sign in now</Link>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

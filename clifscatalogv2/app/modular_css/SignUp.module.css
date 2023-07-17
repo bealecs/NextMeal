@@ -1,0 +1,50 @@
+.container {
+    background: url("/signupBackground.jpg");
+    background-size: 100%;
+    min-height: 100vh;
+}
+.formDiv {
+    position: fixed;
+    top: 10rem;
+    left: 5rem;
+    background-color: whitesmoke;
+    min-height: 30vh;
+    width:30%;
+    border-radius: 1rem;
+}
+.formDiv h3 {
+    text-align: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.form label {
+    width: 90%;
+}
+.form input {
+    width: 90%;
+}
+.form button  {
+    width: 40%;
+    margin: 2rem auto;
+    border-radius: 1rem;
+}
+.alternate {
+    text-align: center;
+}
+.back {
+    padding: 1rem;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    position: fixed;
+    top: 1rem;
+    text-decoration: none;
+    color: black;
+    transition: all ease 0.3s;
+}
+.back:hover {
+    text-decoration: underline;
+    color: red;
+}
