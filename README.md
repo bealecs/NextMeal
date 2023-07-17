@@ -1,4 +1,4 @@
-# Clifs Catalog V2
+# Next Meal
 
 ### Starting from scratch with new technologies, this will be a more up-to-date version of Clif's Catalog
 
