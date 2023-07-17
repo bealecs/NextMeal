@@ -1,5 +1,3 @@
-import Provider from "./store/SessionProvider";
-
 export const metadata = {
   title: "Clif's Catalog",
   description: "Version 2.0 of Clif's Catalog",
@@ -12,11 +10,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Provider>
-          {children}
-        </Provider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
