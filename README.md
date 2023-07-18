@@ -3,8 +3,6 @@
 
 **[Jason Vallery](https://github.com/JVSONV) and [Clif Beale](https://github.com/bealecs) are tag teaming this project**
 
-__The name of the project is to be changed, seeing as Jason and Clif are co owning this project__
-
 #### Technologies that are being leveraged:
 - React/Next.js/TypeScript
 - Next-Auth for authentication
