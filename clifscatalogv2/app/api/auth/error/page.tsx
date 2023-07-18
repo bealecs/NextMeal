@@ -8,7 +8,7 @@ export default function Error() {
       <p>Please ensure you have typed the correct username & password</p>
       <br />
       <Link href="/signin">Attempt sign in again</Link>
-      <p>Don't have an account? Click <a href="/signup">here</a></p>
+      <p>Do not have an account? Click <a href="/signup">here</a></p>
     </section>
   )
 }
