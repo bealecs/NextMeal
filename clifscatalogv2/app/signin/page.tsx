@@ -12,11 +12,11 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn("credentials", {
-      email,
-      password,
+      username: email,
+      password: password,
       callbackUrl: "http://localhost:3000",
       redirect: true,
-    });
+    })
   };
 
   return (
