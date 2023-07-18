@@ -19,17 +19,21 @@ export default function SignUp() {
     });
     if (res.ok) {
       await signIn("credentials", {
-        email,
-        password,
+        username: email,
+        password: password,
         callbackUrl: "http://localhost:3000",
         redirect: true,
       });
+    } else {
+      alert("The email you entered is already associated with another account..");
     }
   };
 
   return (
     <section className={SignUpStyles.container}>
-      <Link href="/" className={SignUpStyles.back}>← Back to home</Link>
+      <Link href="/" className={SignUpStyles.back}>
+        ← Back to home
+      </Link>
       <div className={SignUpStyles.formDiv}>
         <h3>Create your account below</h3>
         <form onSubmit={handleSubmit} className={SignUpStyles.form}>

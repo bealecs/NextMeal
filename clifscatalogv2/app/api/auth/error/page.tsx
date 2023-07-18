@@ -12,3 +12,4 @@ export default function Error() {
     </section>
   )
 }
+//use prisma find many for unique email constraint on sign up
