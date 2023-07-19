@@ -1,8 +1,6 @@
 import { verifyJwt } from "@/app/lib/jwt";
 import prisma from "@/app/lib/prisma";
 
-
-
 //API call to retrieve a list of the user's favorited recipes
 export async function GET(
   request: Request,
