@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Favorite from "./Favorite";
+import { SimiliarRecipes } from "./SimilarRecipes";
 
 //Leverages Spoonaculars random recipe API endpoint
 export async function getRandomMeal() {
@@ -19,7 +20,7 @@ export async function getRandomMeal() {
 
 export const RandomMealButton = async () => {
   const data = await getRandomMeal();
-
+  
   // regex function to remove html elements from the returned json response
   function removeTags(string: string) {
     return string
@@ -39,7 +40,7 @@ export const RandomMealButton = async () => {
           summary: string;
         }
         const destructuredRecipe: DestructuredRecipe = recipe;
-
+        
         return (
           <section key={destructuredRecipe.id}>
             <h3>{destructuredRecipe.title}</h3>
@@ -57,6 +58,7 @@ export const RandomMealButton = async () => {
               style={{ marginTop: "2rem", borderRadius: "1rem" }}
             />
             <button>Get a meal</button>
+            <SimiliarRecipes mealId={destructuredRecipe.id} />
           </section>
         );
       })}

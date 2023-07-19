@@ -6,7 +6,7 @@ export const SignIn = () => {
   const { data: session } = useSession();
 
   if (session && session.user) {
-    console.log(session.user)
+    
     return (
       <div style={{ display: "flex" }}>
         <p>{session.user.name}</p>

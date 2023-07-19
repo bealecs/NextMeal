@@ -10,7 +10,7 @@ export default function Home() {
       <Provider>
         <Main />
         <SearchBar />
-        {/* <RandomMealButton /> commenting this out for now to save resources on our API calls */} 
+        <RandomMealButton /> {/*commenting this out for now to save resources on our API calls */} 
         <Footer />
       </Provider>
     </main>

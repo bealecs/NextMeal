@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 
@@ -20,11 +20,10 @@ export const SearchBar = async () => {
         <form className={SearchBarStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"
+            autoCorrect="true"
             placeholder="Chicken salad"
             value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
+            onChange={(e) => setSearchQuery(e.target.value)}
             className={SearchBarStyles.searchBar}
           />
           <button type="submit" className={SearchBarStyles.button}>
