@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { getSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
@@ -6,7 +6,8 @@ import React from "react";
 async function getUserFavorites() {
   const session = await getSession();
   const accessToken = session?.user?.accessToken;
-  const favoritesResponse = await fetch(`/api/user/${session?.user?.id}`, {
+  const userId = session?.user?.id;
+  const favoritesResponse = await fetch(`/api/user/${userId}`, {
     headers: {
       Authorization: accessToken,
     },
@@ -22,29 +23,30 @@ async function getUserFavorites() {
 
 export default async function UserFavorites() {
   const favorites = await getUserFavorites();
-    console.log(favorites);
+  console.log(favorites);
   return (
     <div>
-      {favorites[0].map((favorite) => {
-        interface UserFavorites {
-          id: number;
-          title: string;
-          image: string;
-        }
-        const destructuredFavorite: UserFavorites = favorite;
+      {favorites[0].length &&
+        favorites[0].map((favorite) => {
+          interface UserFavorites {
+            id: number;
+            title: string;
+            image: string;
+          }
+          const destructuredFavorite: UserFavorites = favorite;
 
-        return (
-          <div key={destructuredFavorite.id}>
-            <h3>{destructuredFavorite.title}</h3>
-            <Image
-              src={destructuredFavorite.image}
-              alt={destructuredFavorite.title}
-              width={200}
-              height={200}
-            />
-          </div>
-        );
-      })}
+          return (
+            <div key={destructuredFavorite.id}>
+              <h3>{destructuredFavorite.title}</h3>
+              <Image
+                src={destructuredFavorite.image}
+                alt={destructuredFavorite.title}
+                width={200}
+                height={200}
+              />
+            </div>
+          );
+        })}
     </div>
   );
 }
