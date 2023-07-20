@@ -6,7 +6,7 @@ export async function GET({
   params: { query: string };
 }) {
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONACULAR_API_KEY}&query=${query}`,
+    `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${process.env.SPOONACULAR_API_KEY}`,
     {
       headers: {
         "Content-Type": "application/json",

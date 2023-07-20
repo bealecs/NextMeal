@@ -8,11 +8,11 @@ export const SearchBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`/api/search/${searchQuery}`);
-    console.log(res.json())
+    const res = await fetch(`/api/search/${searchQuery.trim().replace(" ", "+")}`);
+    console.log(res.json());
     return res.json();
   };
-
+  
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
@@ -23,7 +23,9 @@ export const SearchBar = () => {
             autoCorrect="true"
             placeholder="Chicken salad"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
             className={SearchBarStyles.searchBar}
           />
           <button type="submit" className={SearchBarStyles.button}>
