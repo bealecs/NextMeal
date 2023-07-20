@@ -6,7 +6,7 @@ import React from "react";
 async function getUserFavorites() {
   const session = await getSession();
   const accessToken = session?.user?.accessToken;
-  const favoritesResponse = await fetch(`/api/user/${session.user.id}`, {
+  const favoritesResponse = await fetch(`/api/user/${session?.user?.id}`, {
     headers: {
       Authorization: accessToken,
     },
