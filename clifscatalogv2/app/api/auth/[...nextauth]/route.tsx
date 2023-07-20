@@ -58,23 +58,23 @@ const handler = NextAuth({
     })
   ],
   callbacks: {
+    async jwt({ token, user }) {
+      return { ...token, ...user };
+    },
+
+    async session({ session, token }) {
+      session.user = token as any;
+      return session;
+    },
     async redirect({ url, baseUrl }) {
       // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`;
+      if (url.startsWith("/")) return `${baseUrl}${url}`
       // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url;
-      return baseUrl;
-    },
+      else if (new URL(url).origin === baseUrl) return url
+      return baseUrl
+    }
   },
-  //   async jwt({ token, user }) {
-  //     return { ...token, ...user };
-  //   },
-
-  //   async session({ session, token }) {
-  //     session.user = token as any;
-  //     return session;
-  //   },
-  // },
 });
+  
 
 export { handler as GET, handler as POST };
