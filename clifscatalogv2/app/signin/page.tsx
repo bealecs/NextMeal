@@ -47,7 +47,7 @@ export default function SignIn() {
         </form>
         <div className={SignInStyles.alternate}>
           <p>
-            Don't have an account yet?
+            Do not have an account yet?
             <Link href="/signup">Sign up now</Link>
           </p>
         </div>
