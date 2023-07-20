@@ -21,7 +21,7 @@ export default function SignUp() {
       await signIn("credentials", {
         username: email,
         password: password,
-        callbackUrl: "http://localhost:3000",
+        callbackUrl: "/",
         redirect: true,
       });
     } else {

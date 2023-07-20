@@ -14,7 +14,7 @@ export default function SignIn() {
     signIn("credentials", {
       username: email,
       password: password,
-      callbackUrl: "http://localhost:3000",
+      callbackUrl: "/",
       redirect: true,
     })
   };
