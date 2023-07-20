@@ -26,7 +26,7 @@ export default async function UserFavorites() {
   console.log(favorites);
   return (
     <div>
-      {favorites[0].length &&
+      {favorites[0] !== undefined &&
         favorites[0].map((favorite) => {
           interface UserFavorites {
             id: number;
