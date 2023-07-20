@@ -15,10 +15,9 @@ export async function POST(req: Request) {
     },
   });
 
-  console.log(body.password);
-
+  
   const encoded = await bcrypt.hash(body.password, 10);
-  console.log(encoded);
+
 
   if (user && (await bcrypt.compare(body.password, user.password))) {
     const { password, ...userWithoutPass } = user;
