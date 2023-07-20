@@ -1,9 +1,9 @@
 "use client";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 
-export const SearchBar = async () => {
+export const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSubmit = async (e) => {
