@@ -1,7 +1,9 @@
 import { verifyJwt } from "@/app/lib/jwt";
 import prisma from "@/app/lib/prisma";
 
-//add an API call to this GET request in a seperate component to display a list of the user's favorite recipes
+
+
+//API call to retrieve a list of the user's favorited recipes
 export async function GET(
   request: Request,
   { params }: { params: { id: number } }
@@ -27,6 +29,6 @@ export async function GET(
       },
     },
   });
-
-  return new Response(JSON.stringify(userFavorites));
+  
+  return new Response(JSON.stringify([userFavorites]));
 }
