@@ -1,12 +1,10 @@
 import { NextResponse } from "next/server";
 
-export async function GET(req: Request, {
-  params: { query },
-}: {
-  params: { query: string };
-}) {
+export async function GET(request: Request,
+  { params }: { params: { query: string } }) {
+    
   const res = await fetch(
-    `https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${process.env.SPOONACULAR_API_KEY}`,
+    `https://api.spoonacular.com/recipes/complexSearch?query=${params.query}&apiKey=${process.env.SPOONACULAR_API_KEY}`,
     {
       headers: {
         "Content-Type": "application/json",
