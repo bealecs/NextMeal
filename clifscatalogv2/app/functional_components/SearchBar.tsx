@@ -1,29 +1,31 @@
+"use client";
+import { useState } from "react";
 import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 
 export const SearchBar = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const res = await fetch(`/api/search/${searchQuery.trim().replace(" ", "+")}`);
+    console.log(res.json());
+    return res.json();
+  };
+  
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
         <h2>Search for your favorite meals here</h2>
-        <form className={SearchBarStyles.form}>
-          <h3>Filter Search</h3>
-          <div className={SearchBarStyles.formDiv}>
-            <label>Search by ingredients</label>
-            <input type="checkbox" value="ingredients" />
-          </div>
-          <div className={SearchBarStyles.formDiv}>
-            <label>Search by meals</label>
-            <input type="checkbox" value="meals" />
-          </div>
-          <div className={SearchBarStyles.formDiv}>
-            <label>Search by location</label>
-            <input type="checkbox" value="ingredients" />
-          </div>
+        <form className={SearchBarStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Search..."
-            autoComplete="true"
+            autoCorrect="true"
+            placeholder="Chicken salad"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
             className={SearchBarStyles.searchBar}
           />
           <button type="submit" className={SearchBarStyles.button}>

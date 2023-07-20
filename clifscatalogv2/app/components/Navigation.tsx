@@ -4,12 +4,11 @@ import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
 import { useState } from "react";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { SignIn } from "../functional_components/SignIn";
 
 export const Navigation = () => {
   //state for navbar icon theme toggle
   const [themeClicked, setThemeClicked] = useState(false);
-  const { data: session } = useSession();
 
   //click handler for changing navbar icon for theme toggle
   const handleToggle = () => {
@@ -42,13 +41,7 @@ export const Navigation = () => {
           <Link href="#search-recipes">Search Recipes</Link>
         </li>
         <li className={NavigationStyles.navItem}>
-          {!session && <Link href="/signin">Sign In</Link>}
-          {session && (
-            <div className={NavigationStyles.userHolder}>
-              <Link href="/">Welcome, {session.user.name}</Link>
-              <button onClick={() => signOut()}>Sign Out</button>
-            </div>
-          )}
+          <SignIn />
         </li>
         <button className={NavigationStyles.themer} onClick={handleToggle}>
           {themeClicked ? "⛅" : "🌛"}
