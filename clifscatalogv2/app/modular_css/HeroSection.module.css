@@ -1,12 +1,14 @@
 .container {
   min-height: 100vh;
 }
+
 .chatbotDiv {
   position: fixed;
   bottom: 0;
   right: 0;
   width: 25%;
 }
+
 .chatbotDiv button {
   background-color: white;
   width: fit-content;
@@ -18,13 +20,15 @@
   border-top-right-radius: 1rem;
   cursor: pointer;
 }
+
 .chatbotImage {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 1rem;
+  bottom: 1rem;
+  right: 1rem;
   cursor: pointer;
+  animation: chefShake 30s ease-in-out infinite forwards;
 }
+
 .closeSectionDiv {
   display: flex;
   justify-content: space-between;
@@ -33,6 +37,25 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
+
 .closeSectionDiv h3 {
   margin: auto;
+}
+
+@keyframes chefShake {
+  45.6% {
+    transform: translate(0px);
+  }
+
+  46.2% {
+    transform: translate(-3px);
+  }
+
+  47% {
+    transform: translate(3px);
+  }
+
+  47.6% {
+    transform: translate(0px);
+  }
 }
