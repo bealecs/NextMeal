@@ -23,7 +23,6 @@ async function getUserFavorites() {
 
 export default async function UserFavorites() {
   const favorites = await getUserFavorites();
-  console.log(favorites);
   return (
     <div>
       {favorites[0] !== undefined &&
