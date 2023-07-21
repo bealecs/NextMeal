@@ -6,7 +6,7 @@ export async function GET(
   request: Request,
   { params }: { params: { id: number } }
 ) {
-  const accessToken = request.headers.get("authorization");
+  const accessToken = request.headers.get("Authorization");
   if (!accessToken || !verifyJwt(accessToken)) {
     return new Response(
       JSON.stringify({

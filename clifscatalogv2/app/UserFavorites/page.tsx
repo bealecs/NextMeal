@@ -1,15 +1,13 @@
 "use client";
-import { getSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
 
-async function getUserFavorites() {
-  const session = await getSession();
-  const accessToken = session?.user?.accessToken;
-  const userId = session?.user?.id;
-  const favoritesResponse = await fetch(`https://vtxfjirpfhbpnzrztuil.supabase.co/api/user/${userId}`, {
+async function getUserFavorites(userId: number, accessToken: string) {
+
+  const favoritesResponse = await fetch(`/api/user/${userId}`, {
     headers: {
-      Authorization: accessToken,
+      Authorization: `Bearer ${accessToken}`,
     },
   });
 
@@ -22,7 +20,8 @@ async function getUserFavorites() {
 }
 
 export default async function UserFavorites() {
-  const favorites = await getUserFavorites();
+  const {data: session} = useSession();
+  const favorites = await getUserFavorites(session?.user?.id, session?.user?.accessToken);
   return (
     <div>
       {favorites[0] !== undefined &&
