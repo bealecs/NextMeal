@@ -10,13 +10,14 @@ interface Props {
 
 export default async function Favorite(props: Props) {
 const session = await getSession();
-
+const accessToken = session?.user?.accessToken;
   const handleFavorite = async () => {
       try {
         await fetch("https://vtxfjirpfhbpnzrztuil.supabase.co/api/favorite", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: accessToken,
           },
           body: JSON.stringify({
             mealId: props.mealId,
