@@ -7,7 +7,7 @@ async function getUserFavorites() {
   const session = await getSession();
   const accessToken = session?.user?.accessToken;
   const userId = session?.user?.id;
-  const favoritesResponse = await fetch(`/api/user/${userId}`, {
+  const favoritesResponse = await fetch(`https://vtxfjirpfhbpnzrztuil.supabase.co/api/user/${userId}`, {
     headers: {
       Authorization: accessToken,
     },

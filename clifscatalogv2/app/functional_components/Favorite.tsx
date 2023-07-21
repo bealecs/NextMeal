@@ -13,7 +13,7 @@ const session = await getSession();
 
   const handleFavorite = async () => {
       try {
-        await fetch("/api/favorite", {
+        await fetch("https://vtxfjirpfhbpnzrztuil.supabase.co/api/favorite", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
