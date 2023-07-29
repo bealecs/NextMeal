@@ -16,7 +16,7 @@ export const SimiliarRecipes = async (props: Props) => {
     const simliarRecipe: DestructuredSimilarRecipe = recipe;
 
     return (
-      <div key={props.mealId}>
+      <div key={props.mealId + Math.floor(Math.random() * 100)}>
         <h4>{simliarRecipe.title}</h4>
       </div>
     );

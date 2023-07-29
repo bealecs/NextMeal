@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Clif's Catalog",
-  description: "Version 2.0 of Clif's Catalog",
+  title: "Next Meal",
+  description: "Next Meal Web App",
 };
 
 export default function RootLayout({

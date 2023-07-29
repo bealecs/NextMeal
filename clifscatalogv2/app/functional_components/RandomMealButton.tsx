@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Favorite from "./Favorite";
 import { SimiliarRecipes } from "./SimilarRecipes";
+import { Favorite } from "./Favorite";
 
 //Leverages Spoonaculars random recipe API endpoint
 export async function getRandomMeal() {
