@@ -8,7 +8,8 @@ export async function getRandomMeal() {
   const res = await fetch(
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
     {
-      method: "GET"
+      method: "GET",
+      cache: "no-store"
     }
   );
 
