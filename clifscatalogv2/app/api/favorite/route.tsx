@@ -20,6 +20,5 @@ interface RequestBody {
       });
       
       const {...result} = newFavorite;
-      console.log(result)
     return new Response(JSON.stringify(result));
   }

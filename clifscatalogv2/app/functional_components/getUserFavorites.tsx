@@ -1,5 +1,5 @@
 export async function getUserFavorites(userId: number, accessToken: string) {
-
+  //soon, make this call to database url env variable so we dont have to keep swapping the url between dev and prod
     const favoritesResponse = await fetch(`/api/user/${userId}`, {
       headers: {
         "Authorization": `${accessToken}`,
@@ -11,5 +11,5 @@ export async function getUserFavorites(userId: number, accessToken: string) {
       throw new Error("Failed to fetch your current favorite recipes.");
     }
   
-    return await favoritesResponse.json();
+    return favoritesResponse.json();
   }

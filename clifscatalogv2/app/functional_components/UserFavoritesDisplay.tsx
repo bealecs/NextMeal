@@ -1,15 +1,18 @@
-"use client";
-import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React from "react";
-import { getUserFavorites } from "../functional_components/getUserFavorites";
+import { getUserFavorites } from "./getUserFavorites";
+import { Session } from "next-auth";
 
-export default function UserFavoritesDisplay () {
-  const { data: session } = useSession();
-  if (session && session.user) {
-    const favorites = getUserFavorites(
-      session.user?.id,
-      session.user?.accessToken
+interface Props {
+  session: Session;
+}
+
+export default async function UserFavoritesDisplay (props: Props) {
+  
+  if (props.session && props.session.user) {
+    const favorites = await getUserFavorites(
+      props.session.user.id,
+      props.session.user.accessToken
     );
 
     return (
@@ -35,10 +38,7 @@ export default function UserFavoritesDisplay () {
               </div>
             );
           })}
-          <p>This is working</p>
       </div>
     );
-  } else {
-    return <p>Please sign in to view a favorites</p>;
-  }
+  } 
 };

@@ -1,40 +1,39 @@
 "use client";
 
-import { getSession, useSession } from "next-auth/react";
+import { Session } from "next-auth";
 
 interface Props {
   mealId: number;
   title: string;
   image: string;
+  session: Session;
 }
 
 export function Favorite(props: Props) {
-  const {data: session} = useSession();
-  const accessToken = session.user.accessToken;
+ 
   const handleFavorite = async () => {
     try {
       await fetch("/api/favorite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `${accessToken}`,
         },
         body: JSON.stringify({
           mealId: props.mealId,
           title: props.title,
           image: props.image,
-          userId: session.user.id,
+          userId: props.session.user.id,
         }),
       });
     } catch (error) {
       console.log(error);
     }
   };
-
+//remount hero section on favorite somehow to display the updated content
   return (
     <button
       onClick={() => {
-        if (session && session.user) {
+        if (props.session && props.session.user) {
           handleFavorite();
         } else {
           alert("Please sign in to favorite a meal");
