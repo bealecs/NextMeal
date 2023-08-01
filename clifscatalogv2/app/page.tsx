@@ -12,7 +12,7 @@ export default async function Home() {
     <main className="main-content">
       <Main session={session} />
       <SearchBar />
-      <RandomMealButton session={session}/>
+      {/* <RandomMealButton session={session}/> */}
       <Footer />
     </main>
   );
