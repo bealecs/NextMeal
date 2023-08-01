@@ -8,8 +8,8 @@ interface Props {
 }
 
 export const RandomMealButton = async (props: Props) => {
-  const data = await fetch("/api/random", { method: "GET", cache: "no-store" });
-
+  const data = await fetch("./api/random", {cache: "no-store"});
+  
   // regex function to remove html elements from the returned json response
   function removeTags(string: string) {
     return string
@@ -30,7 +30,7 @@ export const RandomMealButton = async (props: Props) => {
           summary: string;
         }
         const destructuredRecipe: DestructuredRecipe = recipe;
-
+        
         return (
           <section key={destructuredRecipe.id}>
             <h3>{destructuredRecipe.title}</h3>
