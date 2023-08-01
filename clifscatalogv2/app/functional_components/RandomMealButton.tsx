@@ -7,7 +7,9 @@ import { Session } from "next-auth";
 export async function getRandomMeal() {
   const res = await fetch(
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
-    { cache: "no-cache" }
+    {
+      method: "GET"
+    }
   );
 
   if (!res.ok) {
@@ -16,7 +18,7 @@ export async function getRandomMeal() {
     );
   }
 
-  return res.json();
+  return await res.json();
 }
 
 interface Props {
