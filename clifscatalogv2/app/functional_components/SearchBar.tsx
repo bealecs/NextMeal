@@ -8,7 +8,7 @@ export const SearchBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`https://vtxfjirpfhbpnzrztuil.supabase.co/api/search/${searchQuery.trim().replace(" ", "+")}`);
+    const res = await fetch(`/api/search/${searchQuery.trim().replace(" ", "+")}`);
     console.log(res.json());
     return res.json();
   };

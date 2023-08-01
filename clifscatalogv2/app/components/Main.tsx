@@ -1,13 +1,16 @@
 import { HeroSection } from "./HeroSection";
-import { Navigation } from "./Navigation";
 import '../globalStyles.css';
 import MainStyles from '../modular_css/Main.module.css';
+import { Session } from "next-auth";
 
-export const Main = () => {
+interface Props {
+  session: Session;
+}
+
+export const Main = (props: Props) => {
   return (
     <main className={MainStyles.container}>
-      <Navigation />
-      <HeroSection />
+      <HeroSection session={props.session} />
     </main>
   );
 };

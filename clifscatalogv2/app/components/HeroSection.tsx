@@ -4,8 +4,16 @@ import Chat from "../functional_components/Chat";
 import "../globalStyles.css";
 import HeroSectionStyles from "../modular_css/HeroSection.module.css";
 import { useState } from "react";
+import { Session } from "next-auth";
+import SignIn from "../signin/page";
+import { signOut } from "next-auth/react";
+import UserFavoritesDisplay from "../functional_components/UserFavoritesDisplay";
 
-export const HeroSection = () => {
+interface Props {
+  session: Session;
+}
+
+export const HeroSection = (props: Props) => {
   const [showChat, setShowChat] = useState(false);
 
   const handleClick = () => {
@@ -14,7 +22,15 @@ export const HeroSection = () => {
 
   return (
     <main className={HeroSectionStyles.container}>
-      {/* set a conditional here for whether the user is logged in or not for the hero message */}
+      {props.session ? (
+        <div>
+          <h2>Welcome, {props.session.user.name}</h2>
+          <UserFavoritesDisplay session={props.session} />
+          <button onClick={() => signOut()}>Sign out</button>
+        </div>
+      ) : (
+        <SignIn />
+      )}
       {!showChat && (
         <Image
           src="/chef_kiss.svg"

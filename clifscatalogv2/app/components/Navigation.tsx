@@ -4,7 +4,6 @@ import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
 import { useState } from "react";
 import Link from "next/link";
-import { SignIn } from "../functional_components/SignIn";
 
 export const Navigation = () => {
   //state for navbar icon theme toggle
@@ -29,19 +28,16 @@ export const Navigation = () => {
       </div>
       <ul>
         <li className={NavigationStyles.navItem}>
-          <Link href="#">Pick For Me</Link>
+          <Link href="#">My Dashboard</Link>
         </li>
         <li className={NavigationStyles.navItem}>
-          <Link href="#">My Sous-chef</Link>
+          <Link href="#">Search Recipes</Link>
         </li>
         <li className={NavigationStyles.navItem}>
-          <Link href="/UserFavorites">My Favorites</Link>
+          <Link href="/UserFavorites">Pick for Me</Link>
         </li>
         <li className={NavigationStyles.navItem}>
-          <Link href="#search-recipes">Search Recipes</Link>
-        </li>
-        <li className={NavigationStyles.navItem}>
-          <SignIn />
+          <Link href="#search-recipes">My Sous-chef</Link>
         </li>
         <button className={NavigationStyles.themer} onClick={handleToggle}>
           {themeClicked ? "⛅" : "🌛"}

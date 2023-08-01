@@ -1,15 +1,19 @@
 "use client";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { Session } from "next-auth";
+import { signIn, signOut } from "next-auth/react";
 import React from "react";
 
-export const SignIn = () => {
-  const { data: session } = useSession();
+interface Props {
+  session: Session;
+}
+//potentially make this conditionally render whether there is a session or not via props and if so render the user's favorites dashboard
+export const SignIn = (props: Props) => {
 
-  if (session && session.user) {
+  if (props.session && props.session.user) {
     
     return (
       <div style={{ display: "flex" }}>
-        <p>{session.user.name}</p>
+        <p>{props.session.user.name}</p>
         <button onClick={() => signOut()}>Sign Out</button>
       </div>
     );

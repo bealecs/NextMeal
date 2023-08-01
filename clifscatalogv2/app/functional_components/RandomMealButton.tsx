@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SimiliarRecipes } from "./SimilarRecipes";
 import { Favorite } from "./Favorite";
+import { Session } from "next-auth";
 
 //Leverages Spoonaculars random recipe API endpoint
 export async function getRandomMeal() {
@@ -18,7 +19,11 @@ export async function getRandomMeal() {
   return res.json();
 }
 
-export const RandomMealButton = async () => {
+interface Props {
+  session: Session;
+}
+
+export const RandomMealButton = async (props: Props) => {
   const data = await getRandomMeal();
   
   // regex function to remove html elements from the returned json response
@@ -46,6 +51,7 @@ export const RandomMealButton = async () => {
             <h3>{destructuredRecipe.title}</h3>
             <p>{removeTags(destructuredRecipe.summary)}</p>
             <Favorite
+              session={props.session}
               mealId={destructuredRecipe.id}
               title={destructuredRecipe.title}
               image={destructuredRecipe.image}
