@@ -12,7 +12,7 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("https://clifs-catalog-v2.vercel.app/api/user", {
+    const res = await fetch("http://localhost:3000/api/user", {
       method: "POST",
       body: JSON.stringify({ email, password, name }),
       headers: { "Content-Type": "application/json" },

@@ -13,7 +13,7 @@ export function Favorite(props: Props) {
  
   const handleFavorite = async () => {
     try {
-      await fetch("https://clifs-catalog-v2.vercel.app/api/favorite", {
+      await fetch("http://localhost:3000/api/favorite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

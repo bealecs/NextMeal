@@ -9,6 +9,7 @@ export async function getRandomMeal() {
     `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
     {
       method: "GET",
+      cache: "no-store"
     }
   );
 

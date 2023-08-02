@@ -36,7 +36,7 @@ export const HeroSection = (props: Props) => {
           src="/chef_kiss.svg"
           width={100}
           height={100}
-          alt="something"
+          alt="emoji of a chef"
           onClick={handleClick}
           className={HeroSectionStyles.chatbotImage}
         />
