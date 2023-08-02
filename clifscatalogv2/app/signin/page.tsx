@@ -21,7 +21,6 @@ export default function SignIn() {
 
   return (
     <section className={SignInStyles.container}>
-      <Link href="/" className={SignInStyles.back}>← Back to home</Link>
       <div className={SignInStyles.formDiv}>
         <h3>Sign in below</h3>
         <form onSubmit={handleSubmit} className={SignInStyles.form}>

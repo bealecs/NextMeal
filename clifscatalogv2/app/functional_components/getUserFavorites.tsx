@@ -1,6 +1,6 @@
 export async function getUserFavorites(userId: number, accessToken: string) {
   //soon, make this call to database url env variable so we dont have to keep swapping the url between dev and prod
-    const favoritesResponse = await fetch(`/api/user/${userId}`, {
+    const favoritesResponse = await fetch(`https://clifs-catalog-v2.vercel.app/api/user/${userId}`, {
       headers: {
         "Authorization": `${accessToken}`,
       },

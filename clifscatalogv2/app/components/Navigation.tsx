@@ -34,7 +34,7 @@ export const Navigation = () => {
           <Link href="#">Search Recipes</Link>
         </li>
         <li className={NavigationStyles.navItem}>
-          <Link href="/UserFavorites">Pick for Me</Link>
+          <Link href="/#">Pick for Me</Link>
         </li>
         <li className={NavigationStyles.navItem}>
           <Link href="#search-recipes">My Sous-chef</Link>
