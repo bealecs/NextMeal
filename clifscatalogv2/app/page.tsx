@@ -11,8 +11,8 @@ export default async function Home() {
   return (
     <main className="main-content">
       <Main session={session} />
-      {/* <SearchBar /> */}
-      {/* <RandomMealButton session={session}/> */}
+      <SearchBar /> 
+      <RandomMealButton session={session}/>
       <Footer />
     </main>
   );
