@@ -19,7 +19,7 @@ export async function getRandomMeal() {
     );
   }
 
-  return res.json();
+  return await res.json();
 }
 
 interface Props {
