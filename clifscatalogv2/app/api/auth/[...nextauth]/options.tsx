@@ -62,6 +62,9 @@ export const options: NextAuthOptions = {
         signIn: '/signin',
         error: '/auth/error'
       },
+      session: {
+        maxAge: 60*60*24 // 1day in seconds
+      },
       callbacks: {
         async jwt({ token, user }) {
           return { ...token, ...user };
