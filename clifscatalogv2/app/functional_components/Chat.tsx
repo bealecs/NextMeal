@@ -7,6 +7,7 @@ export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
 
   return (
+
     <section className={ChatStyles.container}>
       <div className={ChatStyles.messagesContainer}>
         {messages.length < 1 && 
