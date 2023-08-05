@@ -13,6 +13,7 @@ export default async function Home() {
       <Main session={session} />
       {/* <SearchBar /> 
       <RandomMealButton session={session}/> */}
+      <RandomMealButton session={session} />
       <Footer />
     </main>
   );
