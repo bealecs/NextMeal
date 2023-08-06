@@ -1,25 +1,33 @@
+import { useState } from "react";
+import { getSimilarMeals } from "./getSimilarMeals";
+
 interface Props {
   mealId: number;
 }
 
-export const SimiliarRecipes = async (props: Props) => {
-  const res = await fetch(
-    `https://api.spoonacular.com/recipes/${props.mealId}/similar?apiKey=${process.env.SPOONACULAR_API_KEY}&number=3`,
-    { cache: "no-store" }
-  );
-  const resJson = await res.json();
-  const resMapped = resJson.map((recipe) => {
-    interface DestructuredSimilarRecipe {
-      id: number;
-      title: string;
-    }
-    const simliarRecipe: DestructuredSimilarRecipe = recipe;
+export const SimiliarRecipes = (props: Props) => {
+  const [similarRecipes, setSimilarRecipes] = useState(null);
+  const mealID = props.mealId;
 
-    return (
-      <div key={props.mealId + Math.floor(Math.random() * 100)}>
-        <h4>{simliarRecipe.title}</h4>
-      </div>
-    );
-  });
-  return resMapped;
+  const getSimilarRecipes = async () => {
+    setSimilarRecipes(await getSimilarMeals(mealID));
+  };
+
+  return (
+    <>
+      <h4>See similar recipes?</h4>
+      <button onClick={getSimilarRecipes}>Show Recipes</button>
+      {similarRecipes &&
+        similarRecipes.map((recipe) => {
+          interface DestructuredSimilarRecipe {
+            id: number;
+            title: string;
+          }
+          const simliarRecipe: DestructuredSimilarRecipe = recipe;
+          <div key={simliarRecipe.id}>
+            <h4>{simliarRecipe.title}</h4>
+          </div>;
+        })}
+    </>
+  );
 };
