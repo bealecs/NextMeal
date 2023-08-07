@@ -8,6 +8,7 @@ interface Props {
 }
 
 export const Main = (props: Props) => {
+  
   return (
     <main className={MainStyles.container}>
       <HeroSection session={props.session} />
