@@ -63,7 +63,7 @@ export const options: NextAuthOptions = {
         error: '/auth/error'
       },
       session: {
-        maxAge: 60*60*24 // 1day in seconds
+        maxAge: 60*60*23 // 1day in seconds
       },
       callbacks: {
         async jwt({ token, user }) {

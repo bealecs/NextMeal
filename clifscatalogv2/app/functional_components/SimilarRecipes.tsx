@@ -7,10 +7,12 @@ interface Props {
 
 export const SimiliarRecipes = (props: Props) => {
   const [similarRecipes, setSimilarRecipes] = useState(null);
+  const [showSimilar, setShowSimilar] = useState(false);
   const mealID = props.mealId;
 
   const getSimilarRecipes = async () => {
     setSimilarRecipes(await getSimilarMeals(mealID));
+    setShowSimilar(!showSimilar);
   };
 
   return (
@@ -24,9 +26,11 @@ export const SimiliarRecipes = (props: Props) => {
             title: string;
           }
           const simliarRecipe: DestructuredSimilarRecipe = recipe;
-          <div key={simliarRecipe.id}>
-            <h4>{simliarRecipe.title}</h4>
-          </div>;
+          return (
+            <div key={simliarRecipe.id}>
+              <h4>{simliarRecipe.title}</h4>
+            </div>
+          );
         })}
     </>
   );
