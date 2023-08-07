@@ -1,18 +1,14 @@
 "use client";
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import NavigationStyles from "../modular_css/Navigation.module.css";
+import { ThemeContext } from "../store/ThemeProvider";
 
 const NavigationThemer = () => {
-  //state for navbar icon theme toggle
-  const [themeClicked, setThemeClicked] = useState(false);
-
-  //click handler for changing navbar icon for theme toggle
-  const handleToggle = () => {
-    setThemeClicked(!themeClicked);
-  };
+  const theme = useContext(ThemeContext);
+  
   return (
-    <button className={NavigationStyles.themer} onClick={handleToggle}>
-      {themeClicked ? "⛅" : "🌛"}
+    <button className={NavigationStyles.themer} onClick={theme.onThemeChange}>
+      {theme.themeValue === "container_dark" ? "⛅" : "🌛"}
     </button>
   );
 };

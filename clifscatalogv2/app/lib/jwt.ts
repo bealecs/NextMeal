@@ -6,7 +6,7 @@ interface SignOption {
 }
 
 const DEFAULT_SIGN_OPTION:SignOption = {
-    expiresIn: "1hr"
+    expiresIn: 60*60*24 //1 day
 }
 
 export function signJwtAccessToken(payload:JwtPayload, options:SignOption = DEFAULT_SIGN_OPTION){
