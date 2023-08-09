@@ -1,33 +1,23 @@
+"use client"
 import Image from "next/image";
 import { SimiliarRecipes } from "./SimilarRecipes";
 import { Favorite } from "./Favorite";
 import { Session } from "next-auth";
-
-//Leverages Spoonaculars random recipe API endpoint
-export async function getRandomMeal() {
-  const res = await fetch(
-    `https://api.spoonacular.com/recipes/random?apiKey=${process.env.SPOONACULAR_API_KEY}`,
-    {
-      method: "GET",
-      cache: "no-store"
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error(
-      "Oops... I wasn't able to grab a meal for you... Please try again"
-    );
-  }
-
-  return await res.json();
-}
+import { getRandomMeal } from "./getRandomMeal";
+import { useState } from "react";
 
 interface Props {
   session: Session;
 }
 
-export const RandomMealButton = async (props: Props) => {
-  const data = await getRandomMeal();
+export const RandomMealButton = (props: Props) => {
+
+  const [newMeal, setNewMeal] = useState(null);
+
+  const getNewMeal = async () => {
+    const data = await getRandomMeal();
+    setNewMeal(data);
+  }
   
   // regex function to remove html elements from the returned json response
   function removeTags(string: string) {
@@ -39,7 +29,9 @@ export const RandomMealButton = async (props: Props) => {
 
   return (
     <div>
-      {data.recipes.map((recipe) => {
+      <button onClick={getNewMeal}>Get fresh meal</button>
+      {newMeal &&
+      newMeal.recipes.map((recipe) => {
         //creating interface for destructuring the returned recipe object with variables that will be leveraged
         interface DestructuredRecipe {
           image: string;
@@ -66,7 +58,6 @@ export const RandomMealButton = async (props: Props) => {
               alt={destructuredRecipe.summary}
               style={{ marginTop: "2rem", borderRadius: "1rem" }}
             />
-            <button>Get a meal</button>
             <SimiliarRecipes mealId={destructuredRecipe.id} />
           </section>
         );

@@ -29,7 +29,7 @@ export function Favorite(props: Props) {
       console.log(error);
     }
   };
-//remount hero section on favorite somehow to display the updated content
+
   return (
     <button
       onClick={() => {
