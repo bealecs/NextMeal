@@ -21,11 +21,9 @@ export const HeroSection = (props: Props) => {
     <main className={HeroSectionStyles.container}>
       {props.session ? (
         <div>
-          <h2>Welcome, {props.session.user.name}</h2>
           <Suspense>
           <UserFavoritesDisplay session={props.session} />
           </Suspense>
-          <button onClick={() => signOut()}>Sign out</button>
         </div>
       ) : (
         <SignIn />
