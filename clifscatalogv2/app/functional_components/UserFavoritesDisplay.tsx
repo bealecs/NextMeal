@@ -15,7 +15,7 @@ export default async function UserFavoritesDisplay(props: Props) {
       props.session.user.accessToken
     );
 
-    const handleDelete = async (id: number) => {
+    const handleDelete = async (id: number, title: string) => {
       try {
         const res = await fetch("http://localhost:3000/api/deleteFavorite", {
           method: "POST",
@@ -26,12 +26,19 @@ export default async function UserFavoritesDisplay(props: Props) {
       } catch (error) {
         console.log(error);
       }
+      document.getElementById(title).remove();
     };
+    
+    //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)
+    const uniqueFavorites = favorites[0].filter(
+      (value, index, self) =>
+        self.findIndex((t) => t.title === value.title) === index
+    );
 
     return (
       <div>
-        {favorites[0] !== undefined &&
-          favorites[0].map((favorite) => {
+        {uniqueFavorites &&
+          uniqueFavorites.map((favorite) => {
             interface UserFavorites {
               id: number;
               title: string;
@@ -40,7 +47,7 @@ export default async function UserFavoritesDisplay(props: Props) {
             const destructuredFavorite: UserFavorites = favorite;
 
             return (
-              <div key={destructuredFavorite.id}>
+              <div id={destructuredFavorite.title} key={destructuredFavorite.id}>
                 <h3>{destructuredFavorite.title}</h3>
                 <Image
                   src={destructuredFavorite.image}
@@ -48,7 +55,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                   width={200}
                   height={200}
                 />
-                <button onClick={() => handleDelete(destructuredFavorite.id)}>
+                <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
                   Remove Favorite
                 </button>
               </div>
