@@ -15,7 +15,7 @@ export default async function UserFavoritesDisplay(props: Props) {
       props.session.user.accessToken
     );
 
-    const handleDelete = async (id: number) => {
+    const handleDelete = async (id: number, title: string) => {
       try {
         const res = await fetch("http://localhost:3000/api/deleteFavorite", {
           method: "POST",
@@ -26,6 +26,7 @@ export default async function UserFavoritesDisplay(props: Props) {
       } catch (error) {
         console.log(error);
       }
+      document.getElementById(title).remove();
     };
 
     return (
@@ -40,7 +41,7 @@ export default async function UserFavoritesDisplay(props: Props) {
             const destructuredFavorite: UserFavorites = favorite;
 
             return (
-              <div key={destructuredFavorite.id}>
+              <div id={destructuredFavorite.title} key={destructuredFavorite.id}>
                 <h3>{destructuredFavorite.title}</h3>
                 <Image
                   src={destructuredFavorite.image}
@@ -48,7 +49,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                   width={200}
                   height={200}
                 />
-                <button onClick={() => handleDelete(destructuredFavorite.id)}>
+                <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
                   Remove Favorite
                 </button>
               </div>
