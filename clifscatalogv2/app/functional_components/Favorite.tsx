@@ -32,9 +32,11 @@ export function Favorite(props: Props) {
 
   return (
     <button
-      onClick={() => {
+    id="favorite-button"
+      onClick={(e) => {
         if (props.session && props.session.user) {
           handleFavorite();
+          e.currentTarget.disabled = true;
         } else {
           alert("Please sign in to favorite a meal");
         }

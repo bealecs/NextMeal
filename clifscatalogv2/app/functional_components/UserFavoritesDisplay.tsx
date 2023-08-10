@@ -28,11 +28,17 @@ export default async function UserFavoritesDisplay(props: Props) {
       }
       document.getElementById(title).remove();
     };
+    
+    //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)
+    const uniqueFavorites = favorites[0].filter(
+      (value, index, self) =>
+        self.findIndex((t) => t.title === value.title) === index
+    );
 
     return (
       <div>
-        {favorites[0] !== undefined &&
-          favorites[0].map((favorite) => {
+        {uniqueFavorites &&
+          uniqueFavorites.map((favorite) => {
             interface UserFavorites {
               id: number;
               title: string;
