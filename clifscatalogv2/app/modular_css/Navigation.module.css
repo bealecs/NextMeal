@@ -1,58 +1,39 @@
 .container {
+    align-items: center;
     position: sticky;
     top: 0;
+    transition: all 0.3s ease;
+}
+.container h4 {
+    padding: 1rem;
+    margin: auto 0;
+    font-size: 1.4rem;
+}
+.pushRight {
     display: flex;
-    width: 100%;
-    background-color: rgba(0,0, 0, 0.2);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    transition: all ease 0.4s;
+    justify-content: flex-end;
 }
-.container:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
-}
-.container:hover a {
-    color: white;
-}
-.container ul {
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
-    width: 70%;
-    align-items: center;
-}
-.container li {
-    display: block;
-}
-.navItem a {
-    text-decoration: none;
-    color: white;
-    transition: all ease 0.3s;
-}
-.navItem a:hover {
-    border-bottom: 1px solid gold;
-    padding-bottom: 1rem;
-    color: gold;
+.avatar {
     cursor: pointer;
 }
-.imageDiv {
-    margin: auto;
-}
-.themer {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-}
-.userHolder {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-.userHolder button {
+.userOptionsList {
+    background-color: rgba(0, 0, 0, 0.3);
     width: fit-content;
-    margin: 0 2rem;
-    border-radius: 1rem;
-    padding: 0.4rem;
+    position: fixed;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    z-index: 100;
+}
+.userOption {
+    padding: 1rem;
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.3s ease;
+}
+.userOption:hover {
+    color: gold;
+    text-decoration: underline;
+    cursor: pointer;
 }

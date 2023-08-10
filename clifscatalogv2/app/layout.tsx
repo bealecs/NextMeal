@@ -1,4 +1,3 @@
-import { Navigation } from "./components/Navigation";
 import AuthProvider from "./store/SessionProvider";
 import ThemeContextProvider from "./store/ThemeProvider";
 
@@ -16,7 +15,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ThemeContextProvider>
-          <Navigation />
           <AuthProvider>{children}</AuthProvider>
         </ThemeContextProvider>
       </body>

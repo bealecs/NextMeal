@@ -1,36 +1,48 @@
-import Image from "next/image";
+"use client";
 import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
-import Link from "next/link";
-import NavigationThemer from "../functional_components/NavigationThemer";
-export const Navigation = () => {
+import Image from "next/image";
+import { useState } from "react";
+import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
+import { createPortal } from "react-dom";
+
+interface Props {
+  session: Session;
+}
+export const Navigation = (props: Props) => {
+  const [showPreferences, setShowPreferences] = useState(false);
 
   return (
     <section className={NavigationStyles.container}>
-      <div className={NavigationStyles.imageDiv}>
-        <Image
-          width={80}
-          height={80}
-          style={{ borderRadius: "50%" }}
-          alt="Clif Catalog logo"
-          src="/logo.svg"
-        />
-      </div>
-      <ul>
-        <li className={NavigationStyles.navItem}>
-          <Link href="#">My Dashboard</Link>
-        </li>
-        <li className={NavigationStyles.navItem}>
-          <Link href="#">Search Recipes</Link>
-        </li>
-        <li className={NavigationStyles.navItem}>
-          <Link href="/#">Pick for Me</Link>
-        </li>
-        <li className={NavigationStyles.navItem}>
-          <Link href="#search-recipes">My Sous-chef</Link>
-        </li>
-        <NavigationThemer/>
-      </ul>
+      {props.session && props.session.user && (
+        <>
+          <div className={NavigationStyles.pushRight}>
+            <h4>Welcome {props.session.user.name}</h4>
+            <Image
+              src="/avatar.svg"
+              alt="stock avatar image signifying a user presence"
+              width={80}
+              height={80}
+              className={NavigationStyles.avatar}
+              onClick={() => setShowPreferences(!showPreferences)}
+            />
+          </div>
+          {showPreferences && (
+            <ul className={NavigationStyles.userOptionsList}>
+              <li className={NavigationStyles.userOption}>User Preferences</li>
+              <li className={NavigationStyles.userOption}>Value Here</li>
+              <li className={NavigationStyles.userOption}>Value Here</li>
+              <li
+                className={NavigationStyles.userOption}
+                onClick={() => signOut()}
+              >
+                Sign Out
+              </li>
+            </ul>
+          )}
+        </>
+      )}
     </section>
   );
 };
