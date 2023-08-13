@@ -18,9 +18,10 @@ interface RequestBody {
   export async function POST(request: Request) {
     const body: RequestBody = await request.json();
  
+    //finding preference based on relation to user by userID from body Req and updating the user's preference. Each user is given default preference list at sign up
     const newPreferences = await prisma.preferences.updateMany({
       where: {
-        userId: body.userId //This compares the id on preferences (which should be the user's relational ID) with the userId from the req.body
+        userId: body.userId
       },
         data: {
             theme: body.checked.theme,
