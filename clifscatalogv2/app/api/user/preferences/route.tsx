@@ -18,7 +18,10 @@ interface RequestBody {
   export async function POST(request: Request) {
     const body: RequestBody = await request.json();
  
-    const newPreferences = await prisma.preferences.create({
+    const newPreferences = await prisma.preferences.updateMany({
+      where: {
+        userId: body.userId //This compares the id on preferences (which should be the user's relational ID) with the userId from the req.body
+      },
         data: {
             theme: body.checked.theme,
             noDairy: body.checked.noDairy,
