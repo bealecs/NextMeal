@@ -2,7 +2,6 @@
 import HeroSectionStyles from "../modular_css/HeroSection.module.css";
 import { Session } from "next-auth";
 import SignIn from "../signin/page";
-import { signOut } from "next-auth/react";
 import UserFavoritesDisplay from "../functional_components/UserFavoritesDisplay";
 import SousChef from "../functional_components/SousChef";
 import "../globalStyles.css";
@@ -14,21 +13,20 @@ interface Props {
 }
 
 export const HeroSection = (props: Props) => {
-
-  // const theme = useContext(ThemeContext);
-
+  
+  const themeContext = useContext(ThemeContext);
+  const actualTheme = themeContext.themeValue.toString();
+  
   return (
-    <main className={HeroSectionStyles.container}>
+    <Suspense>
+    <main id="main-container" className={actualTheme}>
       {props.session ? (
-        <div>
-          <Suspense>
           <UserFavoritesDisplay session={props.session} />
-          </Suspense>
-        </div>
       ) : (
         <SignIn />
       )}
       <SousChef />
     </main>
+    </Suspense>
   );
 };

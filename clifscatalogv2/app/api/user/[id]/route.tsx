@@ -28,5 +28,16 @@ export async function GET(
     },
   });
   
-  return new Response(JSON.stringify([userFavorites]));
+  const userPreferences = await prisma.preferences.findMany({
+    where: { userId: +params.id }, //comparing userId of the preferences model in the DB to the params id as a string
+    include: {
+      user: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
+
+  return new Response(JSON.stringify([userFavorites, userPreferences]));
 }

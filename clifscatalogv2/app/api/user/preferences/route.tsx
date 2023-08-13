@@ -17,7 +17,7 @@ interface RequestBody {
   
   export async function POST(request: Request) {
     const body: RequestBody = await request.json();
- //dont forget to pass the session's user id into this as well to tie the preferences to the specific user
+ 
     const newPreferences = await prisma.preferences.create({
         data: {
             theme: body.checked.theme,

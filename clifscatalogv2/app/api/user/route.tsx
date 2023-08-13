@@ -23,6 +23,19 @@ export async function POST(request: Request) {
         name: body.name,
         email: body.email,
         password: await bcrypt.hash(body.password, 10),
+        preferences: {
+          create: {
+            theme: false,
+            noDairy: false,
+            nutAllergy: false,
+            fishAllergy: false,
+            vegan: false,
+            vegetarian: false,
+            noRedMeat: false,
+            noPork: false,
+            dieting: false
+          }
+        }
       },
     });
     const { password, ...result } = user;

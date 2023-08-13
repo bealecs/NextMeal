@@ -5,18 +5,21 @@ import { RandomMealButton } from "./functional_components/RandomMealButton";
 import { SearchBar } from "./functional_components/SearchBar";
 import { options } from "./api/auth/[...nextauth]/options";
 import { Navigation } from "./components/Navigation";
+import ThemeContextProvider from "./store/ThemeProvider";
 
 export default async function Home() {
   const session = await getServerSession(options);
   
   return (
     <main className="main-content">
-      <Navigation session={session} />
-      <Main session={session} />
-      {/* <SearchBar /> 
-      <RandomMealButton session={session}/> */}
-      <RandomMealButton session={session} />
-      <Footer />
+      <ThemeContextProvider session={session}>
+        <Navigation session={session} />
+        <Main session={session} />
+        {/* <SearchBar /> 
+        <RandomMealButton session={session}/> */}
+        <RandomMealButton session={session} />
+        <Footer />
+      </ThemeContextProvider>
     </main>
   );
 }

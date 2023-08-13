@@ -1,16 +1,16 @@
-"use client";
-import React, { useContext } from "react";
-import NavigationStyles from "../modular_css/Navigation.module.css";
-import { ThemeContext } from "../store/ThemeProvider";
+// "use client";
+// import React, { useContext } from "react";
+// import NavigationStyles from "../modular_css/Navigation.module.css";
+// import { ThemeContext } from "../store/ThemeProvider";
 
-const NavigationThemer = () => {
-  const theme = useContext(ThemeContext);
+// const NavigationThemer = () => {
+//   const theme = useContext(ThemeContext);
   
-  return (
-    <button className={NavigationStyles.themer} onClick={theme.onThemeChange}>
-      {theme.themeValue === "container_dark" ? "⛅" : "🌛"}
-    </button>
-  );
-};
+//   return (
+//     <button className={NavigationStyles.themer} onClick={theme.onThemeChange}>
+//       {theme.themeValue === "container_dark" ? "⛅" : "🌛"}
+//     </button>
+//   );
+// };
 
-export default NavigationThemer;
+// export default NavigationThemer;
