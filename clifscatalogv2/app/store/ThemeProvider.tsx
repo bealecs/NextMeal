@@ -1,43 +1,63 @@
 "use client";
+import { Session } from "next-auth";
 import React, { createContext, useState } from "react";
+import { getUserFavorites } from "../functional_components/getUserFavorites";
+// import { getUserPreferences } from "../functional_components/getUserPreferences";
 
 type Ctx = {
   themeValue: string;
-  onThemeChange: () => void;
+  // onThemeChange: () => void;
 };
 
 type Props = {
+  session: Session;
   children: React.ReactNode;
 };
 
 export const ThemeContext = createContext<Ctx>({
   themeValue: "container_dark",
-  onThemeChange: () => {},
+  // onThemeChange: () => {},
 });
 
-const ThemeContextProvider = (props: Props) => {
-  const [theme, setTheme] = useState("container_dark");
+const ThemeContextProvider = async (props: Props) => {
+  // const [theme, setTheme] = useState("container_dark");
 
-  const onThemeChange = () => {
-    if (theme == 'container_dark') {
-      console.log("clicked")
-      setTheme("container_light");
+    if(props.session && props.session.user) {
+      const preferences = await getUserFavorites(props.session.user.id, props.session.user.accessToken);
+      const themePreference = preferences[1][0].theme === true ? "container_light" : "container_dark";
+      const ctxValue: Ctx = {
+        themeValue: themePreference,
+        // onThemeChange: onThemeChange,
+      };
+      
+      return (
+        <ThemeContext.Provider value={ctxValue}>
+          {props.children}
+        </ThemeContext.Provider>
+      );
     } else {
-      console.log("clicked x2")
-      setTheme("container_dark");
+      const ctxValue: Ctx = {
+        themeValue: "container_dark"
+      };
+    
+      return (
+        <ThemeContext.Provider value={ctxValue}>
+          {props.children}
+        </ThemeContext.Provider>
+      );
     }
-  };
+  }
+  
+  // const onThemeChange = () => {
+  //   if (theme == 'container_dark') {
+  //     console.log("clicked")
+  //     setTheme("container_light");
+  //   } else {
+  //     console.log("clicked x2")
+  //     setTheme("container_dark");
+  //   }
+  // };
 
-  const ctxValue: Ctx = {
-    themeValue: theme,
-    onThemeChange: onThemeChange,
-  };
-
-  return (
-    <ThemeContext.Provider value={ctxValue}>
-      {props.children}
-    </ThemeContext.Provider>
-  );
-};
+  
 
 export default ThemeContextProvider;

@@ -14,6 +14,7 @@ model User {
   name      String?
   password  String
   favorites Favorites[]
+  preferences Preferences[]
 }
 
 model Favorites {
@@ -21,6 +22,21 @@ model Favorites {
   title  String
   image  String
   mealId Int
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Preferences {
+  id     Int    @id @default(autoincrement())
+  theme  Boolean
+  noDairy Boolean
+  nutAllergy Boolean
+  fishAllergy Boolean
+  vegan Boolean
+  vegetarian Boolean
+  noRedMeat Boolean
+  noPork Boolean
+  dieting Boolean
   userId Int
   user   User   @relation(fields: [userId], references: [id])
 }

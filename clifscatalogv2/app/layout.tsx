@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeContextProvider>
+        {/* <ThemeContextProvider> */}
           <AuthProvider>{children}</AuthProvider>
-        </ThemeContextProvider>
+        {/* </ThemeContextProvider> */}
       </body>
     </html>
   );
