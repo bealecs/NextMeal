@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
-import HeroSectionStyles from "../modular_css/HeroSection.module.css";
+import SousChefStyles from "../modular_css/SousChef.module.css";
 import Chat from "./Chat";
 
 const SousChef = () => {
@@ -21,12 +21,12 @@ const SousChef = () => {
           height={100}
           alt="emoji of a chef"
           onClick={handleClick}
-          className={HeroSectionStyles.chatbotImage}
+          className={SousChefStyles.chatbotImage}
         />
       )}
       {showChat && (
-        <div className={HeroSectionStyles.chatbotDiv}>
-          <div className={HeroSectionStyles.closeSectionDiv}>
+        <div className={SousChefStyles.chatbotDiv}>
+          <div className={SousChefStyles.closeSectionDiv}>
             <button onClick={handleClick}>❌</button>
             <h3>My Sous-chef</h3>
           </div>

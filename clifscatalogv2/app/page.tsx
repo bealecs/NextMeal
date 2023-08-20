@@ -15,9 +15,6 @@ export default async function Home() {
       <ThemeContextProvider session={session}>
         <Navigation session={session} />
         <Main session={session} />
-        {/* <SearchBar /> 
-        <RandomMealButton session={session}/> */}
-        <RandomMealButton session={session} />
         <Footer />
       </ThemeContextProvider>
     </main>
