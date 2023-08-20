@@ -6,6 +6,7 @@ import SousChef from "../functional_components/SousChef";
 import { Suspense, useState } from "react";
 import UserFavoritesDisplay from "../functional_components/UserFavoritesDisplay";
 import { RandomMealButton } from "../functional_components/RandomMealButton";
+import { Loading } from '../suspense_fallback/Loading';
 
 interface Props {
   session: Session;
@@ -25,7 +26,7 @@ export const Main = (props: Props) => {
           <div>
             <button onClick={handleClick}>View Random Suggestion</button>
           </div>
-          <Suspense>
+          <Suspense fallback={<Loading />}>
             <UserFavoritesDisplay session={props.session} />
           </Suspense>
           <SousChef />
