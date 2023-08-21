@@ -1,5 +1,5 @@
 # Next Meal 🍎🍔
-### View the build preview of the main branch [here](https://clifs-catalog-v2.vercel.app/) and follow along as we build
+### View the build preview of the main branch [here](https://next-meal-cookbook.vercel.app/) and follow along as we build
 
 **[Jason Vallery](https://github.com/JVSONV) and [Clif Beale](https://github.com/bealecs) are tag teaming this project**
 
