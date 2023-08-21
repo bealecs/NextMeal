@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import PreferencesModal from "../functional_components/ModalWrapper";
+import { SearchBar } from "../functional_components/SearchBar";
 
 
 interface Props {
@@ -50,6 +51,7 @@ export const Navigation = (props: Props) => {
     <section className={NavigationStyles.container}>
       {props.session && props.session.user && (
         <>
+          <SearchBar />
           <div className={NavigationStyles.pushRight}>
             <h4>Welcome {props.session.user.name}</h4>
             <Image

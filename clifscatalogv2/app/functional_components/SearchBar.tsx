@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 import Image from "next/image";
+import PreferencesModal from "./ModalWrapper";
 
 type StateResult = [
   {
@@ -15,6 +16,7 @@ type StateResult = [
 export const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<StateResult>();
+  const [openPreferences, setOpenPreferences] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,9 +29,10 @@ export const SearchBar = () => {
     }
     const data = await res.json();
     setSearchResult(data.results);
+    setOpenPreferences(!openPreferences);
     return data;
   };
-  console.log(searchResult)
+  
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
@@ -48,7 +51,10 @@ export const SearchBar = () => {
             Find Meal
           </button>
         </form>
-        
+        <PreferencesModal
+            title="Search Results"
+            isOpened={openPreferences}
+            onClose={() => setOpenPreferences(false)}>
         {searchResult &&
           searchResult.map((result) => (
             <div key={result.id}>
@@ -62,9 +68,10 @@ export const SearchBar = () => {
               <button>View meal</button>
             </div>
           ))}
+          
           {searchResult != undefined && searchResult.length <= 0 &&
           <p>There were no recipes to match your search, please try again with a different dish</p>}
-
+          </PreferencesModal>
       </div>
     </section>
   );

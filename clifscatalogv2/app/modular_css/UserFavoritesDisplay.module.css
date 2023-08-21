@@ -1,0 +1,14 @@
+.resultsContainer {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.individualResult {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 3rem;
+}
+.individualResult button {
+    width: 30%;
+}

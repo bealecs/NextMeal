@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { getUserFavorites } from "./getUserFavorites";
 import { Session } from "next-auth";
+import UserFavoritesDisplayStyles from '../modular_css/UserFavoritesDisplay.module.css';
 
 interface Props {
   session: Session;
@@ -47,17 +48,19 @@ export default async function UserFavoritesDisplay(props: Props) {
             const destructuredFavorite: UserFavorites = favorite;
 
             return (
-              <div id={destructuredFavorite.title} key={destructuredFavorite.id}>
-                <h3>{destructuredFavorite.title}</h3>
-                <Image
-                  src={destructuredFavorite.image}
-                  alt={destructuredFavorite.title}
-                  width={200}
-                  height={200}
-                />
-                <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
-                  Remove Favorite
-                </button>
+              <div id={destructuredFavorite.title} key={destructuredFavorite.id} className={UserFavoritesDisplayStyles.resultsContainer}>
+                <div className={UserFavoritesDisplayStyles.individualResult}>
+                  <h3>{destructuredFavorite.title}</h3>
+                  <Image
+                    src={destructuredFavorite.image}
+                    alt={destructuredFavorite.title}
+                    width={200}
+                    height={200}
+                  />
+                  <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
+                    Remove Favorite
+                  </button>
+                </div>
               </div>
             );
           })}
