@@ -1,22 +1,24 @@
 import { getServerSession } from "next-auth";
 import { Footer } from "./components/Footer";
 import { Main } from "./components/Main";
-import { RandomMealButton } from "./functional_components/RandomMealButton";
-import { SearchBar } from "./functional_components/SearchBar";
 import { options } from "./api/auth/[...nextauth]/options";
 import { Navigation } from "./components/Navigation";
 import ThemeContextProvider from "./store/ThemeProvider";
+import SignIn from "./signin/page";
 
 export default async function Home() {
   const session = await getServerSession(options);
   
   return (
     <main className="main-content">
-      <ThemeContextProvider session={session}>
-        <Navigation session={session} />
-        <Main session={session} />
-        <Footer />
-      </ThemeContextProvider>
+      {session ? (
+        <ThemeContextProvider session={session}>
+          <Navigation session={session} />
+          <Main session={session} />
+          <Footer />
+        </ThemeContextProvider>
+        ) : (
+        <SignIn />)}
     </main>
   );
 }

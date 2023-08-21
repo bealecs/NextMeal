@@ -7,6 +7,7 @@ import { Suspense, useState } from "react";
 import UserFavoritesDisplay from "../functional_components/UserFavoritesDisplay";
 import { RandomMealButton } from "../functional_components/RandomMealButton";
 import { Loading } from '../suspense_fallback/Loading';
+import { SearchBar } from '../functional_components/SearchBar';
 
 interface Props {
   session: Session;
@@ -23,6 +24,7 @@ export const Main = (props: Props) => {
     <main className={MainStyles.container}>
       {!clicked ? (
         <>
+          <SearchBar />
           <div>
             <button onClick={handleClick}>View Random Suggestion</button>
           </div>
@@ -33,6 +35,7 @@ export const Main = (props: Props) => {
         </>
       ) : (
         <>
+          <SearchBar />
           <div>
             <button onClick={handleClick}>View My Favorites</button>
           </div>

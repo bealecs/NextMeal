@@ -1,8 +1,3 @@
-.mainDiv {
-  text-align: center;
-  align-items: center;
-  padding-top: 1rem;
-}
 .container {
   min-height: 95vh;
   background-image: url("/searchBackground.png");

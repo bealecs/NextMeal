@@ -1,5 +1,4 @@
 import AuthProvider from "./store/SessionProvider";
-import ThemeContextProvider from "./store/ThemeProvider";
 
 export const metadata = {
   title: "Next Meal",
@@ -14,9 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {/* <ThemeContextProvider> */}
           <AuthProvider>{children}</AuthProvider>
-        {/* </ThemeContextProvider> */}
       </body>
     </html>
   );

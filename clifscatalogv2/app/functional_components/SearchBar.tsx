@@ -29,11 +29,10 @@ export const SearchBar = () => {
     setSearchResult(data.results);
     return data;
   };
-
+  console.log(searchResult)
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
-        <h2>Search for your favorite meals here</h2>
         <form className={SearchBarStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"
@@ -49,6 +48,7 @@ export const SearchBar = () => {
             Find Meal
           </button>
         </form>
+        
         {searchResult &&
           searchResult.map((result) => (
             <div key={result.id}>
@@ -62,6 +62,9 @@ export const SearchBar = () => {
               <button>View meal</button>
             </div>
           ))}
+          {searchResult != undefined && searchResult.length <= 0 &&
+          <p>There were no recipes to match your search, please try again with a different dish</p>}
+
       </div>
     </section>
   );
