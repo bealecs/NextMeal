@@ -31,7 +31,7 @@ export const RandomMealButton = (props: Props) => {
     <div>
       {!newMeal && 
       <>
-        <p>Feeling hungry but not sure what you want to eat? We've got you covered! We have a broad selection of meals to choose from, all you need to do is simply click below.</p>
+        <p>Feeling hungry but not sure what you want to eat? We have got you covered! We have a broad selection of meals to choose from, all you need to do is simply click below.</p>
         <p>See a recipe you want to try? Click show full info to see a list of all of the ingredients necessary, time to cook, step by step instructions, and more!</p>
         <p>See a recipe you like, but would like to try another time? We have got you covered there too! Simply favorite the recipe to store it with the rest of those recipes that
           you are waiting to come back to
