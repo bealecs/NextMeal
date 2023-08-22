@@ -29,7 +29,15 @@ export const RandomMealButton = (props: Props) => {
 
   return (
     <div>
-      <button onClick={getNewMeal}>Get fresh meal</button>
+      {!newMeal && 
+      <>
+        <p>Feeling hungry but not sure what you want to eat? We have got you covered! We have a broad selection of meals to choose from, all you need to do is simply click below.</p>
+        <p>See a recipe you want to try? Click show full info to see a list of all of the ingredients necessary, time to cook, step by step instructions, and more!</p>
+        <p>See a recipe you like, but would like to try another time? We have got you covered there too! Simply favorite the recipe to store it with the rest of those recipes that
+          you are waiting to come back to
+        </p>
+        <button onClick={getNewMeal}>Get new recipe</button>
+      </>}
       {newMeal &&
       newMeal.recipes.map((recipe) => {
         //creating interface for destructuring the returned recipe object with variables that will be leveraged
@@ -58,6 +66,7 @@ export const RandomMealButton = (props: Props) => {
               alt={destructuredRecipe.summary}
               style={{ marginTop: "2rem", borderRadius: "1rem" }}
             />
+            <button onClick={getNewMeal}>Get new recipe</button>
             <SimiliarRecipes mealId={destructuredRecipe.id} />
           </section>
         );

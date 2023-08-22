@@ -1,22 +1,13 @@
-.mainDiv {
-  text-align: center;
-  align-items: center;
-  padding-top: 1rem;
-}
 .container {
-  min-height: 95vh;
-  background-image: url("/searchBackground.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
 }
 .form {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
   margin: auto;
-  padding: 2rem;
-padding-top: 8rem;
+}
+.mainDiv {
+  background-color: white;
+  margin: auto;
 }
 .searchBar {
   padding: 1rem;

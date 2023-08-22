@@ -17,6 +17,7 @@ export async function GET(
       }
     );
   }
+  //once adding the grocery list, change all of these prisma calls to one call on the user. Extract data from the call as needed. Data will contain favorites, preferences, and grocery list
   const userFavorites = await prisma.favorites.findMany({
     where: { userId: +params.id }, //comparing userId of the favorites model in the DB to the params id as a string
     include: {

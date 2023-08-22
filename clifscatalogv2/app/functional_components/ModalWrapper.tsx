@@ -46,11 +46,11 @@ const PreferencesModal = ({
         ref.current && !isClickInsideRectangle(e, ref.current) && onClose()
       }
     >
-      <h3>{title}</h3>
-      {children}
       <div>
         <button onClick={onClose}>Close</button>
       </div>
+      <h3>{title}</h3>
+      {children}
     </dialog>
   );
 };
