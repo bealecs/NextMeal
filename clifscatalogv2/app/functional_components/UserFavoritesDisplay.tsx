@@ -3,6 +3,7 @@ import React from "react";
 import { getUserFavorites } from "./getUserFavorites";
 import { Session } from "next-auth";
 import UserFavoritesDisplayStyles from '../modular_css/UserFavoritesDisplay.module.css';
+import { FullMealInfo } from "./FullMealInfo";
 
 interface Props {
   session: Session;
@@ -57,6 +58,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                     width={200}
                     height={200}
                   />
+                  <FullMealInfo mealId={destructuredFavorite.id} />
                   <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
                     Remove Favorite
                   </button>

@@ -4,6 +4,7 @@ import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 import Image from "next/image";
 import PreferencesModal from "./ModalWrapper";
+import { FullMealInfo } from "./FullMealInfo";
 
 type StateResult = [
   {
@@ -65,7 +66,7 @@ export const SearchBar = () => {
                 width={100}
                 height={100}
               />
-              <button>View meal</button>
+              <FullMealInfo mealId={result.id} />
             </div>
           ))}
           
