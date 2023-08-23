@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import "../globalStyles.css";
 import SearchBarStyles from "../modular_css/SearchBar.module.css";
 import Image from "next/image";
 import PreferencesModal from "./ModalWrapper";
 import { FullMealInfo } from "./FullMealInfo";
 import { Session } from "next-auth";
+import { Loading } from "../suspense_fallback/Loading";
 
 type StateResult = [
   {
@@ -70,7 +71,9 @@ export const SearchBar = (props: Props) => {
                 width={100}
                 height={100}
               />
-              {/* <FullMealInfo mealId={result.id} session={props.session}/> */}
+              <Suspense fallback={<Loading />}>
+                <FullMealInfo mealId={result.id} session={props.session}/>
+              </Suspense>
             </div>
           ))}
           
