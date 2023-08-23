@@ -5,6 +5,7 @@ import SearchBarStyles from "../modular_css/SearchBar.module.css";
 import Image from "next/image";
 import PreferencesModal from "./ModalWrapper";
 import { FullMealInfo } from "./FullMealInfo";
+import { Session } from "next-auth";
 
 type StateResult = [
   {
@@ -13,8 +14,11 @@ type StateResult = [
     image: string;
   }
 ];
+interface Props {
+  session: Session;
+}
 
-export const SearchBar = () => {
+export const SearchBar = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
@@ -66,7 +70,7 @@ export const SearchBar = () => {
                 width={100}
                 height={100}
               />
-              <FullMealInfo mealId={result.id} />
+              {/* <FullMealInfo mealId={result.id} session={props.session}/> */}
             </div>
           ))}
           

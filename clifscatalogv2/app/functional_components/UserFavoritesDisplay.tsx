@@ -45,6 +45,7 @@ export default async function UserFavoritesDisplay(props: Props) {
               id: number;
               title: string;
               image: string;
+              mealId: number;
             }
             const destructuredFavorite: UserFavorites = favorite;
 
@@ -58,7 +59,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                     width={200}
                     height={200}
                   />
-                  <FullMealInfo mealId={destructuredFavorite.id} />
+                  <FullMealInfo mealId={destructuredFavorite.mealId} session={props.session}/>
                   <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>
                     Remove Favorite
                   </button>

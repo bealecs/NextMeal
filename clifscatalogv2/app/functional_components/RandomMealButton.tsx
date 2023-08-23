@@ -5,7 +5,6 @@ import { Favorite } from "./Favorite";
 import { Session } from "next-auth";
 import { getRandomMeal } from "./getRandomMeal";
 import { useState } from "react";
-import { FullMealInfo } from "./FullMealInfo";
 
 interface Props {
   session: Session;
@@ -67,9 +66,8 @@ export const RandomMealButton = (props: Props) => {
               alt={destructuredRecipe.summary}
               style={{ marginTop: "2rem", borderRadius: "1rem" }}
             />
-            <FullMealInfo mealId={destructuredRecipe.id} />
             <button onClick={getNewMeal}>Get new recipe</button>
-            <SimiliarRecipes mealId={destructuredRecipe.id} />
+            <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/>
           </section>
         );
       })}
