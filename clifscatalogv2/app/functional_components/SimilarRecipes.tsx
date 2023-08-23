@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { getSimilarMeals } from "./getSimilarMeals";
+import { FullMealInfo } from "./FullMealInfo";
+import { Session } from "next-auth";
 
 interface Props {
+  session: Session;
   mealId: number;
 }
 
@@ -29,6 +32,7 @@ export const SimiliarRecipes = (props: Props) => {
           return (
             <div key={simliarRecipe.id}>
               <h4>{simliarRecipe.title}</h4>
+              <FullMealInfo mealId={simliarRecipe.id} session={props.session}/>
             </div>
           );
         })}

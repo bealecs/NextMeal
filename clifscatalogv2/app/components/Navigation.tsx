@@ -51,7 +51,7 @@ export const Navigation = (props: Props) => {
     <section className={NavigationStyles.container}>
       {props.session && props.session.user && (
         <>
-          <SearchBar />
+          <SearchBar session={props.session}/>
           <div className={NavigationStyles.pushRight}>
             <h4>Welcome {props.session.user.name}</h4>
             <Image
