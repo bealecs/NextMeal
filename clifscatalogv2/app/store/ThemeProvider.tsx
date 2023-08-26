@@ -1,7 +1,7 @@
 "use client";
 import { Session } from "next-auth";
 import React, { createContext, useState } from "react";
-import { getUserFavorites } from "../functional_components/getUserFavorites";
+import { getUserProfile } from "../functional_components/getUserProfile";
 // import { getUserPreferences } from "../functional_components/getUserPreferences";
 
 type Ctx = {
@@ -23,8 +23,8 @@ const ThemeContextProvider = async (props: Props) => {
   // const [theme, setTheme] = useState("container_dark");
 
     if(props.session && props.session.user) {
-      const preferences = await getUserFavorites(props.session.user.id, props.session.user.accessToken);
-      const themePreference = preferences[1][0].theme === true ? "container_light" : "container_dark";
+      const userProfile = await getUserProfile(props.session.user.id, props.session.user.accessToken);
+      const themePreference = userProfile[0].preferences[0].theme === true ? "container_light" : "container_dark";
       const ctxValue: Ctx = {
         themeValue: themePreference,
         // onThemeChange: onThemeChange,

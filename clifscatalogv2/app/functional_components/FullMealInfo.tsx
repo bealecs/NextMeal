@@ -35,6 +35,7 @@ interface DestructuredMealInfo {
 }
 
 async function getMealInfo(mealId: number) {
+    //replace spoonacular api key with process.env.SPOONACULAR_API_KEY for prod environment
         const res = await fetch(`https://api.spoonacular.com/recipes/${mealId}/information?apiKey=fc356dc7986b4090b47b50832b8c4cbf`, {
         method: "GET",
         headers: {

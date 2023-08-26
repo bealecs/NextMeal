@@ -24,6 +24,9 @@ export const SearchBar = (props: Props) => {
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
 
+  //within this component, I need to call getUserPreferences() with a suspense boundary
+  //then I need to take the array of preferences, and sort out only the values that are true. 
+  //Take the values that are true and append them to the search call (maybe even do this on the server for performance)
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch(

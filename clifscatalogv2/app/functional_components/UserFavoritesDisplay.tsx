@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { getUserFavorites } from "./getUserFavorites";
+import { getUserProfile } from "./getUserProfile";
 import { Session } from "next-auth";
 import UserFavoritesDisplayStyles from '../modular_css/UserFavoritesDisplay.module.css';
 import { FullMealInfo } from "./FullMealInfo";
@@ -12,7 +12,7 @@ interface Props {
 export default async function UserFavoritesDisplay(props: Props) {
 
   if (props.session && props.session.user) {
-    const favorites = await getUserFavorites(
+    const userProfile = await getUserProfile(
       props.session.user.id,
       props.session.user.accessToken
     );
@@ -32,7 +32,7 @@ export default async function UserFavoritesDisplay(props: Props) {
     };
     
     //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)
-    const uniqueFavorites = favorites[0].filter(
+    const uniqueFavorites = userProfile[0].favorites.filter(
       (value, index, self) =>
         self.findIndex((t) => t.title === value.title) === index
     );
