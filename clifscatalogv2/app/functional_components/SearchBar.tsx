@@ -7,6 +7,7 @@ import PreferencesModal from "./ModalWrapper";
 import { FullMealInfo } from "./FullMealInfo";
 import { Session } from "next-auth";
 import { Loading } from "../suspense_fallback/Loading";
+import { getUserProfile } from "./getUserProfile";
 
 type StateResult = [
   {
@@ -24,13 +25,54 @@ export const SearchBar = (props: Props) => {
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
 
-  //within this component, I need to call getUserPreferences() with a suspense boundary
-  //then I need to take the array of preferences, and sort out only the values that are true. 
-  //Take the values that are true and append them to the search call (maybe even do this on the server for performance)
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //grab user profile
+    const preferences = await getUserProfile(props.session.user.id, props.session.user.accessToken);
+
+    //grabs the user preferences and extracts only the values that have been selected as a preference (truthy value)
+    const excludeIngredients = [];
+    const dietPreference = [];
+    const selectedPreferences = preferences[0].preferences.forEach((preference) => {
+      for (const [key, value] of Object.entries(preference)) {
+        if (value === true) {
+          switch(key) {
+            case 'noDairy':
+              excludeIngredients.push("dairy");
+            break;
+            case 'nutAllergy':
+              excludeIngredients.push("nuts");
+            break;
+            case 'fishAllergy':
+              excludeIngredients.push("fish");
+            break;
+            case 'noRedMeat':
+              excludeIngredients.push("red_meat");
+            break;
+            case 'noPork':
+              excludeIngredients.push("pork");
+            break;
+            case 'vegetarian':
+              dietPreference.push("vegetarian");
+            break;
+            case 'vegan':
+              dietPreference.push("vegan");
+            break;
+          }
+        }
+      }
+    });
+    
+    const searchAPIExcludeIngredients = excludeIngredients.join(',');
+    const searchAPIDietPreferences = dietPreference.join(",");
     const res = await fetch(
-      `http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`
+      `http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`,
+      {
+        headers: {
+          "exclude": searchAPIExcludeIngredients,
+          "diet": searchAPIDietPreferences,
+        }
+      }
     );
 
     if (!res.ok) {
