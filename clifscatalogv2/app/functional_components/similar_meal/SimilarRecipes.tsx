@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getSimilarMeals } from "./getSimilarMeals";
-import { FullMealInfo } from "./FullMealInfo";
+import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
 
 interface Props {

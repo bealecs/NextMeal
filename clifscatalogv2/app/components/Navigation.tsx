@@ -5,8 +5,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
-import PreferencesModal from "../functional_components/ModalWrapper";
-import { SearchBar } from "../functional_components/SearchBar";
+import PreferencesModal from "../store/ModalWrapper";
+import { SearchBar } from "../functional_components/search/SearchBar";
 
 
 interface Props {

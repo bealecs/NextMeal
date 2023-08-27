@@ -1,12 +1,12 @@
 "use client"
 import Image from "next/image";
-import { SimiliarRecipes } from "./SimilarRecipes";
-import { Favorite } from "./Favorite";
+import { SimiliarRecipes } from "../similar_meal/SimilarRecipes";
+import { Favorite } from "../favorite/Favorite";
 import { Session } from "next-auth";
 import { getRandomMeal } from "./getRandomMeal";
 import { Suspense, useState } from "react";
-import { Loading } from "../suspense_fallback/Loading";
-import { FullMealInfo } from "./FullMealInfo";
+import { Loading } from "../../suspense_fallback/Loading";
+import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 
 interface Props {
   session: Session;

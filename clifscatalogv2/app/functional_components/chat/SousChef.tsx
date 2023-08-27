@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
-import SousChefStyles from "../modular_css/SousChef.module.css";
+import SousChefStyles from "../../modular_css/SousChef.module.css";
 import Chat from "./Chat";
 
 const SousChef = () => {

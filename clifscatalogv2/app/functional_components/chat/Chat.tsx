@@ -1,6 +1,6 @@
 "use client";
-import "../globalStyles.css";
-import ChatStyles from "../modular_css/Chat.module.css";
+import "../../globalStyles.css";
+import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
 
 export default function Chat() {

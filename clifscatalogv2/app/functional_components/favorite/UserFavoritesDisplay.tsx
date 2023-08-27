@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import { getUserProfile } from "./getUserProfile";
+import { getUserProfile } from "../user_profile/getUserProfile";
 import { Session } from "next-auth";
-import UserFavoritesDisplayStyles from '../modular_css/UserFavoritesDisplay.module.css';
-import { FullMealInfo } from "./FullMealInfo";
+import UserFavoritesDisplayStyles from '../../modular_css/UserFavoritesDisplay.module.css';
+import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 
 interface Props {
   session: Session;

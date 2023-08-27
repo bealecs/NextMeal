@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Session } from "next-auth";
-import { Favorite } from "./Favorite";
-import PreferencesModal from "./ModalWrapper";
+import { Favorite } from "../favorite/Favorite";
+import PreferencesModal from "../../store/ModalWrapper";
 
 interface Props {
     session: Session | null;

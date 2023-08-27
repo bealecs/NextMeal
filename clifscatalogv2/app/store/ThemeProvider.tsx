@@ -1,7 +1,7 @@
 "use client";
 import { Session } from "next-auth";
 import React, { createContext, useState } from "react";
-import { getUserProfile } from "../functional_components/getUserProfile";
+import { getUserProfile } from "../functional_components/user_profile/getUserProfile";
 // import { getUserPreferences } from "../functional_components/getUserPreferences";
 
 type Ctx = {
