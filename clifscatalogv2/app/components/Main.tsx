@@ -2,10 +2,10 @@
 import '../globalStyles.css';
 import MainStyles from '../modular_css/Main.module.css';
 import { Session } from "next-auth";
-import SousChef from "../functional_components/SousChef";
+import SousChef from "../functional_components/chat/SousChef";
 import { Suspense, useState } from "react";
-import UserFavoritesDisplay from "../functional_components/UserFavoritesDisplay";
-import { RandomMealButton } from "../functional_components/RandomMealButton";
+import UserFavoritesDisplay from "../functional_components/favorite/UserFavoritesDisplay";
+import { RandomMealButton } from "../functional_components/random_meal/RandomMealButton";
 import { Loading } from '../suspense_fallback/Loading';
 
 interface Props {

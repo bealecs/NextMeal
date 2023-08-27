@@ -1,13 +1,13 @@
 "use client";
 import { Suspense, useState } from "react";
-import "../globalStyles.css";
-import SearchBarStyles from "../modular_css/SearchBar.module.css";
+import "../../globalStyles.css";
+import SearchBarStyles from "../../modular_css/SearchBar.module.css";
 import Image from "next/image";
-import PreferencesModal from "./ModalWrapper";
-import { FullMealInfo } from "./FullMealInfo";
+import PreferencesModal from "../../store/ModalWrapper";
+import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
-import { Loading } from "../suspense_fallback/Loading";
-import { getUserProfile } from "./getUserProfile";
+import { Loading } from "../../suspense_fallback/Loading";
+import { getUserProfile } from "../user_profile/getUserProfile";
 
 type StateResult = [
   {
