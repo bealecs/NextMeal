@@ -35,7 +35,7 @@ export default function SignUp() {
         ← Back to home
       </Link>
       <div className={SignUpStyles.formDiv}>
-        <h3>Create your account below</h3>
+        <h3>Create your account</h3>
         <form onSubmit={handleSubmit} className={SignUpStyles.form}>
           <label>
             First Name
@@ -68,10 +68,8 @@ export default function SignUp() {
           <button type="submit">Sign Up</button>
         </form>
         <div className={SignUpStyles.alternate}>
-          <p>
-            Already have an account?
-            <Link href="/signin">Sign in now</Link>
-          </p>
+          <p>Already have an account?</p>
+          <Link className={SignUpStyles.signin} href="/signin">Sign in now</Link>
         </div>
       </div>
     </section>

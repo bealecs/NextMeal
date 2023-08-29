@@ -21,11 +21,14 @@ export default function SignIn() {
 
   return (
     <section className={SignInStyles.container}>
+      <Link href="/" className={SignInStyles.back}>
+        ← Back to home
+      </Link>
       <div className={SignInStyles.formDiv}>
         <h3>Sign in below</h3>
         <form onSubmit={handleSubmit} className={SignInStyles.form}>
           <label>
-            Email
+            Email:
             <input
               type="email"
               value={email}
@@ -34,7 +37,7 @@ export default function SignIn() {
             />
           </label>
           <label>
-            Password
+            Password:
             <input
               type="password"
               value={password}
@@ -47,8 +50,8 @@ export default function SignIn() {
         <div className={SignInStyles.alternate}>
           <p>
             Do not have an account yet?
-            <Link href="/signup">Sign up now</Link>
           </p>
+          <Link className={SignInStyles.signup} href="/signup">Sign up now</Link>
         </div>
       </div>
     </section>
