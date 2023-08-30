@@ -1,3 +1,14 @@
 .container {
     margin-top: 2%;
 }
+.currentView {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 20px;
+}
+.currentView select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background-color: white;
+}

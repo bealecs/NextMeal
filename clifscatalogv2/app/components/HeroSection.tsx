@@ -2,11 +2,14 @@ import Link from 'next/link';
 import '../globalStyles.css';
 import HeroSectionStyles from '../modular_css/HeroSection.module.css';
 import { SearchBar } from '../functional_components/search/SearchBarNoUser';
+import SousChef from '../functional_components/chat/SousChef';
+import { RandomMealButton } from '../functional_components/random_meal/RandomMealButton';
 
 export const HeroSection = () => {
 
 
     return (
+        <div>
         <div className={HeroSectionStyles.container}>
             <div className={HeroSectionStyles.searchBar}>
                 <SearchBar session={null} />
@@ -21,6 +24,9 @@ export const HeroSection = () => {
                     <Link href={"/signin"} className={HeroSectionStyles.link2}>Sign in</Link>
                 </div>
             </div>
+            <SousChef />
+        </div>
+        <RandomMealButton session={null} />
         </div>
     )
 }
