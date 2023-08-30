@@ -4,7 +4,7 @@ import { Main } from "./components/Main";
 import { options } from "./api/auth/[...nextauth]/options";
 import { Navigation } from "./components/Navigation";
 import ThemeContextProvider from "./store/ThemeProvider";
-import SignIn from "./signin/page";
+import { HeroSection } from "./components/HeroSection";
 
 export default async function Home() {
   const session = await getServerSession(options);
@@ -18,7 +18,7 @@ export default async function Home() {
           <Footer />
         </ThemeContextProvider>
         ) : (
-        <SignIn />)}
+        <HeroSection />)}
     </main>
   );
 }

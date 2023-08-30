@@ -16,6 +16,25 @@ body {
     color: white;
     background-color: blue;
 }
+.randomJoke {
+  padding-top: 5rem;
+  min-height: 70vh;
+}
+.jokeQuestion {
+  text-align: center;
+  font-size: 1.7rem;
+  display: block;
+  margin: 1rem auto;
+  color: black;
+}
+.jokeAnswer {
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  color: #1877f2;
+  margin: 1rem auto;
+}
+
 @keyframes spinner {
     0% {
       transform: rotate(0deg);

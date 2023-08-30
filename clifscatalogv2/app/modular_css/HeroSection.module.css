@@ -1,0 +1,54 @@
+.container {
+    background-image: url("/HeroBackground.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    min-height: 95vh;
+}
+.heroText {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 40%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+.heroText h4 {
+    margin: 2rem 0;
+    line-height: 2.5rem;
+}
+.heroText h1 .nameSpan {
+    font-size: 5rem;
+    color: #1877f2;
+}
+.heroText h4 .nameSpan {
+    font-size: 2rem;
+    color: #1877f2;
+}
+.buttons {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+.link {
+    margin: 0 1rem 0 0;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    padding: 1rem;
+    color: white;
+    background-color: #1877f2;
+}
+.link2 {
+    margin: 0 1rem 0 0;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    padding: 1rem;
+    color: black;
+    background-color: whitesmoke;
+}
+.searchBar {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+}

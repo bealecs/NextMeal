@@ -6,9 +6,9 @@
 }
 
 .chatbotDiv button {
-  background-color: white;
+  background-color: #1877f2;
   width: fit-content;
-  border: 1px solid white;
+  border: 1px solid #1877f2;
   text-align: left;
   font-size: 1.5rem;
   padding: 0.4rem;
@@ -29,7 +29,8 @@
   display: flex;
   justify-content: space-between;
   width: 90%;
-  background-color: white;
+  background-color: #1877f2;
+  color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }

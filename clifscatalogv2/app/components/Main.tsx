@@ -13,33 +13,42 @@ interface Props {
 }
 
 export const Main = (props: Props) => {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState("userFavorites");
   
-  const handleClick = () => {
-    setClicked(!clicked)
+  const handleClick = (event) => {
+    setClicked(event.target.value);
   }
 
-  return (
-    <main className={MainStyles.container}>
-      {!clicked ? (
-        <>
-          <div>
-            <button onClick={handleClick}>View Random Suggestion</button>
-          </div>
+  const renderSelectedComponent = () => {
+    switch(clicked) {
+      case 'userFavorites':
+        return (
           <Suspense fallback={<Loading />}>
             <UserFavoritesDisplay session={props.session} />
           </Suspense>
-          <SousChef />
-        </>
-      ) : (
-        <>
-          <div>
-            <button onClick={handleClick}>View My Favorites</button>
-          </div>
-          <RandomMealButton session={props.session} />
-          <SousChef />
-        </>
-      )}
+        );
+      case 'randomMeal':
+        return <RandomMealButton session={props.session}/>
+    }
+  }
+  return (
+    <main className={MainStyles.container}>
+      <div className={MainStyles.currentView}>Current View:
+      {/* User is on the user favorites display */}
+      {clicked === "userFavorites" && (
+        <select value={clicked} placeholder={'My Favorites'} onChange={handleClick}>
+          <option value={"userFavorites"}>My Favorites</option>
+          <option value={"randomMeal"}>Random Meal Selector</option>
+        </select>)}
+
+      {/* User is on the random meal display */}
+      {clicked === "randomMeal" && (
+        <select value={clicked} placeholder={'Random Meal Selector'} onChange={handleClick}>
+          <option value={"userFavorites"}>My Favorites</option>
+          <option value={"randomMeal"}>Random Meal Selector</option>
+        </select>)}
+      </div>
+      {renderSelectedComponent()}
     </main>
   );
 };

@@ -2,7 +2,7 @@
 import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import PreferencesModal from "../store/ModalWrapper";
@@ -15,6 +15,7 @@ interface Props {
 export const Navigation = (props: Props) => {
   const [showOptions, setShowOptions] = useState(false);
   const [openPreferences, setOpenPreferences] = useState(false);
+  const optionsRef = useRef(null); //ref for options menu
   const [checked, setChecked] = useState({
       theme: false,
       noDairy: false,
@@ -33,6 +34,24 @@ export const Navigation = (props: Props) => {
       [event.target.name]: event.target.checked,
     })
   }
+
+  const handleOutsideClick = (event) => {
+    // Close the options menu if the click is outside the menu
+    if (optionsRef.current && !optionsRef.current.contains(event.target)) {
+      setShowOptions(false);
+    }
+  };
+
+  useEffect(() => {
+    // Attach the event listener when the component mounts
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, []);
+
   const handlePreferencesSubmission = async () => {
     const res = await fetch("http://localhost:3000/api/user/preferences", {
       method:"POST",
@@ -65,8 +84,10 @@ export const Navigation = (props: Props) => {
           </div>
           
           {showOptions && (
-            <ul className={NavigationStyles.userOptionsList}>
-              <li className={NavigationStyles.userOption} onClick={() => setOpenPreferences(!openPreferences)}>User Preferences</li>
+            <ul ref={optionsRef} className={NavigationStyles.userOptionsList}>
+              <li className={NavigationStyles.userOption} onClick={() => {
+                setOpenPreferences(!openPreferences)
+                setShowOptions(!showOptions)}}>User Preferences</li>
               <li
                 className={NavigationStyles.userOption}
                 onClick={() => signOut()}
