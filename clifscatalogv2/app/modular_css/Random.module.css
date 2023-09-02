@@ -1,0 +1,89 @@
+.backgroundImage {
+    min-height: 400px;
+    background-image: url("/bottomimage.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.container h2 {
+    margin: 6rem 0 2rem 5rem;
+    color: #1877f2;
+    font-size: 2rem;
+}
+.preMeal {
+    font-size: 1.4rem;
+    margin: 0 0 0 5rem;
+    line-height: 2rem;
+    width: 70%;
+    font-weight: bold;
+}
+.preMeal button {
+    display: block;
+    margin: 2rem 0;
+    padding: 20px;
+    width: 10rem;
+    background-color: #1877f2;
+    color: white;
+    border-radius: 0.5rem;
+    transition: all ease 0.3s;
+}
+.preMeal button:hover {
+    color: yellow;
+    transform: scale(1.05);
+}
+.populatedMealContainer {
+    display: flex;
+}
+.instructions {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 2rem 10rem 2rem 5rem;
+    line-height: 2rem;
+}
+.mealImage {
+    margin: 3rem;
+    border-radius: 0.5rem;
+}
+.mealImage button {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    border: 1px solid grey;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.mealImage button:hover {
+    background-color: #1877f2;
+    color: white;
+}
+.mealButtonActions {
+    display: flex;
+    justify-content: space-between;
+    margin: 5rem;
+    width: 80%;
+}
+.mealButtonActions button:first-child {
+    background-color: #1877f2;
+    color: white;
+    transition: all ease 0.3s;
+}
+.mealButtonActions button:first-child:hover {
+    color: yellow;
+}
+.mealButtonActions button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    border: 1px solid grey;
+    transition: all ease 0.3s;
+    cursor: pointer;
+}
+.mealButtonActions button:hover {
+    background-color: #1877f2;
+    color: white;
+}
+
+

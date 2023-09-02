@@ -37,6 +37,7 @@
     padding: 1rem;
     color: white;
     background-color: #1877f2;
+    transition: all ease-out 0.3s;
 }
 .link2 {
     margin: 0 1rem 0 0;
@@ -46,6 +47,13 @@
     padding: 1rem;
     color: black;
     background-color: whitesmoke;
+    transition: all ease-out 0.3s;
+}
+.link:hover {
+    transform: scale(1.05);
+}
+.link2:hover {
+    transform: scale(1.05);
 }
 .searchBar {
     display: flex;

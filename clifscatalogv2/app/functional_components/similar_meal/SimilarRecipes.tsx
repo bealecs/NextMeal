@@ -19,10 +19,9 @@ export const SimiliarRecipes = (props: Props) => {
   };
 
   return (
-    <>
-      <h4>See similar recipes?</h4>
-      <button onClick={getSimilarRecipes}>Show Recipes</button>
-      {similarRecipes &&
+    <div>
+      <button onClick={getSimilarRecipes}>{showSimilar ? "Hide Similar Recipes" : "Show Similar Recipes"}</button>
+      {similarRecipes && showSimilar &&
         similarRecipes.map((recipe) => {
           interface DestructuredSimilarRecipe {
             id: number;
@@ -36,6 +35,6 @@ export const SimiliarRecipes = (props: Props) => {
             </div>
           );
         })}
-    </>
+    </div>
   );
 };
