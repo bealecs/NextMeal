@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Session } from "next-auth";
 import { Favorite } from "../favorite/Favorite";
-import PreferencesModal from "../../store/ModalWrapper";
+import FullMealStyles from '../../modular_css/FullMeal.module.css';
 
 interface Props {
     session: Session | null;
@@ -78,14 +78,7 @@ export const FullMealInfo = async (props: Props) => {
     }
 
     return (
-        <PreferencesModal
-              title={mealData.title}
-              isOpened={openPreferences}
-              onClose={() => {
-                setMealData(null);
-                setOpenPreferences(false);
-            }}>
-            <div key={mealData.id * 1000}>
+            <div key={mealData.id * 1000} className={FullMealStyles.container}>
                 <Image
                     src={mealData.image}
                     alt={mealData.title}
@@ -118,6 +111,5 @@ export const FullMealInfo = async (props: Props) => {
                 </ul>
                 <p>{removeTags(mealData.summary)}</p>
             </div>
-        </PreferencesModal>
         )
     }

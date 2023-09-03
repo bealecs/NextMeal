@@ -1,0 +1,5 @@
+.container {
+    z-index: 150;
+    min-height: 50vh;
+    min-width: 50vh;
+}

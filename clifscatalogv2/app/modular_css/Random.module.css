@@ -62,8 +62,7 @@
 .mealButtonActions {
     display: flex;
     justify-content: space-between;
-    margin: 5rem;
-    width: 80%;
+    margin: auto;
 }
 .mealButtonActions button:first-child {
     background-color: #1877f2;
@@ -85,5 +84,18 @@
     background-color: #1877f2;
     color: white;
 }
-
+.similarMeal {
+    text-align: center;
+}
+.similarMeal button {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    transition: all ease 0.3s;
+}
+.similarMeal button:hover {
+    background-color: #1877f2;
+    color: white;
+}
 

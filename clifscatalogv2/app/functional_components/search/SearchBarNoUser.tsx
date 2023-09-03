@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import "../../globalStyles.css";
 import SearchBarStyles from "../../modular_css/SearchBar.module.css";
 import Image from "next/image";
-import PreferencesModal from "../../store/ModalWrapper";
+import PreferencesModal from "../../store/SearchModalWrapper";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
 import { Loading } from "../../suspense_fallback/Loading";
@@ -34,6 +34,7 @@ export const SearchBar = (props: Props) => {
     const data = await res.json();
     setSearchResult(data.results);
     setOpenPreferences(!openPreferences);
+    setSearchQuery("");
     return data;
   };
   

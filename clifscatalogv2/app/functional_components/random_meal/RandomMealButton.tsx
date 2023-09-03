@@ -72,21 +72,21 @@ export const RandomMealButton = (props: Props) => {
                   width={400}
                   height={300}
                   alt={destructuredRecipe.summary}
-                  style={{borderRadius: "1rem" }}
+                  style={{borderRadius: "1rem"}}
                 />
-              <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/>
+              <div className={RandomStyles.mealButtonActions}>
+                <Favorite
+                  session={props.session}
+                  mealId={destructuredRecipe.id}
+                  title={destructuredRecipe.title}
+                  image={destructuredRecipe.image}
+                />
+                <FullMealInfo mealId={destructuredRecipe.id} session={props.session} />
+                <button onClick={getNewMeal}>Get new recipe</button>
+              </div>
             </div>
-            </div>
-            <div className={RandomStyles.mealButtonActions}>
-              <Favorite
-                session={props.session}
-                mealId={destructuredRecipe.id}
-                title={destructuredRecipe.title}
-                image={destructuredRecipe.image}
-              />
-              <FullMealInfo mealId={destructuredRecipe.id} session={props.session} />
-              <button onClick={getNewMeal}>Get new recipe</button>
-            </div>
+          </div>
+          <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/>
           </Suspense>
           </section>
         );

@@ -1,0 +1,32 @@
+.container {
+    max-height: 75vh;
+    margin: 5rem 0.5rem 0 auto;
+    padding: 1rem 3rem;
+    width: 15rem;
+}
+.modalSearchResults h4 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+.modalSearchResults button {
+    display: block;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    transition: all ease 0.3s;
+}
+.modalSearchResults button:hover {
+    background-color: #1877f2;
+    color: white;
+}
+.close {
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    display: block;
+    padding: 0.5rem;
+    transition: all ease 0.3s;
+    margin-bottom: 1rem;
+}
+.close:hover {
+    background-color: red;
+}

@@ -1,4 +1,5 @@
 import { MouseEvent, useEffect, useRef } from "react";
+import ModalStyles from '../modular_css/SearchModal.module.css';
 
 const isClickInsideRectangle = (
   e: MouseEvent,
@@ -41,16 +42,17 @@ const PreferencesModal = ({
   return (
     <dialog
       ref={ref}
+      className={ModalStyles.container}
       onCancel={onClose}
       onClick={(e) =>
         ref.current && !isClickInsideRectangle(e, ref.current) && onClose()
       }
     >
-      <div>
-        <button onClick={onClose}>Close</button>
-      </div>
+      <button onClick={onClose} className={ModalStyles.close}>Close</button>
       <h3>{title}</h3>
-      {children}
+      <div className={ModalStyles.modalSearchResults}>
+        {children}
+      </div>
     </dialog>
   );
 };

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
-import PreferencesModal from "../store/ModalWrapper";
+import PreferencesModal from "../store/SearchModalWrapper";
 import { SearchBar } from "../functional_components/search/SearchBar";
 
 

@@ -18,13 +18,18 @@
   width: fit-content;
   margin: auto;
   padding: 1rem;
+  transition: all ease 0.3s;
 }
-.formDiv {
+.button:hover {
+  background-color: #1877f2;
+  color: white;
+}
+.form input {
+  border-radius: 0.5rem;
+}
+.modalSearchResults {
   display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
-}
-.formDiv input {
-  width: 10%;
+  flex-direction: column;
+  min-height: 10vh;
+  background-color: black;
 }

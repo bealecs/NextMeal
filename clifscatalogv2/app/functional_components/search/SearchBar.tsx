@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import "../../globalStyles.css";
 import SearchBarStyles from "../../modular_css/SearchBar.module.css";
 import Image from "next/image";
-import PreferencesModal from "../../store/ModalWrapper";
+import PreferencesModal from "../../store/SearchModalWrapper";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
 import { Loading } from "../../suspense_fallback/Loading";
@@ -24,6 +24,7 @@ export const SearchBar = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
+  const [fullMeal, setFullMeal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -93,6 +94,7 @@ export const SearchBar = (props: Props) => {
             autoCorrect="true"
             placeholder="Chicken salad"
             value={searchQuery}
+            minLength={3}
             onChange={(e) => {
               setSearchQuery(e.target.value);
             }}
