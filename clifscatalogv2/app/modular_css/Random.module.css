@@ -55,34 +55,28 @@
     transition: all ease 0.3s;
     cursor: pointer;
 }
-.mealImage button:hover {
-    background-color: #1877f2;
-    color: white;
-}
+
 .mealButtonActions {
     display: flex;
     justify-content: space-between;
     margin: auto;
 }
-.mealButtonActions button:first-child {
+.favoriteButton button {
     background-color: #1877f2;
     color: white;
+    border: 1px solid white;
     transition: all ease 0.3s;
 }
-.mealButtonActions button:first-child:hover {
+.favoriteButton button:hover {
     color: yellow;
+    border: 1px solid black;
 }
 .mealButtonActions button {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: whitesmoke;
-    border: 1px solid grey;
     transition: all ease 0.3s;
-    cursor: pointer;
 }
 .mealButtonActions button:hover {
-    background-color: #1877f2;
     color: white;
+    background-color: #1877f2;
 }
 .similarMeal {
     text-align: center;

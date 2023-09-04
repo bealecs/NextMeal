@@ -9,6 +9,9 @@
   background-color: white;
   margin: auto;
 }
+.resultsDiv {
+  background-color: whitesmoke;
+}
 .searchBar {
   padding: 1rem;
   margin: 1rem;
@@ -26,10 +29,4 @@
 }
 .form input {
   border-radius: 0.5rem;
-}
-.modalSearchResults {
-  display: flex;
-  flex-direction: column;
-  min-height: 10vh;
-  background-color: black;
 }

@@ -44,12 +44,15 @@ const PreferencesModal = ({
       ref={ref}
       className={ModalStyles.container}
       onCancel={onClose}
-      onClick={(e) =>
-        ref.current && !isClickInsideRectangle(e, ref.current) && onClose()
-      }
+      onClick={(e) => {
+        if (ref.current && !isClickInsideRectangle(e, ref.current)) {
+          onClose();
+        }
+        e.stopPropagation(); // Prevent the click event from propagating
+      }}
     >
-      <button onClick={onClose} className={ModalStyles.close}>Close</button>
-      <h3>{title}</h3>
+      <button onClick={onClose} className={ModalStyles.close}>❌</button>
+      <h3 className={ModalStyles.title}>{title}</h3>
       <div className={ModalStyles.modalSearchResults}>
         {children}
       </div>

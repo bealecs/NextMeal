@@ -77,7 +77,13 @@ export const SearchBar = (props: Props) => {
           ))}
           
           {searchResult != undefined && searchResult.length <= 0 &&
-          <p>There were no recipes to match your search, please try again with a different dish</p>}
+          <>
+            <br />
+            <p>No results found</p>
+            <br/>
+            <p>Please try another dish</p>
+            <br />
+          </>}
           </PreferencesModal>
       </div>
     </section>

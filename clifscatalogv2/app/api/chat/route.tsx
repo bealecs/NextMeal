@@ -12,13 +12,23 @@ export const runtime = 'edge';
  
 export async function POST(req: Request) {
   // Extract the `messages` from the body of the request
-  const { messages } = await req.json();
+  const { messages, prompt } = await req.json();
  
   // Ask OpenAI for a streaming chat completion given the prompt
   const response = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     stream: true,
-    messages
+    messages: [
+      {
+        role: 'system',
+        content:
+          "When suggesting meals to users, only include the name of the meal. Leave out the description of the meal and the instructions. Also, insert a line break in between bulleted suggestions"
+      },
+      ...messages
+    ],
+    temperature: 1,
+    max_tokens: 200,
+    
   });
   // Convert the response into a friendly text-stream
   const stream = OpenAIStream(response);

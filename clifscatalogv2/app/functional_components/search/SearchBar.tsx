@@ -24,7 +24,6 @@ export const SearchBar = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
-  const [fullMeal, setFullMeal] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,13 +118,16 @@ export const SearchBar = (props: Props) => {
                 height={100}
               />
               <Suspense fallback={<Loading />}>
-                <FullMealInfo mealId={result.id} session={props.session}/>
+                <FullMealInfo mealId={result.id} session={props.session} />
               </Suspense>
             </div>
           ))}
           
           {searchResult != undefined && searchResult.length <= 0 &&
-          <p>There were no recipes to match your search, please try again with a different dish</p>}
+          <>
+            <p>No results found</p>
+            <p>Please try again with a different dish</p>
+          </>}
           </PreferencesModal>
       </div>
     </section>

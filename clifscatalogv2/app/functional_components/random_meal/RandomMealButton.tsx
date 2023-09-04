@@ -75,12 +75,14 @@ export const RandomMealButton = (props: Props) => {
                   style={{borderRadius: "1rem"}}
                 />
               <div className={RandomStyles.mealButtonActions}>
-                <Favorite
-                  session={props.session}
-                  mealId={destructuredRecipe.id}
-                  title={destructuredRecipe.title}
-                  image={destructuredRecipe.image}
-                />
+                <div className={RandomStyles.favoriteButton}>
+                  <Favorite
+                    session={props.session}
+                    mealId={destructuredRecipe.id}
+                    title={destructuredRecipe.title}
+                    image={destructuredRecipe.image}
+                  />
+                </div>
                 <FullMealInfo mealId={destructuredRecipe.id} session={props.session} />
                 <button onClick={getNewMeal}>Get new recipe</button>
               </div>
