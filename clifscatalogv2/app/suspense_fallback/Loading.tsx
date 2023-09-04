@@ -5,33 +5,33 @@ export const Loading = () => {
     //adding a little jokey joke during the loading screen so that the user might get a laugh while our data loads
 
     const foodJokes = [
-      ["Why did the tomato turn red?", "Because it saw the salad dressing!"],
-      ["What do you call cheese that isn't yours?", "Nacho cheese!"],
-      ["Why did the scarecrow become a successful gardener?", "Because he was outstanding in his field!"],
+      ["Why did the vegetable go to the art gallery?", "To find its inner peas!"],
+      ["What's a vampire's favorite fruit?", "A blood orange!"],
+      ["Why did the lettuce win the race?", "Because it was ahead in the salad!"],
+      ["How do you fix a broken tomato?", "With tomato paste!"],
+      ["What did the sushi say to the bee?", "Wasabi!"],
+      ["Why don't oysters donate to charity?", "Because they're shellfish!"],
+      ["What do you call a group of musical whales?", "An orca-stra!"],
+      ["Why did the banana go to the doctor?", "Because it wasn't peeling well!"],
+      ["What do you call cheese that can't hear?", "Provolone!"],
+      ["Why did the baker go to therapy?", "Because he kneaded it!"],
+      ["What's a snowman's favorite breakfast?", "Frosted flakes!"],
+      ["Why did the computer go to the restaurant?", "To have its bytes!"],
       ["What do you get when you cross a snowman and a dog?", "Frostbite!"],
-      ["How do you organize a space party?", "You 'planet'!"],
+      ["Why did the coffee file a police report?", "It got mugged!"],
+      ["Why did the kitchen utensils go to the gym?", "To get a little more whisked!"],
+      ["How do you make a lemon drop?", "Just let it fall!"],
+      ["What do you call a bear with no teeth?", "A gummy bear!"],
+      ["Why did the grape stop in the middle of the road?", "Because it ran out of juice!"],
+      ["What do you call a stolen yam?", "A hot potato!"],
+      ["Why did the tomato turn red?", "Because it saw the salad dressing!"],
+      ["What's a skeleton's least favorite room?", "The living room during dinner!"],
       ["Why did the cookie go to the doctor?", "Because it was feeling crumby!"],
       ["What do you call a fake noodle?", "An impasta!"],
-      ["Why was the math book sad?", "Because it had too many problems!"],
-      ["Why don't scientists trust atoms?", "Because they make up everything!"],
-      ["What do you call a bear with no teeth?", "A gummy bear!"],
-      ["Why did the bicycle fall over?", "Because it was two-tired!"],
-      ["Did you hear about the claustrophobic astronaut?", "He just needed a little space!"],
-      ["What did one wall say to the other wall?", "I'll meet you at the corner!"],
-      ["Why did the golfer bring two pairs of pants?", "In case he got a hole in one!"],
-      ["How do you organize a space party?", "You 'planet'!"],
-      ["Why did the fish blush?", "Because it saw the ocean's bottom!"],
-      ["What did the janitor say when he jumped out of the closet?", "Supplies!"],
-      ["Why was the computer cold?", "It left its Windows open!"],
-      ["How does a snowman get around?", "By riding an 'icicle'!"],
-      ["Why did the scarecrow win an award?", "Because he was outstanding in his field!"],
-      ["What do you get when you cross a vampire with a snowman?", "Frostbite!"],
-      ["Why don't scientists trust atoms?", "Because they make up everything!"],
-      ["What do you call a bear with no teeth?", "A gummy bear!"],
       ["Why did the math book look sad?", "Because it had too many problems!"],
-      ["What do you call a sleeping bull?", "A bulldozer!"],
-      ["What do you call a cow with no legs?", "Ground beef!"]
-    ];
+      ["How do you organize a space party?", "You 'planet'!"],
+      ["Why did the fish blush?", "Because it saw the ocean's bottom!"]
+  ];
 
     //grabs the random joke from the above array, and returns an object of the question + answer for easy accessibility
       function getRandomJoke(array) {

@@ -1,7 +1,7 @@
 //Leverages Spoonaculars random recipe API endpoint
 export async function getSimilarMeals(mealId: number) {
     const res = await fetch(
-      `https://api.spoonacular.com/recipes/${mealId}/similar?apiKey=${process.env.NEXT_PUBLIC_SPOONACULAR_API_KEY}&number=3`,
+      `https://api.spoonacular.com/recipes/${mealId}/similar?apiKey=fc356dc7986b4090b47b50832b8c4cbf&number=3`,
       {
         method: "GET",
         cache: "no-store"

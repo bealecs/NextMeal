@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Session } from "next-auth";
 import { Favorite } from "../favorite/Favorite";
-import PreferencesModal from "../../store/ModalWrapper";
+import FullMealStyles from '../../modular_css/FullMeal.module.css';
 
 interface Props {
     session: Session | null;
@@ -73,51 +73,66 @@ export const FullMealInfo = async (props: Props) => {
         }
     };
 
+    const resetMealInfo = () => {
+        setMealData(null);
+    }
+
     if (!mealData) {
-        return <button onClick={setMealInfo}>Show Full Meal Info</button>;
+        return <button onClick={setMealInfo} className={FullMealStyles.displayButton}>Show Full Meal Info</button>;
     }
 
     return (
-        <PreferencesModal
-              title={mealData.title}
-              isOpened={openPreferences}
-              onClose={() => {
-                setMealData(null);
-                setOpenPreferences(false);
-            }}>
-            <div key={mealData.id * 1000}>
+        <div key={mealData.id * 1000} className={FullMealStyles.container} onClick={(e) => e.stopPropagation()}>
+            <div className={FullMealStyles.closeFullMeal}>
+                <button onClick={resetMealInfo}><span>❌</span></button>
+            </div>
+            <h3 style={{textAlign:'center', fontSize:'1.5rem'}}>{mealData.title}</h3>
+            <div className={FullMealStyles.imageDescriptionDiv}>
                 <Image
                     src={mealData.image}
                     alt={mealData.title}
-                    width={100}
-                    height={100}/>
-                {props.session && 
-                <Favorite 
-                    session={props.session}
-                    mealId={mealData.id}
-                    title={mealData.title}
-                    image={mealData.image} />}
-                <p>Servings: {mealData.servings}</p>
-                <p>Time to cook: {mealData.readyInMinutes}</p>
-                <p>Contains Dairy: {mealData.dairyFree ? "No": "Yes"}</p>
-                <p>Gluten Free: {mealData.glutenFree ? "Yes" : "No"}</p>
-                <p>{removeTags(mealData.instructions)}</p>
-                <p>Vegan: {mealData.vegan ? "Yes" : "No"}</p>
-                <p>Vegetarian: {mealData.vegetarian ? "Yes" : "No"}</p>
-                <p>Healthy: {mealData.veryHealthy ? "Yes" : "No"}</p>
-                <p>Popular: {mealData.veryPopular ? "Yes" : "No"}</p>
-                <p>Weight Watcher Points: {mealData.weighWatcherSmartPoints}</p>
-                <p>Best Served: {mealData.dishTypes}</p>
-                <p>Ingredients list:</p>
-                <ul>
-                    {mealData.extendedIngredients.map((ingredient) => (
-                        <li key={ingredient.id * (Math.floor(Math.random() * 100))}>
-                            {ingredient.original}
-                        </li>
-                    ))}
-                </ul>
+                    width={400}
+                    height={300}
+                    style={{borderRadius:'0.5rem', display:'block',margin:'1rem auto'}}/>
                 <p>{removeTags(mealData.summary)}</p>
             </div>
-        </PreferencesModal>
-        )
-    }
+            <br />
+            {props.session && 
+            <Favorite 
+                session={props.session}
+                mealId={mealData.id}
+                title={mealData.title}
+                image={mealData.image} />}
+            <h3 className={FullMealStyles.headers}>Useful Information:</h3>
+            <div className={FullMealStyles.splitDiv}>
+                <div className={FullMealStyles.firstSplit}>
+                    <p>Servings: {mealData.servings}</p>
+                    <p>Time to cook: {mealData.readyInMinutes}</p>
+                    <p>Contains Dairy: {mealData.dairyFree ? "No": "Yes"}</p>
+                    <p>Gluten Free: {mealData.glutenFree ? "Yes" : "No"}</p>
+                    <p>Vegan: {mealData.vegan ? "Yes" : "No"}</p>
+                </div>
+                <div className={FullMealStyles.secondSplit}>
+                    <p>Vegetarian: {mealData.vegetarian ? "Yes" : "No"}</p>
+                    <p>Healthy: {mealData.veryHealthy ? "Yes" : "No"}</p>
+                    <p>Popular: {mealData.veryPopular ? "Yes" : "No"}</p>
+                    <p>Weight Watcher Points: {mealData.weighWatcherSmartPoints ? mealData.weighWatcherSmartPoints : "Not Available"}</p>
+                    <p>Best Served: {mealData.dishTypes.join(", ")}</p>
+                </div>
+            </div>
+            <br />
+            <h3 className={FullMealStyles.headers}>Instructions:</h3>
+            <p className={FullMealStyles.instructions}>{removeTags(mealData.instructions)}</p>
+            <br />
+            <h3 className={FullMealStyles.headers}>Ingredients list:</h3>
+            <ul className={FullMealStyles.ingredientsList}>
+                {mealData.extendedIngredients.map((ingredient) => (
+                    <li key={ingredient.id * (Math.floor(Math.random() * 100))}>
+                        {ingredient.original}
+                    </li>
+                ))}
+            </ul>
+            <br />
+        </div>
+    )
+}

@@ -3,7 +3,7 @@ import { Suspense, useState } from "react";
 import "../../globalStyles.css";
 import SearchBarStyles from "../../modular_css/SearchBar.module.css";
 import Image from "next/image";
-import PreferencesModal from "../../store/ModalWrapper";
+import PreferencesModal from "../../store/SearchModalWrapper";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
 import { Loading } from "../../suspense_fallback/Loading";
@@ -93,6 +93,7 @@ export const SearchBar = (props: Props) => {
             autoCorrect="true"
             placeholder="Chicken salad"
             value={searchQuery}
+            minLength={3}
             onChange={(e) => {
               setSearchQuery(e.target.value);
             }}
@@ -117,13 +118,16 @@ export const SearchBar = (props: Props) => {
                 height={100}
               />
               <Suspense fallback={<Loading />}>
-                <FullMealInfo mealId={result.id} session={props.session}/>
+                <FullMealInfo mealId={result.id} session={props.session} />
               </Suspense>
             </div>
           ))}
           
           {searchResult != undefined && searchResult.length <= 0 &&
-          <p>There were no recipes to match your search, please try again with a different dish</p>}
+          <>
+            <p>No results found</p>
+            <p>Please try again with a different dish</p>
+          </>}
           </PreferencesModal>
       </div>
     </section>

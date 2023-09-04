@@ -6,12 +6,15 @@
 }
 
 .chatbotDiv button {
-  background-color: #1877f2;
   width: fit-content;
-  border: 1px solid #1877f2;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  border: none;
   text-align: left;
   font-size: 1.5rem;
-  padding: 0.4rem;
+  padding: 0.5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   cursor: pointer;
@@ -26,19 +29,17 @@
 }
 
 .closeSectionDiv {
+  box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
+  min-height: 5vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 90%;
-  background-color: #1877f2;
-  color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-
 .closeSectionDiv h3 {
   margin: auto;
 }
-
 @keyframes chefShake {
   45.6% {
     transform: translate(0px);

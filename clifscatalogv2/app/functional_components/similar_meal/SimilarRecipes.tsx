@@ -1,3 +1,4 @@
+import SimilarStyles from '../../modular_css/Similar.module.css';
 import { useState } from "react";
 import { getSimilarMeals } from "./getSimilarMeals";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
@@ -19,10 +20,10 @@ export const SimiliarRecipes = (props: Props) => {
   };
 
   return (
-    <>
-      <h4>See similar recipes?</h4>
-      <button onClick={getSimilarRecipes}>Show Recipes</button>
-      {similarRecipes &&
+    <div className={SimilarStyles.container}>
+      <button onClick={getSimilarRecipes} className={SimilarStyles.showSimilar}>{showSimilar ? "Hide Similar Recipes" : "Show Similar Recipes"}</button>
+      <div className={SimilarStyles.centeredResults}>
+      {similarRecipes && showSimilar &&
         similarRecipes.map((recipe) => {
           interface DestructuredSimilarRecipe {
             id: number;
@@ -30,12 +31,13 @@ export const SimiliarRecipes = (props: Props) => {
           }
           const simliarRecipe: DestructuredSimilarRecipe = recipe;
           return (
-            <div key={simliarRecipe.id}>
+            <div key={similarRecipes.id} className={SimilarStyles.individualResults}>
               <h4>{simliarRecipe.title}</h4>
               <FullMealInfo mealId={simliarRecipe.id} session={props.session}/>
             </div>
           );
         })}
-    </>
+        </div>
+    </div>
   );
 };

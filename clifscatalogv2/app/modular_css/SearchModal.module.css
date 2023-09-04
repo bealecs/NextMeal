@@ -1,0 +1,53 @@
+.container {
+    max-height: 75vh;
+    margin: 5rem 0.5rem 0 auto;
+ 
+    width: 20.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+.modalSearchResults div {
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    transition: all ease 0.3s;
+}
+.modalSearchResults div:has(h4):hover {
+    background-color: rgb(128, 128, 128, 0.3);
+}
+.modalSearchResults h4 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+.modalSearchResults button {
+    display: block;
+    padding: 0.3rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    transition: all ease 0.3s;
+}
+.modalSearchResults button:hover {
+    background-color: #1877f2;
+    color: white;
+}
+.close:focus {
+    border: none;
+    outline: none;
+}
+.close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    transition: all ease 0.3s;
+    margin-bottom: 1rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+.close:hover {
+    cursor: pointer;
+}
+.title {
+    margin-top: 3rem;
+}

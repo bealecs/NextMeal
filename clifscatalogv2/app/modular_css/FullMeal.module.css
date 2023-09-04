@@ -1,0 +1,61 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: whitesmoke;
+    z-index: 10;
+    line-height: 2.2rem;
+    overflow-y: scroll;
+}
+.imageDescriptionDiv {
+    display: flex;
+    margin: 2rem;
+    justify-content: space-evenly;
+}
+.imageDescriptionDiv p {
+    margin: 1rem 2rem;
+    font-size: 1.2rem;
+}
+.closeFullMeal button:has(span) {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+.closeFullMeal button:has(span):hover {
+    background-color: transparent;
+}
+.displayButton {
+    cursor: pointer;
+}
+.splitDiv {
+    display: flex;
+    justify-content: flex-start;
+}
+.firstSplit {
+    margin: 0 2rem;
+}
+.headers {
+    margin: 0 2rem;
+    text-decoration: underline;
+}
+.instructions {
+    margin: 0 2rem;
+    width: 80%;
+}
+.ingredientsList {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-height: 20vh;
+}
+.ingredientsList li {
+    margin: 0 3rem;
+}

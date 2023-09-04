@@ -31,7 +31,7 @@ export function Favorite(props: Props) {
 
   return (
     <button
-    id="favorite-button"
+      id="favorite-button"
       onClick={(e) => {
         if (props.session && props.session.user) {
           handleFavorite();

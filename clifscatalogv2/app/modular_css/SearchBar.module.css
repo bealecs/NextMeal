@@ -9,6 +9,9 @@
   background-color: white;
   margin: auto;
 }
+.resultsDiv {
+  background-color: whitesmoke;
+}
 .searchBar {
   padding: 1rem;
   margin: 1rem;
@@ -18,13 +21,12 @@
   width: fit-content;
   margin: auto;
   padding: 1rem;
+  transition: all ease 0.3s;
 }
-.formDiv {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-  margin: auto;
+.button:hover {
+  background-color: #1877f2;
+  color: white;
 }
-.formDiv input {
-  width: 10%;
+.form input {
+  border-radius: 0.5rem;
 }
