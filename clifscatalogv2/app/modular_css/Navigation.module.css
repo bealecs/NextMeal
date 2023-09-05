@@ -3,8 +3,9 @@
     position: sticky;
     top: 0;
     transition: all 0.3s ease;
+    background-color: white;
 }
-.container h4 {
+.container h2 {
     padding: 1rem;
     margin: auto 0;
     font-size: 1.4rem;
@@ -13,19 +14,57 @@
     display: flex;
     justify-content: flex-end;
 }
+.keepLeft {
+    display: flex;
+    justify-content: flex-start;
+}
 .avatar {
     cursor: pointer;
 }
 .userOptionsList {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: whitesmoke;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    color: black;
+    border: 1px solid black;
     width: fit-content;
     position: fixed;
-    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-left: 1rem;
     transition: all 0.3s ease;
     z-index: 100;
+}
+.userPreferenceList {
+    background-color: whitesmoke;
+    width: fit-content;
+    position: fixed;
+    left: 0;
+    margin-left: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    line-height: 2rem;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: all 0.3s ease;
+}
+
+.userPreferenceList input {
+    margin: 0 1rem 0 0;
+}
+.userPreferenceList button {
+    cursor: pointer;
+    margin: 1rem 0 0 0;
+    padding: 0.4rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    transition: all ease 0.3s;
+}
+.userPreferenceList button:hover {
+    background-color: #1877f2;
+    color: white;
 }
 .userOption {
     padding: 1rem;
@@ -34,7 +73,7 @@
     transition: all 0.3s ease;
 }
 .userOption:hover {
-    color: gold;
+    color: #1877f2;
     text-decoration: underline;
     cursor: pointer;
 }

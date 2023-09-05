@@ -67,6 +67,13 @@
     border: 1px solid white;
     transition: all ease 0.3s;
 }
+.favoriteButton button:disabled {
+    background-color: rgba(24, 119, 242, 0.2);
+}
+.favoriteButton button:hover:disabled {
+    background-color: rgba(24, 119, 242, 0.2);
+    border: 1px solid white;
+}
 .favoriteButton button:hover {
     color: yellow;
     border: 1px solid black;

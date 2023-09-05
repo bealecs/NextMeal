@@ -2,11 +2,12 @@
 import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
 import PreferencesModal from "../store/SearchModalWrapper";
 import { SearchBar } from "../functional_components/search/SearchBar";
+import { Loading } from "../suspense_fallback/Loading";
 
 
 interface Props {
@@ -16,6 +17,7 @@ export const Navigation = (props: Props) => {
   const [showOptions, setShowOptions] = useState(false);
   const [openPreferences, setOpenPreferences] = useState(false);
   const optionsRef = useRef(null); //ref for options menu
+  const preferencesRef = useRef(null); //ref for preferences menu
   const [checked, setChecked] = useState({
       theme: false,
       noDairy: false,
@@ -39,6 +41,10 @@ export const Navigation = (props: Props) => {
     // Close the options menu if the click is outside the menu
     if (optionsRef.current && !optionsRef.current.contains(event.target)) {
       setShowOptions(false);
+    }
+    // Close the preferences menu if the click is outside the menu
+    if(preferencesRef.current && !preferencesRef.current.contains(event.target)) {
+      setOpenPreferences(false);
     }
   };
 
@@ -70,16 +76,17 @@ export const Navigation = (props: Props) => {
     <section className={NavigationStyles.container}>
       {props.session && props.session.user && (
         <>
-          <SearchBar session={props.session}/>
-          <div className={NavigationStyles.pushRight}>
-            <h4>Welcome {props.session.user.name}</h4>
+          <div className={NavigationStyles.keepLeft}>
+            <h2>Welcome {props.session.user.name}</h2>
             <Image
               src="/avatar.svg"
               alt="stock avatar image signifying a user presence"
               width={80}
               height={80}
               className={NavigationStyles.avatar}
-              onClick={() => setShowOptions(!showOptions)}
+              onClick={() => {
+                setOpenPreferences(false);
+                setShowOptions(!showOptions)}}
             />
           </div>
           
@@ -96,33 +103,43 @@ export const Navigation = (props: Props) => {
               </li>
             </ul>
           )}
-          <PreferencesModal
-              title="User Preferences"
-              isOpened={openPreferences}
-              onClose={() => setOpenPreferences(false)}
-            >
-              <form onSubmit={handlePreferencesSubmission}>
-                <label htmlFor="preference1">Theme: Light</label>
-                <input type="checkbox" id="preference1" name="theme" checked={checked.theme} onChange={handleFormChange}/>
-                <label htmlFor="preference2">No Dairy</label>
-                <input type="checkbox" id="preference2" name="noDairy" checked={checked.noDairy} onChange={handleFormChange}/>
-                <label htmlFor="preference3">Nut Allergy</label>
-                <input type="checkbox" id="preference3" name="nutAllergy" checked={checked.nutAllergy} onChange={handleFormChange}/>
-                <label htmlFor="preference4">Fish Allergy</label>
-                <input type="checkbox"id=" preference4" name="fishAllergy" checked={checked.fishAllergy} onChange={handleFormChange}/>
-                <label htmlFor="preference5">Vegan</label>
-                <input type="checkbox" id="preference5" name="vegan" checked={checked.vegan} onChange={handleFormChange}/>
-                <label htmlFor="preference6">Vegetarian</label>
-                <input type="checkbox" id="preference6" name="vegetarian" checked={checked.vegetarian} onChange={handleFormChange}/>
-                <label htmlFor="preference7">No Red Meat</label>
-                <input type="checkbox" id="preference7" name="noRedMeat" checked={checked.noRedMeat} onChange={handleFormChange}/>
-                <label htmlFor="preference8">No Pork</label>
-                <input type="checkbox" id="preference8" name="noPork" checked={checked.noPork} onChange={handleFormChange}/>
-                <label htmlFor="preference9">Dieting</label>
-                <input type="checkbox" id="preference9" name="dieting" checked={checked.dieting} onChange={handleFormChange}/>
-                <button type="submit">Submit Preferences</button>
-              </form>
-            </PreferencesModal>
+          {openPreferences && 
+          <form ref={preferencesRef} onSubmit={handlePreferencesSubmission} className={NavigationStyles.userPreferenceList}>
+            <input type="checkbox" id="preference1" name="theme" checked={checked.theme} onChange={handleFormChange}/>
+            <label htmlFor="preference1">Dark Mode</label>
+            <br />
+            <input type="checkbox" id="preference2" name="noDairy" checked={checked.noDairy} onChange={handleFormChange}/>
+            <label htmlFor="preference2">No Dairy</label>
+            <br />
+            <input type="checkbox" id="preference3" title="Nut Allergy" name="nutAllergy" checked={checked.nutAllergy} onChange={handleFormChange}/>
+            <label htmlFor="preference3">Nut Allergy</label>
+            <br />
+            <input type="checkbox" id="preference4" name="fishAllergy" checked={checked.fishAllergy} onChange={handleFormChange}/>
+            <label htmlFor="preference4">Fish Allergy</label>
+            <br />
+            <input type="checkbox" id="preference5" name="vegan" checked={checked.vegan} onChange={handleFormChange}/>
+            <label htmlFor="preference5">Vegan</label>
+            <br />
+            <input type="checkbox" id="preference6" name="vegetarian" checked={checked.vegetarian} onChange={handleFormChange}/>
+            <label htmlFor="preference6">Vegetarian</label>
+            <br />
+            <input type="checkbox" id="preference7" name="noRedMeat" checked={checked.noRedMeat} onChange={handleFormChange}/>
+            <label htmlFor="preference7">No Red Meat</label>
+            <br />
+            <input type="checkbox" id="preference8" name="noPork" checked={checked.noPork} onChange={handleFormChange}/>
+            <label htmlFor="preference8">No Pork</label>
+            <br />
+            <input type="checkbox" id="preference9" name="dieting" checked={checked.dieting} onChange={handleFormChange}/>
+            <label htmlFor="preference9">Dieting</label>
+            <br />
+            <button className={NavigationStyles.submitPreferences} type="submit">Submit Preferences</button>
+          </form>
+          }
+            <div className={NavigationStyles.pushRight}>
+              <Suspense fallback={<Loading />}>
+                <SearchBar session={props.session}/>
+              </Suspense>
+            </div> 
         </>
       )}
     </section>

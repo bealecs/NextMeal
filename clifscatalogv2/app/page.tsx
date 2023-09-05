@@ -15,7 +15,7 @@ export default async function Home() {
         <ThemeContextProvider session={session}>
           <Navigation session={session} />
           <Main session={session} />
-          <Footer />
+          {/* <Footer /> */}
         </ThemeContextProvider>
         ) : (
         <HeroSection />)}
