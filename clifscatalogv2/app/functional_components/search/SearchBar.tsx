@@ -126,7 +126,7 @@ export const SearchBar = (props: Props) => {
           {searchResult != undefined && searchResult.length <= 0 &&
           <>
             <p>No results found</p>
-            <p>Please try again with a different dish</p>
+            <p>Please try another dish</p>
           </>}
           </PreferencesModal>
       </div>

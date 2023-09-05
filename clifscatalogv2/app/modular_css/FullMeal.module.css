@@ -34,6 +34,11 @@
 .displayButton {
     cursor: pointer;
 }
+.favoriteButton:has(button) {
+    display: block;
+    width: fit-content;
+    margin: 0 0 1rem 1.5rem;
+}
 .splitDiv {
     display: flex;
     justify-content: flex-start;
@@ -54,7 +59,8 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: fit-content;
-    max-height: 20vh;
+    max-width: 50%;
+    max-height: 50vh;
 }
 .ingredientsList li {
     margin: 0 3rem;
