@@ -1,6 +1,10 @@
 .container {
-  position: fixed;
+  position: absolute;
   top: 0;
+  right: 1%;
+  background-color: white;
+  width: fit-content;
+  z-index: 1;
 }
 .form {
   margin: auto;
@@ -17,7 +21,7 @@
   margin: 1rem;
 }
 .button {
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   width: fit-content;
   margin: auto;
   padding: 1rem;
@@ -29,4 +33,27 @@
 }
 .form input {
   border-radius: 0.5rem;
+}
+@media only screen and (max-width: 992px) {
+  .searchBar {
+    padding: 0.5rem;
+    margin: 1rem;
+    width: fit-content;
+  }
+  .button {
+    padding: 0.5rem;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .container {
+    right: 0;
+  }
+  .searchBar {
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 40%;
+  }
+  .button {
+    padding: 0.5rem;
+  }
 }

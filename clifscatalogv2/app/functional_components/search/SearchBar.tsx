@@ -65,6 +65,7 @@ export const SearchBar = (props: Props) => {
     
     const searchAPIExcludeIngredients = excludeIngredients.join(',');
     const searchAPIDietPreferences = dietPreference.join(",");
+    if(searchQuery) {
     const res = await fetch(
       `http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`,
       {
@@ -82,7 +83,8 @@ export const SearchBar = (props: Props) => {
     setSearchResult(data.results);
     setOpenPreferences(!openPreferences);
     return data;
-  };
+  }
+};
   
   return (
     <section className={SearchBarStyles.container} id="search-recipes">

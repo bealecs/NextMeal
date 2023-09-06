@@ -30,6 +30,7 @@
 
 .closeSectionDiv {
   box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
+  background-color: white;
   min-height: 5vh;
   display: flex;
   justify-content: center;
@@ -55,5 +56,30 @@
 
   47.6% {
     transform: translate(0px);
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .chatbotDiv {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .chatbotDiv {
+    width: 37%;
+  }
+}
+@media only screen and (max-width: 992px) {
+    .chatbotDiv {
+      width: 45%;
+    }
+}
+@media only screen and (max-width: 768px) {
+  .chatbotDiv {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 481px) {
+  .chatbotDiv {
+    width: 70%;
   }
 }

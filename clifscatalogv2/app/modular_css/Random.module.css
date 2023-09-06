@@ -1,5 +1,5 @@
 .backgroundImage {
-    min-height: 400px;
+    height: 20rem;
     background-image: url("/bottomimage.svg");
     background-size:contain;
     background-repeat: no-repeat;
@@ -85,18 +85,126 @@
     color: white;
     background-color: #1877f2;
 }
-.similarMeal {
-    text-align: center;
-}
-.similarMeal button {
-    cursor: pointer;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid black;
-    transition: all ease 0.3s;
-}
-.similarMeal button:hover {
-    background-color: #1877f2;
-    color: white;
-}
 
+
+@media only screen and (max-width: 1500px) {
+    .backgroundImage {
+        height: 17rem;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .backgroundImage {
+        height: 14rem;
+    }
+    .container h2 {
+        margin: 10rem 2rem 0 2rem;
+    }
+    .instructions {
+        width: 100%;
+        margin: 2rem;
+    }
+    .mealImage img {
+        margin: 2rem 0;
+        width: 400px;
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .preMeal {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+    .backgroundImage {
+        height: 11rem;
+    }
+    .preMeal button {
+        padding: 10px;
+        margin: 1rem 0;
+    }
+    .populatedMealContainer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .container h2 {
+        text-align: center;
+        margin: 5rem 0;
+    }
+    .mealImage img {
+        display: block;
+        margin: auto;
+        width: 400px;
+        height: 350px;
+    }
+    .instructions {
+        width: 80%;
+        margin: 3rem;
+    }
+    .mealButtonActions button {
+        width: 275px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .backgroundImage {
+        height: 9rem;
+    }
+    .populatedMealContainer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .instructions {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .mealImage img {
+        display: block;
+        margin: auto;
+        width: 250px;
+        height: 200px;
+    }
+    .mealImage button {
+        padding: 1rem;
+    }
+    .instructions h3 {
+        line-height: 1rem;
+    }
+    .mealButtonActions button {
+        width: 220px;
+    }
+  }
+@media only screen and (max-width: 481px) {
+    .backgroundImage {
+        height: 6rem;
+    }
+    .preMeal {
+        width: 90%;
+        margin: 0 2rem;
+    }
+    .container h2 {
+        width: 90%;
+        margin: 2rem 2rem;
+    }
+    .populatedMealContainer {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .instructions {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .mealImage img {
+        display: block;
+        margin: auto;
+        width: 250px;
+        height: 200px;
+    }
+    .mealImage button {
+        padding: 1rem;
+    }
+    .instructions h3 {
+        line-height: 1rem;
+    }
+    .mealButtonActions button {
+        width: 130px;
+        height: 80px;
+    }
+}

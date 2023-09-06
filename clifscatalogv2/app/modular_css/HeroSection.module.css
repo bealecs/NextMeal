@@ -2,7 +2,6 @@
     background-image: url("/HeroBackground.png");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: transparent;
     min-height: 95vh;
 }
 .heroText {
@@ -55,8 +54,78 @@
 .link2:hover {
     transform: scale(1.05);
 }
-.searchBar {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 20px;
+.searchBar form {
+    display: block;
+    float: right;
+    background-color: white;
+}
+@media only screen and (max-width: 1500px) {
+    .heroText h1 {
+        font-size: 2.4rem;
+    }
+    .heroText h1 .nameSpan {
+        font-size: 2.4rem;
+    }
+    .heroText {
+        font-size: 1.4rem;
+        width: 50%;
+        top: 40%;
+        left: 58%;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .heroText h1 {
+        font-size: 2rem;
+    }
+    .heroText h1 .nameSpan {
+        font-size: 2rem;
+    }
+    .heroText {
+        font-size: 1.2rem;
+        width: 50%;
+        top: 40%;
+        left: 65%;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .container {
+        min-height: 70vh;
+        margin-top: 10%;
+    }
+    .heroText {
+        font-size: 1rem;
+        width: 50%;
+        top: 40%;
+        left: 70%;
+    }
+    .heroText p {
+        display: none;
+    }
+    .heroText h4 .nameSpan {
+        font-size: 1.2rem;
+    }
+    .heroText h1 {
+        font-size: 1.5rem;
+    }
+    .heroText h1 .nameSpan {
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width: 481px) {
+    .container {
+        min-height: 55vh;
+        margin-top: 25%;
+    }
+    .heroText {
+        font-size: 0.9rem;
+    }
+    .heroText h4 .nameSpan {
+        font-size: 1rem;
+    }
+    .heroText h1 {
+        font-size: 1.2rem;
+    }
+    .heroText h1 .nameSpan {
+        font-size: 1.2rem;
+    }    
 }

@@ -14,8 +14,8 @@
     justify-content: space-evenly;
 }
 .imageDescriptionDiv p {
-    margin: 1rem 2rem;
-    font-size: 1.2rem;
+    margin: 0rem 2rem;
+    font-size: 1rem;
 }
 .closeFullMeal button:has(span) {
     position: absolute;
@@ -64,4 +64,29 @@
 }
 .ingredientsList li {
     margin: 0 3rem;
+}
+@media only screen and (max-width: 1200px) {
+    .container {
+        line-height: 1.8rem;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .imageDescriptionDiv {
+        display: flex;
+        flex-direction: column;
+    }
+    .imageDescriptionDiv img {
+        width: 200px;
+        height: 150px;
+    }
+    .closeFullMeal span{
+        float: left;
+    }
+}
+@media only screen and (max-width: 481) {
+    .imageDescriptionDiv p {
+        width: 100%;
+        margin: 0;
+    }
 }

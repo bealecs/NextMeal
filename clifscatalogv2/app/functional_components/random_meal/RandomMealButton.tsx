@@ -34,7 +34,6 @@ export const RandomMealButton = (props: Props) => {
   return (
     <div className={RandomStyles.container}>
       <h2>Random Meal Selection</h2>
-      <br />
       {!newMeal && 
       <div className={RandomStyles.preMeal}>
         <p>Feeling hungry but not sure what you want to eat? We have got you covered! We have a broad selection of meals to choose from, all you need to do is simply click below.</p>
