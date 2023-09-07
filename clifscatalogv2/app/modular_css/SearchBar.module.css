@@ -34,20 +34,30 @@
 .form input {
   border-radius: 0.5rem;
 }
+@media only screen and (max-width: 1500px) {
+  .container {
+    right: 5%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    right: 5%;
+  }
+}
 @media only screen and (max-width: 992px) {
   .searchBar {
     padding: 0.5rem;
     margin: 1rem;
     width: fit-content;
   }
+  .container {
+    right: 5%;
+  }
   .button {
     padding: 0.5rem;
   }
 }
 @media only screen and (max-width: 481px) {
-  .container {
-    right: 0;
-  }
   .searchBar {
     padding: 0.5rem;
     margin: 1rem;

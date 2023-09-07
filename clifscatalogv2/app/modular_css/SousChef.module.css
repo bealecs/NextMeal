@@ -31,7 +31,7 @@
 .closeSectionDiv {
   box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
   background-color: white;
-  min-height: 5vh;
+  min-height: 7vh;
   display: flex;
   justify-content: center;
   width: 90%;
@@ -60,12 +60,20 @@
 }
 @media only screen and (max-width: 1500px) {
   .chatbotDiv {
-    width: 30%;
+    width: 35%;
+    margin: 1rem;
+  }
+  .chatbotImage {
+    right: 5%;
   }
 }
 @media only screen and (max-width: 1200px) {
   .chatbotDiv {
     width: 37%;
+    margin: 1rem;
+  }
+  .chatbotImage {
+    right: 5%;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -75,7 +83,7 @@
 }
 @media only screen and (max-width: 768px) {
   .chatbotDiv {
-    width: 50%;
+    width: 60%;
   }
 }
 @media only screen and (max-width: 481px) {
