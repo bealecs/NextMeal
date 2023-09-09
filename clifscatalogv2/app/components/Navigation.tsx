@@ -77,7 +77,7 @@ export const Navigation = (props: Props) => {
       {props.session && props.session.user && (
         <>
           <div className={NavigationStyles.keepLeft}>
-            <h2>Welcome {props.session.user.name}</h2>
+            <h2>Welcome, {props.session.user.name}</h2>
             <Image
               src="/avatar.svg"
               alt="stock avatar image signifying a user presence"

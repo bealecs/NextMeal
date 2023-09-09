@@ -1,23 +1,26 @@
 .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     background-image: url("/HeroBackground.png");
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 95vh;
+    height: 70vh;
 }
 .heroText {
-    font-size: 1.4rem;
-    position: absolute;
-    top: 40%;
-    left: 55%;
-    transform: translate(-50%, -50%);
+    width: 60%;
+    border-radius: 0.5rem;
+    padding-right: 5rem;
 }
 .heroText h4 {
     margin: 2rem 0;
     line-height: 2.5rem;
+    font-size: 1.5rem;
 }
+
 .heroText h1 .nameSpan {
-    font-size: 5rem;
-    color: #1877f2;
+        font-size: 3rem;
+        color: #1877f2;
 }
 .heroText h4 .nameSpan {
     font-size: 2rem;
@@ -28,169 +31,77 @@
     justify-content: flex-start;
     margin: 2rem 0;
 }
-.link {
+
+.link, .link2 {
     margin: 0 1rem 0 0;
     text-decoration: none;
     border-radius: 0.5rem;
     border: 1px solid grey;
     padding: 1rem;
+    transition: transform 0.3s ease-out;
+}
+
+.link {
     color: white;
     background-color: #1877f2;
-    transition: all ease-out 0.3s;
 }
+
 .link2 {
-    margin: 0 1rem 0 0;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    border: 1px solid grey;
-    padding: 1rem;
     color: black;
     background-color: whitesmoke;
-    transition: all ease-out 0.3s;
 }
-.link:hover {
+
+.link:hover, .link2:hover {
     transform: scale(1.05);
 }
-.link2:hover {
-    transform: scale(1.05);
-}
+
 .searchBar form {
     display: block;
     float: right;
-    background-color: white;
+    background-color: transparent;
 }
+
 .mobileH4 {
     display: none;
 }
-@media only screen and (max-width: 1500px) {
-    .heroText h1 {
-        font-size: 2.4rem;
-    }
-    .heroText h1 .nameSpan {
-        font-size: 2.4rem;
-    }
-    .heroText {
-        font-size: 1.4rem;
-        width: 50%;
-        top: 40%;
-        left: 58%;
-    }
-}
 @media only screen and (max-width: 1200px) {
-    .container {
-        margin-top: 2%;
-    }
-    .heroText h1 {
-        font-size: 2rem;
-    }
     .heroText h1 .nameSpan {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
-    .heroText {
+    .heroText h4 {
         font-size: 1.2rem;
-        width: 50%;
-        top: 52%;
-        left: 65%;
     }
 }
-@media only screen and (max-width: 992px) {
-    .container {
-        min-height: 70vh;
-        margin-top: 10%;
-    }
-    .heroText {
-        font-size: 1.3rem;
-        width: 50%;
-        top: 40%;
-        left: 70%;
-    }
-    .heroText p {
-        display: none;
-    }
-    .heroText h4 .nameSpan {
-        font-size: 1.4rem;
-    }
+@media only screen and (max-width:992px) {
     .heroText h1 {
         font-size: 1.5rem;
     }
     .heroText h1 .nameSpan {
+        font-size: 2rem;
+    }
+    .heroText h4 .nameSpan {
         font-size: 1.5rem;
     }
 }
 @media only screen and (max-width: 768px) {
+    .container {
+        background-image: url("/modalBackground.svg");
+        background-size: cover;
+    }
     .heroText {
-        font-size: 1rem;
-        margin-top: 5%;
-    }
-    .heroText p {
-        display: none;
-    }
-    .heroText h4 .nameSpan {
-        font-size: 1.4rem;
+        width: 100%;
+        padding: 2rem;
     }
     .heroText h1 {
-        font-size: 1.2rem;
-    }
-    .heroText h1 .nameSpan {
         font-size: 1.3rem;
     }
-    .mobileH4 {
-        display: block;
-    }
-    .desktopH4 {
-        display: none;
-    }
-}
-@media only screen and (max-width: 481px) {
-    .container {
-        min-height: 55vh;
-        margin-top: 35%;
-    }
-    .heroText {
-        font-size: 0.8rem;
-        top: 35%;
+    .heroText h1 .nameSpan {
+        font-size: 1.5rem;
     }
     .heroText h4 {
-        line-height: 1.2rem;
+        font-size: 1rem;
     }
     .heroText h4 .nameSpan {
-        font-size: 1rem;
-    }
-    .heroText h1 {
-        font-size: 1rem;
-    }
-    .heroText h1 .nameSpan {
-        font-size: 1rem;
-    }
-    .desktopH4 {
-        display: none;
-    }
-    .mobileH4 {
-        display: block;
-    }
-    .buttons {
-        padding: 0;
-        width: 15rem;
-        margin: 0;
-        align-items: center;
-    }    
-    .link {
-        padding: 0.5rem;
-        margin: 0;
-    }
-    .link2 {
-        padding: 0.5rem;
-        margin: 0.5rem;
-    }
-}
-@media only screen and (max-width: 300px) {
-    .container {
-        min-height: 75vh;
-        margin-top: 40%;
-    }
-    .heroText {
-        margin: 15% 15%;
-        font-size: 1rem;
-        width: 80%;
+        font-size: 1.3rem;
     }
 }

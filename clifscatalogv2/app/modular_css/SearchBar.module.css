@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   right: 1%;
-  background-color: white;
+  background-color: transparent;
   width: fit-content;
   z-index: 1;
 }
@@ -10,7 +10,7 @@
   margin: auto;
 }
 .mainDiv {
-  background-color: white;
+  background-color: transparent;
   margin: auto;
 }
 .resultsDiv {
