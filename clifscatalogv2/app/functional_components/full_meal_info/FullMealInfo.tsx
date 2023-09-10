@@ -86,7 +86,7 @@ export const FullMealInfo = async (props: Props) => {
             <div className={FullMealStyles.closeFullMeal}>
                 <button onClick={resetMealInfo}><span>❌</span></button>
             </div>
-            <h3 style={{textAlign:'center', fontSize:'1.5rem'}}>{mealData.title}</h3>
+            <h3 className={FullMealStyles.h3MealTitle}>{mealData.title}</h3>
             <div className={FullMealStyles.imageDescriptionDiv}>
                 <Image
                     src={mealData.image}

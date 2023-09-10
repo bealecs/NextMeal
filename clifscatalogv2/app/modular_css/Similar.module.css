@@ -30,3 +30,18 @@
     background-color: #1877f2;
     color: white;
 }
+@media only screen and (max-width: 768px) {
+    .showSimilar {
+        display: none;
+    }
+}
+@media only screen and (max-width: 481px) {
+    .showSimilar {
+        display: none;
+    }
+}
+@media only screen and (max-width: 300px) {
+    .showSimilar {
+        display: none;
+    }
+}

@@ -34,7 +34,6 @@ export const RandomMealButton = (props: Props) => {
   return (
     <div className={RandomStyles.container}>
       <h2>Random Meal Selection</h2>
-      <br />
       {!newMeal && 
       <div className={RandomStyles.preMeal}>
         <p>Feeling hungry but not sure what you want to eat? We have got you covered! We have a broad selection of meals to choose from, all you need to do is simply click below.</p>
@@ -67,6 +66,7 @@ export const RandomMealButton = (props: Props) => {
               <p>{removeTags(destructuredRecipe.summary)}</p>
             </div>
             <div className={RandomStyles.mealImage}>
+              <p className={RandomStyles.warning}><span>Warning:</span> Double check ingredients of meals, your preferences will not effect the random suggestion.</p>
               <Image
                   src={destructuredRecipe.image}
                   width={400}

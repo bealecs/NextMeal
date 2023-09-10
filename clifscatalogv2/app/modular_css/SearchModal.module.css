@@ -50,3 +50,31 @@
 .title {
     margin-top: 3rem;
 }
+@media only screen and (max-width: 1500px) {
+    .container {
+        margin: 5rem 3.6rem 0 auto;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .container {
+        margin: 5rem 2.5rem 0 auto;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .container {
+        margin: 4rem 2.5rem 0 auto;
+        width: 16.5rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        margin: 4rem 3rem 0 auto;
+        width: 16.5rem;
+    }
+}
+@media only screen and (max-width: 481px) {
+    .container {
+        margin: 4rem 4rem 0 auto;
+        width: 16.5rem;
+    }
+}

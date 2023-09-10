@@ -26,6 +26,7 @@ export const SearchBar = (props: Props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(searchQuery) {
     const res = await fetch(`http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`);
 
     if (!res.ok) {
@@ -36,8 +37,8 @@ export const SearchBar = (props: Props) => {
     setOpenPreferences(!openPreferences);
     setSearchQuery("");
     return data;
-  };
-  
+  }
+}
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className={SearchBarStyles.mainDiv}>
