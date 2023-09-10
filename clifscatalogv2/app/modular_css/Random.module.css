@@ -1,7 +1,8 @@
 .backgroundImage {
-    height: 20rem;
+    height: 25rem;
+    max-height: fit-content;
     background-image: url("/bottomimage.svg");
-    background-size:contain;
+    background-size:cover;
     background-repeat: no-repeat;
     background-position: center bottom;
 }
@@ -90,17 +91,19 @@
     font-weight: bolder;
     font-size: 0.8rem;
     width: 400px;
+    margin:1rem auto;
 }
 .warning span {
     text-decoration: underline;
 }
 @media only screen and (max-width: 1500px) {
+    .container h2 {
+        margin: 3rem 5rem;
+    }
     .backgroundImage {
         height: 17rem;
     }
-    .container h2 {
-        margin: 2.8rem;
-    }
+    
     .instructions {
         width: 50%;
         margin: 2rem 3rem;
@@ -111,7 +114,7 @@
         height: 14rem;
     }
     .container h2 {
-        margin: 0;
+        margin: 3rem 5rem;
     }
     .instructions {
         width: 100%;
@@ -142,8 +145,7 @@
         flex-direction: column-reverse;
     }
     .container h2 {
-        margin: 2rem 0;
-        text-align: center;
+        margin: 3rem 5rem;
     }
     .mealImage img {
         display: block;
@@ -171,10 +173,7 @@
         width: 80%;
         margin: 0 auto;
     }
-    .container h2 {
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
+  
     .mealImage img {
         display: block;
         margin: auto;
@@ -205,14 +204,7 @@
         margin: 0 auto;
         font-size: 1rem;
     }
-    .container h2 {
-        width: 90%;
-        margin: 2rem auto;
-        padding: 0;
-        display: block;
-        word-wrap: none;
-        font-size: 1.5rem;
-    }
+    
     .populatedMealContainer {
         display: flex;
         flex-direction: column-reverse;

@@ -5,10 +5,11 @@
     background-image: url("/HeroBackground.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 70vh;
+    background-size: 1000px, contain;
+    height: 85vh;
 }
 .heroText {
-    width: 60%;
+    width: 70%;
     border-radius: 0.5rem;
     padding-right: 5rem;
 }
@@ -26,6 +27,7 @@
     font-size: 2rem;
     color: #1877f2;
 }
+
 .buttons {
     display: flex;
     justify-content: flex-start;
@@ -64,15 +66,43 @@
 .mobileH4 {
     display: none;
 }
+@media only screen and (max-width:1500px) {
+    .container {
+        margin-top: 3%;
+        height: 75vh;
+        min-height: 75vh;
+        background-size: 750px;
+    }
+    .heroText {
+        width: 65%;
+    }
+
+}
 @media only screen and (max-width: 1200px) {
+    .heroText {
+        width: 60%;
+    }
+    .heroText h1 {
+        font-size: 2rem;
+    }
     .heroText h1 .nameSpan {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .heroText h4 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        line-height: 1.4rem;
     }
 }
 @media only screen and (max-width:992px) {
+    .container {
+        min-height: 70vh;
+        height: 70vh;
+        background-size: 700px;
+        margin-top: 5%;
+    }
+    .heroText {
+        width: 55%;
+    }
     .heroText h1 {
         font-size: 1.5rem;
     }
@@ -85,23 +115,80 @@
 }
 @media only screen and (max-width: 768px) {
     .container {
-        background-image: url("/modalBackground.svg");
-        background-size: cover;
+        height: 65vh;
+        min-height: 65vh;
+        background-size: 550px;
+        margin-top: 10%;
+        align-items: baseline;
     }
     .heroText {
+        padding-top: 10%;
+        width: 60%;
+    }
+    .heroText h4, .heroText h1 {
         width: 100%;
-        padding: 2rem;
+        display: block;
+        margin-left: 20%;
+        color: black;
     }
     .heroText h1 {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
     }
     .heroText h1 .nameSpan {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     .heroText h4 {
         font-size: 1rem;
     }
     .heroText h4 .nameSpan {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+    .signInOptions {
+        width: fit-content;
+        display: block;
+        margin: auto;
+    }
+}
+@media only screen and (max-width:601px) {
+    .container {
+        height: 45vh;
+        min-height: 45vh;
+        background-size: 400px;
+        margin-top: 15%;
+        align-items: baseline;
+    }
+    .heroText {
+        width: 60%;
+        padding-top: 0;
+    }
+    .heroText h4, .heroText h1 {
+        display: block;
+        margin-left: 20%;
+        color: black;
+    }
+    .heroText h1 {
+        font-size: 1.6rem;
+    }
+    .heroText h1 .nameSpan {
+        font-size: 1.6rem;
+    }
+    .heroText h4 {
+        font-size: 1rem;
+    }
+    .heroText h4 .nameSpan {
+        font-size: 1.4rem;
+    }
+    .signInOptions {
+        margin-left: 20%;
+    }
+   .link {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        width: fit-content;
+   }
+   .link2 {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        width: fit-content;
     }
 }
