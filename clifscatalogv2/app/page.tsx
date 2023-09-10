@@ -1,5 +1,4 @@
 import { getServerSession } from "next-auth";
-import { Footer } from "./components/Footer";
 import { Main } from "./components/Main";
 import { options } from "./api/auth/[...nextauth]/options";
 import { Navigation } from "./components/Navigation";

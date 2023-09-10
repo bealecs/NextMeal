@@ -1,13 +1,16 @@
-.container {
+#navbar {
+    display: block;
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 100;
     transition: all 0.3s ease;
-    background-color: white;
+    padding-bottom: 1rem;
 }
-.container h2 {
+.stylingContainer h2 {
     padding: 1rem;
     margin: auto 0;
+    align-items: center;
     font-size: 1.4rem;
 }
 .pushRight {
@@ -20,13 +23,12 @@
 }
 .avatar {
     cursor: pointer;
+    border-radius: 100%;
+    margin: 0.5rem;
 }
-.userOptionsList {
-    background-color: whitesmoke;
+#userOptionsList {
     font-weight: bold;
     border-radius: 0.5rem;
-    color: black;
-    border: 1px solid black;
     width: fit-content;
     position: fixed;
     left: 0;
@@ -37,8 +39,7 @@
     transition: all 0.3s ease;
     z-index: 100;
 }
-.userPreferenceList {
-    background-color: whitesmoke;
+#userPreferenceList {
     width: fit-content;
     position: fixed;
     left: 0;
@@ -47,22 +48,20 @@
     padding: 1rem;
     line-height: 2rem;
     font-weight: bold;
-    border: 1px solid black;
     transition: all 0.3s ease;
 }
 
-.userPreferenceList input {
+#userPreferenceList input {
     margin: 0 1rem 0 0;
 }
-.userPreferenceList button {
+#userPreferenceList button {
     cursor: pointer;
     margin: 1rem 0 0 0;
     padding: 0.4rem;
-    border: 1px solid black;
     border-radius: 0.5rem;
     transition: all ease 0.3s;
 }
-.userPreferenceList button:hover {
+#userPreferenceList button:hover {
     background-color: #1877f2;
     color: white;
 }

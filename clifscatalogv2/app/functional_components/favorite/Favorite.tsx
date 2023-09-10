@@ -12,7 +12,7 @@ export function Favorite(props: Props) {
  
   const handleFavorite = async () => {
     try {
-      await fetch("http://localhost:3000/api/favorite", {
+      await fetch("https://next-meal-cookbook.vercel.app/api/favorite", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

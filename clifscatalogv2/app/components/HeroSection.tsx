@@ -4,7 +4,6 @@ import HeroSectionStyles from '../modular_css/HeroSection.module.css';
 import { SearchBar } from '../functional_components/search/SearchBarNoUser';
 import SousChef from '../functional_components/chat/SousChef';
 import { RandomMealButton } from '../functional_components/random_meal/RandomMealButton';
-import Image from 'next/image';
 
 export const HeroSection = () => {
 

@@ -33,7 +33,7 @@ export default async function UserFavoritesDisplay(props: Props) {
 
     const handleDelete = async (id: number, title: string) => {
       try {
-        const res = await fetch("http://localhost:3000/api/deleteFavorite", {
+        const res = await fetch("https://next-meal-cookbook.vercel.app/api/deleteFavorite", {
           cache: "force-cache",
           method: "POST",
           body: JSON.stringify({
@@ -53,6 +53,8 @@ export default async function UserFavoritesDisplay(props: Props) {
     );
 
     return (
+      <>
+      {uniqueFavorites.length <= 5 && <h2 className={UserFavoritesDisplayStyles.emptyFavorites}>Looking a little empty here.. Go favorite some meals</h2>}
       <div className={UserFavoritesDisplayStyles.resultsContainer}>
         {uniqueFavorites &&
           uniqueFavorites.map((favorite) => {
@@ -96,6 +98,7 @@ export default async function UserFavoritesDisplay(props: Props) {
             );
           })}
       </div>
+      </>
     );
   }
 

@@ -67,7 +67,7 @@ export const SearchBar = (props: Props) => {
     const searchAPIDietPreferences = dietPreference.join(",");
     if(searchQuery) {
     const res = await fetch(
-      `http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`,
+      `https://next-meal-cookbook.vercel.app/api/search/${searchQuery.trim().replace(" ", "+")}`,
       {
         headers: {
           "exclude": searchAPIExcludeIngredients,

@@ -1,4 +1,7 @@
-.container {
+.form {
+  margin: auto;
+}
+.mainDiv {
   position: absolute;
   top: 0;
   right: 1%;
@@ -6,15 +9,8 @@
   width: fit-content;
   z-index: 1;
 }
-.form {
-  margin: auto;
-}
-.mainDiv {
-  background-color: transparent;
-  margin: auto;
-}
 .resultsDiv {
-  background-color: whitesmoke;
+  background-color: transparent;
 }
 .searchBar {
   padding: 1rem;

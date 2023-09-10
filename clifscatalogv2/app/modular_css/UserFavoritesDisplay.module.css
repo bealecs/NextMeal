@@ -6,6 +6,7 @@
     width: 80%;
     min-height: 80vh;
     margin: 0 auto;
+    min-height: 90vh;
 }
 .gridTable {
     align-items: center;
@@ -54,4 +55,10 @@
     height: 50px;
     text-overflow: ellipsis;
     text-align: center;
+  }
+  .emptyFavorites {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    height: 100%;
   }
