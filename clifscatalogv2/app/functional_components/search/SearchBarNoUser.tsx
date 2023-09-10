@@ -27,7 +27,7 @@ export const SearchBar = (props: Props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(searchQuery) {
-    const res = await fetch(`http://localhost:3000/api/search/${searchQuery.trim().replace(" ", "+")}`);
+    const res = await fetch(`https://next-meal-cookbook.vercel.app/api/search/${searchQuery.trim().replace(" ", "+")}`);
 
     if (!res.ok) {
       console.log("There was an error");

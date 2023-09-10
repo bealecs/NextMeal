@@ -60,7 +60,7 @@ export const Navigation = (props: Props) => {
   }, []);
 
   const handlePreferencesSubmission = async () => {
-    const res = await fetch("http://localhost:3000/api/user/preferences", {
+    const res = await fetch("https://next-meal-cookbook.vercel.app/api/user/preferences", {
       method:"POST",
       headers: {
         "Content-Type": "application/json"

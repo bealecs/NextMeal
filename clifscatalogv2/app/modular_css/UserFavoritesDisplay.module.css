@@ -56,3 +56,9 @@
     text-overflow: ellipsis;
     text-align: center;
   }
+  .emptyFavorites {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    height: 100%;
+  }
