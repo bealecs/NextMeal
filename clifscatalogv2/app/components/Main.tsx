@@ -7,6 +7,7 @@ import UserFavoritesDisplay from "../functional_components/favorite/UserFavorite
 import { RandomMealButton } from "../functional_components/random_meal/RandomMealButton";
 import { Loading } from '../suspense_fallback/Loading';
 import { ThemeContext } from '../store/ThemeProvider';
+import SousChef from '../functional_components/chat/SousChef';
 
 interface Props {
   session: Session;
@@ -27,10 +28,15 @@ export const Main = (props: Props) => {
         return (
           <Suspense fallback={<Loading />}>
             <UserFavoritesDisplay session={props.session} />
+            <SousChef />
           </Suspense>
         );
       case 'randomMeal':
-        return <RandomMealButton session={props.session}/>
+        return (
+        <>
+          <SousChef />
+          <RandomMealButton session={props.session}/>
+        </>);
     }
   }
   return (
