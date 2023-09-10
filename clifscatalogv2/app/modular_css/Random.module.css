@@ -42,8 +42,13 @@
     margin: 2rem 10rem 2rem 5rem;
     line-height: 2rem;
 }
+.instructions h3 {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
 .mealImage {
-    margin: 3rem;
+    margin:auto;
+    padding: 0.5rem;
     border-radius: 0.5rem;
 }
 .mealImage button {
@@ -145,7 +150,8 @@
         flex-direction: column-reverse;
     }
     .container h2 {
-        margin: 3rem 5rem;
+        margin: 2rem auto;
+        text-align: center;
     }
     .mealImage img {
         display: block;
@@ -162,6 +168,12 @@
     }
 }
 @media only screen and (max-width: 768px) {
+    .container h2 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 2rem 0;
+    }
     .backgroundImage {
         height: 9rem;
     }

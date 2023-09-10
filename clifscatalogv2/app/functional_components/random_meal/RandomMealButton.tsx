@@ -88,7 +88,7 @@ export const RandomMealButton = (props: Props) => {
               </div>
             </div>
           </div>
-          <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/>
+          {/* <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/> */}
           </Suspense>
           </section>
         );

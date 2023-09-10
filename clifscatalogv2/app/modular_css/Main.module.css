@@ -1,9 +1,6 @@
-.container {
-    margin-top: 2%;
-}
 .currentView {
     text-align: center;
-    margin: 2rem 0;
+    padding: 2rem 0;
     font-size: 20px;
 }
 .currentView select {

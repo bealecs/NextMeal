@@ -6,6 +6,7 @@
     width: 80%;
     min-height: 80vh;
     margin: 0 auto;
+    min-height: 90vh;
 }
 .gridTable {
     align-items: center;

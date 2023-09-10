@@ -9,16 +9,46 @@ body {
     margin: 0;
     padding: 0;
 }
-.container-light {
+.container_light {
     color: black;
 }
-.container-dark {
+.container_dark {
     color: white;
-    background-color: blue;
+    background-color: #0A0E14;
+    border-color: white;
+}
+.container_dark table {
+  border-color: white;
+}
+.container_dark ul {
+  border: 1px solid white;
+}
+.container_light ul {
+  border: 1px solid black;
+}
+.container_dark_preferences {
+  border: 1px solid white;
+}
+.container_light_preferences {
+  border: 1px solid black;
+}
+.container_dark dialog {
+    max-height: 75vh;
+    margin: 5rem 0.5rem 0 auto;
+    width: 20.5rem;
+    border: 1px solid white;
+    border-radius: 0.5rem;
+}
+.container_light dialog {
+    max-height: 75vh;
+    margin: 5rem 0.5rem 0 auto;
+    width: 20.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
 }
 .randomJoke {
   padding-top: 5rem;
-  min-height: 70vh;
+  min-height: 90vh;
 }
 .jokeQuestion {
   text-align: center;
@@ -26,6 +56,9 @@ body {
   display: block;
   margin: 1rem auto;
   color: black;
+}
+.container_dark .jokeQuestion {
+  color: white;
 }
 .jokeAnswer {
   text-align: center;

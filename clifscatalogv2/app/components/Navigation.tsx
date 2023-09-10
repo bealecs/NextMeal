@@ -2,13 +2,12 @@
 import NavigationStyles from "../modular_css/Navigation.module.css";
 import "../globalStyles.css";
 import Image from "next/image";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useContext, useEffect, useRef, useState } from "react";
 import { Session } from "next-auth";
 import { signOut } from "next-auth/react";
-import PreferencesModal from "../store/SearchModalWrapper";
 import { SearchBar } from "../functional_components/search/SearchBar";
 import { Loading } from "../suspense_fallback/Loading";
-
+import { ThemeContext } from "../store/ThemeProvider";
 
 interface Props {
   session: Session;
@@ -29,6 +28,8 @@ export const Navigation = (props: Props) => {
       noPork: false,
       dieting: false,
   });
+
+  const theme = useContext(ThemeContext);
 
   const handleFormChange = (event) => {
     setChecked({
@@ -73,16 +74,16 @@ export const Navigation = (props: Props) => {
     return await res.json();
   }
   return (
-    <section className={NavigationStyles.container}>
+    <section className={theme.themeValue} id={NavigationStyles.navbar}>
       {props.session && props.session.user && (
-        <>
+        <div className={NavigationStyles.stylingContainer}>
           <div className={NavigationStyles.keepLeft}>
             <h2>Welcome, {props.session.user.name}</h2>
             <Image
               src="/avatar.svg"
               alt="stock avatar image signifying a user presence"
-              width={80}
-              height={80}
+              width={50}
+              height={50}
               className={NavigationStyles.avatar}
               onClick={() => {
                 setOpenPreferences(false);
@@ -91,7 +92,7 @@ export const Navigation = (props: Props) => {
           </div>
           
           {showOptions && (
-            <ul ref={optionsRef} className={NavigationStyles.userOptionsList}>
+            <ul ref={optionsRef} className={theme.themeValue} id={NavigationStyles.userOptionsList}>
               <li className={NavigationStyles.userOption} onClick={() => {
                 setOpenPreferences(!openPreferences)
                 setShowOptions(!showOptions)}}>User Preferences</li>
@@ -104,8 +105,8 @@ export const Navigation = (props: Props) => {
             </ul>
           )}
           {openPreferences && 
-          <form ref={preferencesRef} onSubmit={handlePreferencesSubmission} className={NavigationStyles.userPreferenceList}>
-            <input type="checkbox" id="preference1" name="theme" checked={checked.theme} onChange={handleFormChange}/>
+          <form ref={preferencesRef} onSubmit={handlePreferencesSubmission} className={theme.themeValue+"_preferences"} id={NavigationStyles.userPreferenceList}>
+            <input type="checkbox" id="preference1" name="theme" checked={checked.theme} className="input" onChange={handleFormChange}/>
             <label htmlFor="preference1">Dark Mode</label>
             <br />
             <input type="checkbox" id="preference2" name="noDairy" checked={checked.noDairy} onChange={handleFormChange}/>
@@ -140,7 +141,7 @@ export const Navigation = (props: Props) => {
                 <SearchBar session={props.session}/>
               </Suspense>
             </div> 
-        </>
+        </div>
       )}
     </section>
   );

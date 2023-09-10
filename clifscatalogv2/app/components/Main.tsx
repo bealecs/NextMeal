@@ -2,11 +2,11 @@
 import '../globalStyles.css';
 import MainStyles from '../modular_css/Main.module.css';
 import { Session } from "next-auth";
-import SousChef from "../functional_components/chat/SousChef";
-import { Suspense, useState } from "react";
+import { Suspense, useContext, useState } from "react";
 import UserFavoritesDisplay from "../functional_components/favorite/UserFavoritesDisplay";
 import { RandomMealButton } from "../functional_components/random_meal/RandomMealButton";
 import { Loading } from '../suspense_fallback/Loading';
+import { ThemeContext } from '../store/ThemeProvider';
 
 interface Props {
   session: Session;
@@ -15,6 +15,8 @@ interface Props {
 export const Main = (props: Props) => {
   const [clicked, setClicked] = useState("userFavorites");
   
+  const theme = useContext(ThemeContext);
+
   const handleClick = (event) => {
     setClicked(event.target.value);
   }
@@ -32,7 +34,7 @@ export const Main = (props: Props) => {
     }
   }
   return (
-    <main className={MainStyles.container}>
+    <main className={theme.themeValue}>
       <div className={MainStyles.currentView}>Current View:
       {/* User is on the user favorites display */}
       {clicked === "userFavorites" && (
