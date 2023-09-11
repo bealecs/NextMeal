@@ -41,7 +41,7 @@ export const SearchBar = (props: Props) => {
 }
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
-      <div className={SearchBarStyles.mainDiv}>
+      <div className="container_light" id={SearchBarStyles.mainDiv}>
         <form className={SearchBarStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"

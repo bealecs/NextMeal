@@ -1,13 +1,3 @@
-.container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    background-color: whitesmoke;
-    z-index: 10;
-    line-height: 2.2rem;
-    overflow-y: scroll;
-}
 .h3MealTitle {
     display: block;
     text-align: center;
@@ -61,6 +51,7 @@
 .instructions {
     margin: 0 2rem;
     width: 80%;
+    
 }
 .ingredientsList {
     display: flex;

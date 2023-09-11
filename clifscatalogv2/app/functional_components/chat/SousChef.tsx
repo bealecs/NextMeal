@@ -1,14 +1,15 @@
 "use client"
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import SousChefStyles from "../../modular_css/SousChef.module.css";
 import Chat from "./Chat";
+import { ThemeContext } from "@/app/store/ThemeProvider";
 
 const SousChef = () => {
   const [showChat, setShowChat] = useState(false);
+  const theme = useContext(ThemeContext);
 
   const handleClick = () => {
-    console.log("here");
     setShowChat(!showChat);
   };
 
@@ -25,8 +26,8 @@ const SousChef = () => {
         />
       )}
       {showChat && (
-        <div className={SousChefStyles.chatbotDiv}>
-          <div className={SousChefStyles.closeSectionDiv}>
+        <div className={theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
+          <div className={SousChefStyles.closeSectionDiv} id="closeSectionDiv">
             <button onClick={handleClick}>❌</button>
             <h3>My Sous-chef</h3>
           </div>

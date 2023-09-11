@@ -1,7 +1,7 @@
 .form {
   margin: auto;
 }
-.mainDiv {
+#mainDiv {
   position: absolute;
   top: 0;
   right: 1%;

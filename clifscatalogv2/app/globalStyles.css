@@ -12,18 +12,155 @@ body {
 .container_light {
     color: black;
 }
+.container_light h1, .container_light h2, .container_light h3, .container_light h4 {
+  color: #f47174;
+}
+.container_dark h1, .container_dark h2, .container_dark h3, .container_dark h4 {
+  color: lightsalmon;
+}
 .container_dark {
-    color: white;
+    color: lightblue;
     background-color: #0A0E14;
-    border-color: white;
+    border-color: lightblue;
+}
+.container_dark button {
+  background-color: lightblue;
+}
+.container_dark_navbar {
+  background-color: #0A0E14;
+  color: lightblue;
+  display: block;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  padding-bottom: 1rem;
+}
+.container_light_navbar {
+  background-color: white;
+  color: black;
+  display: block;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  padding-bottom: 1rem;
+}
+.container_dark_chat {
+  background-color: #0A0E14;
+  width: 90%;
+  position: relative;
+  font-size: 0.8rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 5px 9px 5px 4px rgba(255, 255, 255, 0.3);
+}
+.container_light_chat {
+  background-color: white;
+  width: 90%;
+  position: relative;
+  font-size: 0.8rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 1rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  box-shadow: 5px 9px 5px 4px rgba(0,0,0,0.2);
+}
+.container_dark_souschef {
+  background-color: #0A0E14;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  border-radius: 0.5rem;
+}
+.container_dark_souschef button {
+  background-color: #0A0E14;
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer;
+}
+.container_light_souschef button {
+  background-color: transparent;
+  width: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  cursor: pointer;
+}
+.container_light_souschef {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  border-radius: 0.5rem;
+}
+.container_dark #closeSectionDiv {
+  box-shadow: 5px 2px 5px 4px rgba(255, 255, 255, 0.3);
+  min-height: 7vh;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.container_light #closeSectionDiv {
+  box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
+  min-height: 7vh;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.container_dark_fullMeal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #0A0E14;
+  color: lightblue;
+  z-index: 1000;
+  line-height: 2.2rem;
+  overflow-y: scroll;
+}
+.container_light_fullMeal {
+  position: fixed;
+  background-color: white;
+  color: black;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1000;
+  line-height: 2.2rem;
+  overflow-y: scroll;
 }
 .container_dark table {
   border-color: white;
 }
-.container_dark ul {
+.container_dark_userOptions {
   border: 1px solid white;
 }
-.container_light ul {
+.container_light_userOptions {
   border: 1px solid black;
 }
 .container_dark_preferences {
@@ -36,6 +173,8 @@ body {
     max-height: 75vh;
     margin: 5rem 0.5rem 0 auto;
     width: 20.5rem;
+    background-color: #0A0E14;
+    color: white;
     border: 1px solid white;
     border-radius: 0.5rem;
 }
@@ -50,7 +189,7 @@ body {
   padding-top: 5rem;
   min-height: 90vh;
 }
-.jokeQuestion {
+.container_light .jokeQuestion {
   text-align: center;
   font-size: 1.7rem;
   display: block;
@@ -58,7 +197,11 @@ body {
   color: black;
 }
 .container_dark .jokeQuestion {
-  color: white;
+  color: lightblue;
+  text-align: center;
+  font-size: 1.7rem;
+  display: block;
+  margin: 1rem auto;
 }
 .jokeAnswer {
   text-align: center;

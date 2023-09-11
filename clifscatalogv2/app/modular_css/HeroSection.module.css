@@ -95,8 +95,8 @@
 }
 @media only screen and (max-width:992px) {
     .container {
-        min-height: 70vh;
-        height: 70vh;
+        min-height: 75vh;
+        height: 75vh;
         background-size: 700px;
         margin-top: 5%;
     }
@@ -151,14 +151,14 @@
 }
 @media only screen and (max-width:601px) {
     .container {
-        height: 45vh;
-        min-height: 45vh;
+        height: 75vh;
+        min-height: 75vh;
         background-size: 400px;
-        margin-top: 15%;
+        margin-top: 20%;
         align-items: baseline;
     }
     .heroText {
-        width: 60%;
+        width: 50%;
         padding-top: 0;
     }
     .heroText h4, .heroText h1 {

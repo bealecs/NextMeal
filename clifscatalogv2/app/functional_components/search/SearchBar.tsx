@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useState } from "react";
+import { Suspense, useContext, useState } from "react";
 import "../../globalStyles.css";
 import SearchBarStyles from "../../modular_css/SearchBar.module.css";
 import Image from "next/image";
@@ -8,6 +8,7 @@ import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 import { Session } from "next-auth";
 import { Loading } from "../../suspense_fallback/Loading";
 import { getUserProfile } from "../user_profile/getUserProfile";
+import { ThemeContext } from "@/app/store/ThemeProvider";
 
 type StateResult = [
   {
@@ -24,7 +25,7 @@ export const SearchBar = (props: Props) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState<StateResult>();
   const [openPreferences, setOpenPreferences] = useState(false);
-
+  const theme = useContext(ThemeContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     //grab user profile
@@ -88,7 +89,7 @@ export const SearchBar = (props: Props) => {
   
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
-      <div className={SearchBarStyles.mainDiv}>
+      <div className={theme.themeValue} id={SearchBarStyles.mainDiv}>
         <form className={SearchBarStyles.form} onSubmit={handleSubmit}>
           <input
             type="text"

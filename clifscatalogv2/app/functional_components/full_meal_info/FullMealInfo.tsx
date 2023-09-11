@@ -1,9 +1,10 @@
 "use client"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Image from "next/image";
 import { Session } from "next-auth";
 import { Favorite } from "../favorite/Favorite";
 import FullMealStyles from '../../modular_css/FullMeal.module.css';
+import { ThemeContext } from "@/app/store/ThemeProvider";
 
 interface Props {
     session: Session | null;
@@ -62,6 +63,7 @@ export const FullMealInfo = async (props: Props) => {
 
     const [mealData, setMealData] = useState<DestructuredMealInfo | null>(null);
     const [openPreferences, setOpenPreferences] = useState(false);
+    const theme = useContext(ThemeContext);
 
     const setMealInfo = async () => {
         try {
@@ -82,7 +84,7 @@ export const FullMealInfo = async (props: Props) => {
     }
 
     return (
-        <div key={mealData.id * 1000} className={FullMealStyles.container} onClick={(e) => e.stopPropagation()}>
+        <div key={mealData.id * 1000} className={theme.themeValue+"_fullMeal"} onClick={(e) => e.stopPropagation()}>
             <div className={FullMealStyles.closeFullMeal}>
                 <button onClick={resetMealInfo}><span>❌</span></button>
             </div>

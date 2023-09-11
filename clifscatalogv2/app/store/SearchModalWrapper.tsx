@@ -1,7 +1,5 @@
-"use client"
-import { MouseEvent, useContext, useEffect, useRef } from "react";
+import { MouseEvent, useEffect, useRef } from "react";
 import ModalStyles from '../modular_css/SearchModal.module.css';
-import { ThemeContext } from "./ThemeProvider";
 
 const isClickInsideRectangle = (
   e: MouseEvent,
@@ -30,8 +28,6 @@ const PreferencesModal = ({
   children,
 }: Props) => {
   const ref = useRef<HTMLDialogElement>(null);
-
-  const theme = useContext(ThemeContext);
   
   useEffect(() => {
     if (isOpened) {
@@ -46,7 +42,6 @@ const PreferencesModal = ({
   return (
     <dialog
       ref={ref}
-      className={theme.themeValue}
       onCancel={onClose}
       onClick={(e) => {
         if (ref.current && !isClickInsideRectangle(e, ref.current)) {
