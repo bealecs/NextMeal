@@ -26,7 +26,6 @@ export const Navigation = (props: Props) => {
       vegetarian: false,
       noRedMeat: false,
       noPork: false,
-      dieting: false,
   });
 
   const theme = useContext(ThemeContext);
@@ -74,7 +73,7 @@ export const Navigation = (props: Props) => {
     return await res.json();
   }
   return (
-    <section className={theme.themeValue} id={NavigationStyles.navbar}>
+    <section className={theme.themeValue+"_navbar"} id={NavigationStyles.navbar}>
       {props.session && props.session.user && (
         <div className={NavigationStyles.stylingContainer}>
           <div className={NavigationStyles.keepLeft}>
@@ -92,7 +91,7 @@ export const Navigation = (props: Props) => {
           </div>
           
           {showOptions && (
-            <ul ref={optionsRef} className={theme.themeValue} id={NavigationStyles.userOptionsList}>
+            <ul ref={optionsRef} className={theme.themeValue+"_userOptions"} id={NavigationStyles.userOptionsList}>
               <li className={NavigationStyles.userOption} onClick={() => {
                 setOpenPreferences(!openPreferences)
                 setShowOptions(!showOptions)}}>User Preferences</li>
@@ -129,9 +128,6 @@ export const Navigation = (props: Props) => {
             <br />
             <input type="checkbox" id="preference8" name="noPork" checked={checked.noPork} onChange={handleFormChange}/>
             <label htmlFor="preference8">No Pork</label>
-            <br />
-            <input type="checkbox" id="preference9" name="dieting" checked={checked.dieting} onChange={handleFormChange}/>
-            <label htmlFor="preference9">Dieting</label>
             <br />
             <button className={NavigationStyles.submitPreferences} type="submit">Submit Preferences</button>
           </form>

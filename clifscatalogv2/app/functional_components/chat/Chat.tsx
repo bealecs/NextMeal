@@ -1,14 +1,17 @@
 "use client";
+import { useContext } from "react";
 import "../../globalStyles.css";
 import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
+import { ThemeContext } from "@/app/store/ThemeProvider";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const theme = useContext(ThemeContext);
 
   return (
 
-    <section className={ChatStyles.container}>
+    <section className={theme.themeValue+"_chat"} id={ChatStyles.container}>
       <div className={ChatStyles.messagesContainer}>
         {messages.length < 1 && 
         <div className={ChatStyles.noMessages}>

@@ -1,42 +1,9 @@
-.chatbotDiv {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 25%;
-}
-
-.chatbotDiv button {
-  width: fit-content;
-  position: absolute;
-  background-color: white;
-  top: 0;
-  left: 0;
-  border: none;
-  text-align: left;
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-  cursor: pointer;
-}
-
 .chatbotImage {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
   cursor: pointer;
   animation: chefShake 30s ease-in-out infinite forwards;
-}
-
-.closeSectionDiv {
-  box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
-  background-color: white;
-  min-height: 7vh;
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 .closeSectionDiv h3 {
   margin: auto;
