@@ -7,7 +7,7 @@
 - Prisma & Supabase for backend (User database)
 - Spoonacular (API endpoints)
 
-The inspiration comes from one of Clif's initial projects as a web developer: [Clif's Catalog](https://github.com/bealecs/meal). However, the new app will be being extended to something greater. I am leveraging a new site for the API endpoints that has a greater store of information/meals/recipes. With the new app, users are able to sign up by creating an account, set preferences to enhance the search for recipes/meals, and even favorite meals to their account for later! All of this comes with similar functionality to the previous app, with some new upgrades as well.
+The inspiration comes from one of Clif's initial projects as a web developer: [Clif's Catalog](https://github.com/bealecs/meal). However, the new app will be extended to something greater. I am leveraging a new site for the API endpoints that has a greater store of information/meals/recipes. With the new app, users are able to sign up by creating an account, set preferences to enhance the search for recipes/meals, and even favorite meals to their account for later! All of this comes with similar functionality to the previous app, with some new upgrades as well.
 
 #### Introducing: My Sous-chef
 **My Sous-chef** can really do a lot, however its core functionality in the app is to help indecesive users. Extra functionality also includes, but is not limited to, helping users discover new recipes/meals, finding names of meals/recipes that are lost to the user, and more. This feature leverages Vercel's new AI SDK to incorporate OpenAI's Chat-GPT into our app.
