@@ -22,6 +22,7 @@ export const ThemeContext = createContext<Ctx>({
 const ThemeContextProvider = async (props: Props) => {
   // const [theme, setTheme] = useState("container_dark");
 
+    
     if(props.session && props.session.user) {
       const userProfile = await getUserProfile(props.session.user.id, props.session.user.accessToken);
       const themePreference = userProfile[0].preferences[0].theme === true ? "container_dark" : "container_light";
@@ -37,7 +38,7 @@ const ThemeContextProvider = async (props: Props) => {
       );
     } else {
       const ctxValue: Ctx = {
-        themeValue: "container_dark"
+        themeValue: "container_light"
       };
     
       return (
