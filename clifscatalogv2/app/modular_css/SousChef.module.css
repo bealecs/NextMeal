@@ -26,7 +26,7 @@
   }
 }
 @media only screen and (max-width: 1500px) {
-  .chatbotDiv {
+  #chatbotDiv {
     width: 35%;
     margin: 1rem;
   }
@@ -35,7 +35,7 @@
   }
 }
 @media only screen and (max-width: 1200px) {
-  .chatbotDiv {
+  #chatbotDiv {
     width: 37%;
     margin: 1rem;
   }
@@ -44,17 +44,17 @@
   }
 }
 @media only screen and (max-width: 992px) {
-    .chatbotDiv {
+    #chatbotDiv {
       width: 45%;
     }
 }
 @media only screen and (max-width: 768px) {
-  .chatbotDiv {
+  #chatbotDiv {
     width: 60%;
   }
 }
 @media only screen and (max-width: 481px) {
-  .chatbotDiv {
+  #chatbotDiv {
     width: 70%;
   }
 }

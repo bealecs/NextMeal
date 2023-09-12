@@ -29,7 +29,7 @@ const SousChef = () => {
         <div className={theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
           <div className={SousChefStyles.closeSectionDiv} id="closeSectionDiv">
             <button onClick={handleClick}>❌</button>
-            <h3>My Sous-chef</h3>
+            <h3 style={{textAlign:'center', alignItems:'center'}}>My Sous-chef</h3>
           </div>
           <Chat />
         </div>
