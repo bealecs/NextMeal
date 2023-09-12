@@ -56,14 +56,18 @@ body {
   padding-top: 1rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  
+  box-shadow: 0px 9px 5px 4px rgba(255, 255, 255, 0.3);
 }
 .container_light_chat {
   font-size: 0.8rem;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  width: 90%;
   border-radius: 1rem;
+  padding-top: 1rem;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+  box-shadow: 5px 9px 5px 4px rgba(0,0,0,0.2);
 }
 .container_dark_souschef {
   background-color: #0A0E14;
@@ -71,9 +75,7 @@ body {
   position: fixed;
   bottom: 1%;
   right: 1%;
-  width: 25%;
   border-radius: 0.5rem;
-  box-shadow: 5px 9px 5px 4px rgba(255, 255, 255, 0.3);
 }
 .container_dark_souschef button {
   background-color: #0A0E14;
@@ -104,31 +106,12 @@ body {
   cursor: pointer;
 }
 .container_light_souschef {
-  background-color: whitesmoke;
+  background-color: white;
+  color: #1877f2;
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 25%;
   border-radius: 0.5rem;
-  box-shadow: 5px 9px 5px 4px rgba(0,0,0,0.2);
-}
-.container_dark #closeSectionDiv {
-  box-shadow: 5px 2px 5px 4px rgba(255, 255, 255, 0.3);
-  min-height: 7vh;
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-.container_light #closeSectionDiv {
-  box-shadow: 5px 2px 5px 4px rgba(0,0,0,0.3);
-  min-height: 7vh;
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
 }
 .container_dark_fullMeal {
   position: fixed;
@@ -225,12 +208,4 @@ body {
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
     margin: auto;
-  }
-  @media only screen and (max-width: 768px) {
-    .container_dark_souschef {
-      width: 60%;
-    }
-    .container_light_souschef {
-      width: 60%;
-    }
   }
