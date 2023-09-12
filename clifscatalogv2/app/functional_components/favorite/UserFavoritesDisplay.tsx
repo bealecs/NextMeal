@@ -9,7 +9,7 @@ interface Props {
 }
 
 async function getUserProfile(userId: number, accessToken: string) {
-    const favoritesResponse = await fetch(`http://localhost:3000/api/user/${userId}`, {
+    const favoritesResponse = await fetch(`https://next-meal-cookbook.vercel.app/api/user/${userId}`, {
       headers: {
         "Authorization": `${accessToken}`,
       },
@@ -33,7 +33,7 @@ export default async function UserFavoritesDisplay(props: Props) {
 
     const handleDelete = async (id: number, title: string) => {
       try {
-        const res = await fetch("http://localhost:3000/api/deleteFavorite", {
+        const res = await fetch("https://next-meal-cookbook.vercel.app/api/deleteFavorite", {
           cache: "force-cache",
           method: "POST",
           body: JSON.stringify({
