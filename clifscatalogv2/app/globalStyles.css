@@ -104,7 +104,7 @@ body {
   cursor: pointer;
 }
 .container_light_souschef {
-  background-color: white;
+  background-color: whitesmoke;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -225,4 +225,12 @@ body {
     border-radius: 50%;
     animation: spinner 1.5s linear infinite;
     margin: auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .container_dark_souschef {
+      width: 60%;
+    }
+    .container_light_souschef {
+      width: 60%;
+    }
   }

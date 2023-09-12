@@ -31,7 +31,7 @@ const SousChef = (props:Props) => {
         />
       )}
       {showChat && (
-        <div className={props.session != null ? "container_light_souschef" : theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
+        <div className={props.session === null ? "container_light_souschef" : theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
           <div className={SousChefStyles.closeSectionDiv} id="closeSectionDiv">
             <button onClick={handleClick}>❌</button>
             <h3 style={{textAlign:'center', alignItems:'center'}}>My Sous-chef</h3>
