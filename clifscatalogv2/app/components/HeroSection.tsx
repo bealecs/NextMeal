@@ -27,7 +27,7 @@ export const HeroSection = () => {
                 </div>
             </div>
         </div>
-        <SousChef />
+        <SousChef session={null}/>
         <RandomMealButton session={null} />
         </>
     )

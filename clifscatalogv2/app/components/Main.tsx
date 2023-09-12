@@ -28,13 +28,13 @@ export const Main = (props: Props) => {
         return (
           <Suspense fallback={<Loading />}>
             <UserFavoritesDisplay session={props.session} />
-            <SousChef />
+            <SousChef session={props.session}/>
           </Suspense>
         );
       case 'randomMeal':
         return (
         <>
-          <SousChef />
+          <SousChef session={props.session} />
           <RandomMealButton session={props.session}/>
         </>);
     }

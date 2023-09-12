@@ -4,8 +4,13 @@ import Image from "next/image";
 import SousChefStyles from "../../modular_css/SousChef.module.css";
 import Chat from "./Chat";
 import { ThemeContext } from "@/app/store/ThemeProvider";
+import { Session } from "next-auth";
 
-const SousChef = () => {
+interface Props {
+  session: Session | null;
+}
+
+const SousChef = (props:Props) => {
   const [showChat, setShowChat] = useState(false);
   const theme = useContext(ThemeContext);
 
@@ -26,7 +31,7 @@ const SousChef = () => {
         />
       )}
       {showChat && (
-        <div className={theme.themeValue === "container_dark" ? "container_dark_souschef" : "container_light_souschef"} id={SousChefStyles.chatBotDiv}>
+        <div className={props.session != null ? "container_light_souschef" : theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
           <div className={SousChefStyles.closeSectionDiv} id="closeSectionDiv">
             <button onClick={handleClick}>❌</button>
             <h3 style={{textAlign:'center', alignItems:'center'}}>My Sous-chef</h3>
