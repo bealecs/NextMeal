@@ -38,7 +38,7 @@ const ThemeContextProvider = async (props: Props) => {
       );
     } else {
       const ctxValue: Ctx = {
-        themeValue: "container_light"
+        themeValue: "container_dark"
       };
     
       return (

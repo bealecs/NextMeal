@@ -32,11 +32,9 @@ const SousChef = (props:Props) => {
       )}
       {showChat && (
         <div className={props.session === null ? "container_light_souschef" : theme.themeValue+"_souschef"} id={SousChefStyles.chatBotDiv}>
-          <div className={SousChefStyles.closeSectionDiv} id="closeSectionDiv">
-            <button onClick={handleClick}>❌</button>
-            <h3 style={{textAlign:'center', alignItems:'center'}}>My Sous-chef</h3>
-          </div>
-          <Chat />
+            <button style={{position:'absolute',top:'0',left:'0'}} onClick={handleClick}>❌</button>
+            <h3 style={{textAlign:'center', alignItems:'center',paddingTop:'0.5rem', display:'block', width:'90%'}}>My Sous-chef</h3>
+          <Chat session={props.session}/>
         </div>
       )}
     </div>

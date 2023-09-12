@@ -4,14 +4,19 @@ import "../../globalStyles.css";
 import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
 import { ThemeContext } from "@/app/store/ThemeProvider";
+import { Session } from "next-auth";
 
-export default function Chat() {
+interface Props {
+  session: Session | null;
+}
+
+export default function Chat(props:Props) {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   const theme = useContext(ThemeContext);
 
   return (
 
-    <section className={theme.themeValue+"_chat"} id={ChatStyles.container}>
+    <section className={props.session === null ? "container_light_chat" : theme.themeValue+"_chat"} id={ChatStyles.container}>
       <div className={ChatStyles.messagesContainer}>
         {messages.length < 1 && 
         <div className={ChatStyles.noMessages}>
