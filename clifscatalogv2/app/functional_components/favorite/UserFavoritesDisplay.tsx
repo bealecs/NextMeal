@@ -9,7 +9,7 @@ interface Props {
 }
 
 async function getUserProfile(userId: number, accessToken: string) {
-    const favoritesResponse = await fetch(`https://next-meal-cookbook.vercel.app/api/user/${userId}`, {
+    const favoritesResponse = await fetch(`http://localhost:3000/api/user/${userId}`, {
       headers: {
         "Authorization": `${accessToken}`,
       },

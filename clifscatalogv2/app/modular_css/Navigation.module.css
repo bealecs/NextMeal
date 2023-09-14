@@ -30,29 +30,53 @@
     transition: all 0.3s ease;
     z-index: 100;
 }
+#userOptionsList button {
+    text-align: left;
+    margin: 0;
+}
 #userPreferenceList {
     width: fit-content;
     position: fixed;
     left: 0;
     margin-left: 1rem;
     border-radius: 0.5rem;
-    padding: 1rem;
     line-height: 2rem;
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
-#userPreferenceList input {
-    margin: 0 1rem 0 0;
+.closeButton {
+    border: none;
+    padding: 0.3rem;
+    background-color: transparent;
 }
-#userPreferenceList button {
+.closeButton:hover {
+    background-color: transparent;
+}
+.checkboxDiv {
+    align-items: center;
+    transition: all ease 0.3s;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+.checkboxDiv:hover {
+    color: #1877f2;
+    background-color: rgb(190, 190, 190);
+}
+.inputCheckbox{
+    clip-path: circle(40% at 50% 50%);
+    background-color: black;
+}
+#userPreferenceList label {
+    margin: 0 0 0 1rem;
+}
+.submitPreferences {
     cursor: pointer;
-    margin: 1rem 0 0 0;
+    margin: 1rem;
     padding: 0.4rem;
     border-radius: 0.5rem;
     transition: all ease 0.3s;
 }
-#userPreferenceList button:hover {
+.submitPreferences:hover {
     background-color: #1877f2;
     color: white;
 }

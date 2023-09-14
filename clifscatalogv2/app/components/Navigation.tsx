@@ -10,7 +10,7 @@ import { Loading } from "../suspense_fallback/Loading";
 import { ThemeContext } from "../store/ThemeProvider";
 
 interface Props {
-  session: Session;
+  session: Session | null;
 }
 export const Navigation = (props: Props) => {
   const [showOptions, setShowOptions] = useState(false);
@@ -58,8 +58,12 @@ export const Navigation = (props: Props) => {
     };
   }, []);
 
+  const handleClose = () => {
+    setShowOptions(false);
+    setOpenPreferences(false);
+  }
   const handlePreferencesSubmission = async () => {
-    const res = await fetch("https://next-meal-cookbook.vercel.app/api/user/preferences", {
+    const res = await fetch("http://localhost:3000/api/user/preferences", {
       method:"POST",
       headers: {
         "Content-Type": "application/json"
@@ -92,6 +96,7 @@ export const Navigation = (props: Props) => {
           
           {showOptions && (
             <ul ref={optionsRef} className={theme.themeValue+"_userOptions"} id={NavigationStyles.userOptionsList}>
+              <button className={NavigationStyles.closeButton} onClick={handleClose}>❌</button>
               <li className={NavigationStyles.userOption} onClick={() => {
                 setOpenPreferences(!openPreferences)
                 setShowOptions(!showOptions)}}>User Preferences</li>
@@ -105,30 +110,39 @@ export const Navigation = (props: Props) => {
           )}
           {openPreferences && 
           <form ref={preferencesRef} onSubmit={handlePreferencesSubmission} className={theme.themeValue+"_preferences"} id={NavigationStyles.userPreferenceList}>
-            <input type="checkbox" id="preference1" name="theme" checked={checked.theme} className="input" onChange={handleFormChange}/>
-            <label htmlFor="preference1">Dark Mode</label>
-            <br />
-            <input type="checkbox" id="preference2" name="noDairy" checked={checked.noDairy} onChange={handleFormChange}/>
-            <label htmlFor="preference2">No Dairy</label>
-            <br />
-            <input type="checkbox" id="preference3" title="Nut Allergy" name="nutAllergy" checked={checked.nutAllergy} onChange={handleFormChange}/>
-            <label htmlFor="preference3">Nut Allergy</label>
-            <br />
-            <input type="checkbox" id="preference4" name="fishAllergy" checked={checked.fishAllergy} onChange={handleFormChange}/>
-            <label htmlFor="preference4">Fish Allergy</label>
-            <br />
-            <input type="checkbox" id="preference5" name="vegan" checked={checked.vegan} onChange={handleFormChange}/>
-            <label htmlFor="preference5">Vegan</label>
-            <br />
-            <input type="checkbox" id="preference6" name="vegetarian" checked={checked.vegetarian} onChange={handleFormChange}/>
-            <label htmlFor="preference6">Vegetarian</label>
-            <br />
-            <input type="checkbox" id="preference7" name="noRedMeat" checked={checked.noRedMeat} onChange={handleFormChange}/>
-            <label htmlFor="preference7">No Red Meat</label>
-            <br />
-            <input type="checkbox" id="preference8" name="noPork" checked={checked.noPork} onChange={handleFormChange}/>
-            <label htmlFor="preference8">No Pork</label>
-            <br />
+            <button className={NavigationStyles.closeButton} onClick={handleClose}>❌</button>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference1" name="theme" checked={checked.theme} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference1">Dark Mode</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference2" name="noDairy" checked={checked.noDairy} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference2">No Dairy</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference3" title="Nut Allergy" name="nutAllergy" checked={checked.nutAllergy} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference3">Nut Allergy</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference4" name="fishAllergy" checked={checked.fishAllergy} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference4">Fish Allergy</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference5" name="vegan" checked={checked.vegan} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference5">Vegan</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference6" name="vegetarian" checked={checked.vegetarian} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference6">Vegetarian</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference7" name="noRedMeat" checked={checked.noRedMeat} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference7">No Red Meat</label>
+            </div>
+            <div className={NavigationStyles.checkboxDiv}>
+              <input type="checkbox" id="preference8" name="noPork" checked={checked.noPork} className={NavigationStyles.inputCheckbox} onChange={handleFormChange}/>
+              <label htmlFor="preference8">No Pork</label>
+            </div>
             <button className={NavigationStyles.submitPreferences} type="submit">Submit Preferences</button>
           </form>
           }

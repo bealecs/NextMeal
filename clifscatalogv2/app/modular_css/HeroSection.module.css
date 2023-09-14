@@ -62,7 +62,9 @@
     float: right;
     background-color: transparent;
 }
-
+.signInOptionsMobile {
+    display: none;
+}
 .mobileH4 {
     display: none;
 }
@@ -117,13 +119,13 @@
     .container {
         height: 65vh;
         min-height: 65vh;
-        background-size: 550px;
+        background-size: 500px;
         margin-top: 10%;
         align-items: baseline;
     }
     .heroText {
-        padding-top: 10%;
-        width: 60%;
+        padding-top: 5%;
+        width: 50%;
     }
     .heroText h4, .heroText h1 {
         width: 100%;
@@ -132,30 +134,36 @@
         color: black;
     }
     .heroText h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+        margin: 1rem 0;
     }
     .heroText h1 .nameSpan {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
     .heroText h4 {
-        font-size: 1rem;
+        font-size: 1.3rem;
+        margin: 1rem 0;
     }
     .heroText h4 .nameSpan {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
-    .signInOptions {
-        width: 100%;
+    .signInOptionsDesktop {
+        display: none;
+    }
+    .signInOptionsMobile {
         display: block;
-        margin-left: 20%;
+        text-align: center;
+        margin: 2rem auto;
+        align-items: center;
     }
     .buttons {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         text-align: center;
-        width: 80%;
+        width: 60%;
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
     }
     .link {
         padding: 0.5rem;
@@ -168,8 +176,8 @@
 }
 @media only screen and (max-width:601px) {
     .container {
-        height: 75vh;
-        min-height: 75vh;
+        height: 55vh;
+        min-height: 55vh;
         background-size: 400px;
         margin-top: 20%;
         align-items: baseline;
@@ -195,7 +203,7 @@
     .heroText h4 .nameSpan {
         font-size: 1.4rem;
     }
-    .signInOptions {
+    .signInOptionsDesktop {
         margin-left: 20%;
     }
    .link {
@@ -205,5 +213,11 @@
    .link2 {
         font-size: 1.2rem;
         padding: 0.5rem;
+    }
+}
+@media only screen and (max-width:481px) {
+    .container {
+        min-height: 40vh;
+        height: 40vh;
     }
 }

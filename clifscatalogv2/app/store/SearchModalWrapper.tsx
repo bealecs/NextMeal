@@ -50,7 +50,7 @@ const PreferencesModal = ({
         e.stopPropagation(); // Prevent the click event from propagating
       }}
     >
-      <button onClick={onClose} className={ModalStyles.close}>❌</button>
+      <span onClick={onClose} className={ModalStyles.close}>❌</span>
       <h3 className={ModalStyles.title}>{title}</h3>
       <div className={ModalStyles.modalSearchResults}>
         {children}

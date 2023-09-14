@@ -84,7 +84,7 @@ export const FullMealInfo = async (props: Props) => {
     }
 
     return (
-        <div key={mealData.id * 1000} className={theme.themeValue+"_fullMeal"} onClick={(e) => e.stopPropagation()}>
+        <div key={mealData.id * 1000} className={props.session === null ? "container_light_fullMeal" : theme.themeValue+"_fullMeal"} onClick={(e) => e.stopPropagation()}>
             <div className={FullMealStyles.closeFullMeal}>
                 <button onClick={resetMealInfo}><span>❌</span></button>
             </div>
