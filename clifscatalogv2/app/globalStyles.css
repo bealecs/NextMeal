@@ -54,9 +54,9 @@ body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 1rem;
   padding-top: 1rem;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  box-shadow: 0px 9px 5px 4px rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+  border: 1px solid white;
+  border-radius: 0.5rem;
 }
 .container_light_chat {
   font-size: 0.8rem;
@@ -68,6 +68,7 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   box-shadow: 5px 9px 5px 4px rgba(0,0,0,0.2);
+  border: none;
 }
 .container_dark_souschef {
   background-color: #0A0E14;
@@ -109,8 +110,8 @@ body {
   background-color: white;
   color: #1877f2;
   position: fixed;
-  bottom: 0;
-  right: 0;
+  bottom: 1%;
+  right: 1%;
   border-radius: 0.5rem;
 }
 .container_dark_fullMeal {
