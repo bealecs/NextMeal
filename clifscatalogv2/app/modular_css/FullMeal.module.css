@@ -3,6 +3,7 @@
     text-align: center;
     align-items: center;
     width: 80%;
+    margin-top: 1rem;
     margin-left: 10%;
 }
 .imageDescriptionDiv {
@@ -12,7 +13,7 @@
     align-items: center;
 }
 .imageDescriptionDiv p {
-    margin: 0rem 2rem;
+    margin: 0rem 1rem;
     font-size: 1rem;
 }
 .closeFullMeal button:has(span) {

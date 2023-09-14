@@ -18,7 +18,7 @@ export const HeroSection = () => {
                 <h1>Find Your <span className={HeroSectionStyles.nameSpan}>Next Meal</span></h1>
                 <h4 className={HeroSectionStyles.desktopH4}>Embark on a culinary journey with <span className={HeroSectionStyles.nameSpan}>Next Meal</span> - explore favorite recipes, save meals and personal preferences, 
                     and indulge in something new from randomly selected recipes.</h4>
-                <div className={HeroSectionStyles.signInOptions}>
+                <div className={HeroSectionStyles.signInOptionsDesktop}>
                     <p>Get started below</p>
                     <div className={HeroSectionStyles.buttons}>
                         <Link href={"/signup"} className={HeroSectionStyles.link}>Sign up</Link>
@@ -27,6 +27,13 @@ export const HeroSection = () => {
                 </div>
             </div>
         </div>
+        <div className={HeroSectionStyles.signInOptionsMobile}>
+                    <p>Get started below</p>
+                    <div className={HeroSectionStyles.buttons}>
+                        <Link href={"/signup"} className={HeroSectionStyles.link}>Sign up</Link>
+                        <Link href={"/signin"} className={HeroSectionStyles.link2}>Sign in</Link>
+                    </div>
+                </div>
         <SousChef session={null}/>
         <RandomMealButton session={null} />
         </>

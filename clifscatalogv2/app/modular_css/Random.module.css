@@ -199,12 +199,13 @@
         line-height: 1rem;
     }
     .mealButtonActions {
-        justify-content: space-around;
+        justify-content: space-between;
+        width: 90%;
     }
     .mealButtonActions button {
         height: max-content;
         width: fit-content;
-        margin: 1rem 0;
+        margin: 1rem auto;
     }
   }
 @media only screen and (max-width: 481px) {

@@ -1,17 +1,25 @@
 .modalSearchResults div {
     border-radius: 0.5rem;
     padding: 0.3rem;
+    margin: auto;
     transition: all ease 0.3s;
 }
 .modalSearchResults div:has(h4):hover {
     background-color: rgb(128, 128, 128, 0.3);
 }
 .modalSearchResults h4 {
-    margin: 1rem 0;
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
     font-size: 1.2rem;
+}
+.modalSearchResults img {
+    display: block;
+    margin: 0.5rem auto;
 }
 .modalSearchResults button {
     display: block;
+    margin: auto;
     padding: 0.3rem;
     border: 1px solid black;
     border-radius: 0.5rem;

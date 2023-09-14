@@ -2,7 +2,6 @@
 import '../../globalStyles.css';
 import RandomStyles from '../../modular_css/Random.module.css';
 import Image from "next/image";
-import { SimiliarRecipes } from "../similar_meal/SimilarRecipes";
 import { Favorite } from "../favorite/Favorite";
 import { Session } from "next-auth";
 import { getRandomMeal } from "./getRandomMeal";
@@ -88,7 +87,8 @@ export const RandomMealButton = (props: Props) => {
               </div>
             </div>
           </div>
-          {/* <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/> */}
+          {/* If I add this back in, remember to re add imports
+          <SimiliarRecipes mealId={destructuredRecipe.id} session={props.session}/> */}
           </Suspense>
           </section>
         );
