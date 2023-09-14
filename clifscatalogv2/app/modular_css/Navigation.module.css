@@ -36,7 +36,7 @@
 }
 #userPreferenceList {
     width: fit-content;
-    position: fixed;
+    position: absolute;
     left: 0;
     margin-left: 1rem;
     border-radius: 0.5rem;
