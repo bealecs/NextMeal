@@ -55,7 +55,6 @@ body {
   border-radius: 1rem;
   padding-top: 1rem;
   box-shadow: none;
-  border: 1px solid white;
   border-top: none;
   border-radius: 0.5rem;
 }
@@ -75,6 +74,7 @@ body {
   background-color: #0A0E14;
   color: white;
   position: fixed;
+  border: 1px solid white;
   bottom: 1%;
   right: 1%;
   width: 30%;
