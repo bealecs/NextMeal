@@ -8,7 +8,6 @@ import { signOut } from "next-auth/react";
 import { SearchBar } from "../functional_components/search/SearchBar";
 import { Loading } from "../suspense_fallback/Loading";
 import { ThemeContext } from "../store/ThemeProvider";
-import { useRouter } from "next/router";
 
 interface Props {
   session: Session | null;
@@ -30,7 +29,6 @@ export const Navigation = (props: Props) => {
   });
 
   const theme = useContext(ThemeContext);
-  const router = useRouter();
 
   const handleFormChange = (event) => {
     setChecked({
@@ -74,8 +72,8 @@ export const Navigation = (props: Props) => {
         userId: props.session.user.id,
         checked: checked
       })
-    });
-    router.push('/');
+    })
+
     return await res.json();
   }
   return (
