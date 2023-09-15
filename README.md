@@ -16,6 +16,8 @@ The inspiration comes from one of Clif's initial projects as a web developer: [C
 
 Next Meal is currently still in the developmental stage of the creation process. Star the repo, and follow along as daily improvements are made to better the app for the users. 
 
+Special shoutout to [Jason Vallery](https://github.com/jvsonv) for assistance with the name of the app and some debugging throughout the process
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
