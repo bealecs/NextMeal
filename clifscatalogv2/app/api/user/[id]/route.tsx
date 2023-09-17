@@ -18,7 +18,7 @@ export async function GET(
     );
   }
 
-  const userProfile = await prisma.user.findUnique({
+  const userProfile = await prisma.user.findMany({
     where: { id: +params.id }, //comparing userId of the preferences model in the DB to the params id as a string
     include: { //extracting the necessary values from user and adding them to the request
         preferences: true,
