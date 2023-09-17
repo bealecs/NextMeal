@@ -1,7 +1,6 @@
 .modalSearchResults div {
     border-radius: 0.5rem;
     padding: 0.3rem;
-    margin: auto;
     transition: all ease 0.3s;
 }
 .modalSearchResults div:has(h4):hover {
