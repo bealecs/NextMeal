@@ -179,29 +179,42 @@ body {
     border: 1px solid black;
     border-radius: 0.5rem;
 }
-.randomJoke {
+.container_light_randomJoke {
   padding-top: 5rem;
   min-height: 90vh;
+  background-color: white;
 }
-.container_light .jokeQuestion {
+.container_dark_randomJoke {
+  padding-top: 5rem;
+  min-height: 90vh;
+  background-color: #0A0E14;
+}
+.container_light_randomJoke .jokeQuestion {
   text-align: center;
   font-size: 1.7rem;
   display: block;
   margin: 1rem auto;
   color: black;
 }
-.container_dark .jokeQuestion {
+.container_dark_randomJoke .jokeQuestion {
   color: lightblue;
   text-align: center;
   font-size: 1.7rem;
   display: block;
   margin: 1rem auto;
 }
-.jokeAnswer {
+.container_light_randomJoke .jokeAnswer {
   text-align: center;
   font-size: 2rem;
   display: block;
   color: #1877f2;
+  margin: 1rem auto;
+}
+.container_dark_randomJoke .jokeAnswer {
+  text-align: center;
+  font-size: 2rem;
+  display: block;
+  color: lightsalmon;
   margin: 1rem auto;
 }
 

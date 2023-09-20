@@ -2,10 +2,9 @@
 import '../globalStyles.css';
 import MainStyles from '../modular_css/Main.module.css';
 import { Session } from "next-auth";
-import { Suspense, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import UserFavoritesDisplay from "../functional_components/favorite/UserFavoritesDisplay";
 import { RandomMealButton } from "../functional_components/random_meal/RandomMealButton";
-import { Loading } from '../suspense_fallback/Loading';
 import { ThemeContext } from '../store/ThemeProvider';
 import SousChef from '../functional_components/chat/SousChef';
 
@@ -26,10 +25,10 @@ export const Main = (props: Props) => {
     switch(clicked) {
       case 'userFavorites':
         return (
-          <Suspense fallback={<Loading />}>
+          <>
             <UserFavoritesDisplay session={props.session} />
             <SousChef session={props.session}/>
-          </Suspense>
+          </>
         );
       case 'randomMeal':
         return (
