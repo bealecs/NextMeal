@@ -1,6 +1,11 @@
+"use client"
+import { useContext } from 'react';
 import '../globalStyles.css';
+import { ThemeContext } from '../store/ThemeProvider';
 
 export const Loading = () => {
+
+    const theme = useContext(ThemeContext);
 
     //adding a little jokey joke during the loading screen so that the user might get a laugh while our data loads
 
@@ -46,7 +51,7 @@ export const Loading = () => {
       const randomJoke = getRandomJoke(foodJokes);
 
     return (
-    <div className='randomJoke'>
+    <div className={theme.themeValue+'_randomJoke'}>
         <div className="loading-spinner"></div>
         <h4 className='jokeQuestion'>{randomJoke.question}</h4>
         <h4 className='jokeAnswer'>{randomJoke.answer}</h4>
