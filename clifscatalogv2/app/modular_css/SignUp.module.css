@@ -90,7 +90,7 @@
   .signin {
     color: black;
     text-decoration: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
     transition: all ease 0.3s;
   }
   .signin:hover {
