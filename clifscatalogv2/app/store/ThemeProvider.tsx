@@ -15,7 +15,7 @@ type Props = {
 };
 
 export const ThemeContext = createContext<Ctx>({
-  themeValue: "container_dark",
+  themeValue: "container_light",
   // onThemeChange: () => {},
 });
 
@@ -38,7 +38,7 @@ const ThemeContextProvider = async (props: Props) => {
       );
     } else {
       const ctxValue: Ctx = {
-        themeValue: "container_dark"
+        themeValue: "container_light"
       };
     
       return (

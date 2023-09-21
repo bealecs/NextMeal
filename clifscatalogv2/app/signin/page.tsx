@@ -47,6 +47,9 @@ export default function SignIn() {
           </label>
           <button type="submit">Sign In</button>
         </form>
+        {/* I am leaving this piece out for now because I need to buy a domain to set up the email service 
+        <Link href="/resetPassword" className={SignInStyles.forgotPassword}>Forgot my password</Link>
+        <hr /> */}
         <div className={SignInStyles.alternate}>
           <p>
             Do not have an account yet?
