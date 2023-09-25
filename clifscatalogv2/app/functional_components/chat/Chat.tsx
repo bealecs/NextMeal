@@ -5,11 +5,18 @@ import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
 import { ThemeContext } from "@/app/store/ThemeProvider";
 import { Session } from "next-auth";
+import { getUserProfile } from "../user_profile/getUserProfile";
 
 interface Props {
   session: Session | null;
 }
 
+async function getUserPreferences(session: Session) {
+  const userProfile = await getUserProfile(session.user.id, session.user.accessToken);
+  const userPreferences = userProfile[0].preferences;
+  console.log(userPreferences);
+  return Promise.all(userPreferences);
+}
 export default function Chat(props:Props) {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   const theme = useContext(ThemeContext);
@@ -47,6 +54,7 @@ export default function Chat(props:Props) {
           autoComplete="off"
           onChange={handleInputChange}
         />
+        <button type="submit">Submit</button>
       </form>
     </section>
   );
