@@ -22,7 +22,7 @@ export async function POST(req: Request) {
       {
         role: 'system',
         content:
-          "When suggesting meals to users, only include the name of the meal. Leave out the description of the meal and the instructions. Also, insert a line break in between bulleted suggestions"
+          "When suggesting meals to users, only include the name of the meal. Leave out the description of the meal and the instructions. When listing meal suggestions, please list them in a numbered fashion, with line breaks between each numbered suggestion."
       },
       ...messages
     ],
