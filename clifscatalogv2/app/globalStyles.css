@@ -51,6 +51,7 @@ body {
 .container_dark_chat {
   color: white;
   font-size: 0.8rem;
+  width: 100%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 1rem;
   padding-top: 1rem;
