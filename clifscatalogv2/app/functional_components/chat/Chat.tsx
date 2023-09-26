@@ -1,5 +1,5 @@
 "use client";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import "../../globalStyles.css";
 import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
@@ -11,15 +11,30 @@ interface Props {
   session: Session | null;
 }
 
-async function getUserPreferences(session: Session) {
-  const userProfile = await getUserProfile(session.user.id, session.user.accessToken);
-  const userPreferences = userProfile[0].preferences;
-  console.log(userPreferences);
-  return Promise.all(userPreferences);
-}
 export default function Chat(props:Props) {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
   const theme = useContext(ThemeContext);
+
+  async function getUserPreferences(session: Session) {
+    const userProfile = await getUserProfile(session.user.id, session.user.accessToken);
+    const userPreferences = userProfile[0].preferences;
+    //iterating through the userPreferences result to find truthy values from the boolean preferences
+    for(let i = 0; userPreferences[0].length > i; i++) {
+      if(typeof userPreferences[0][i] != "boolean") {
+        i++;
+      }
+      if(userPreferences[0][i] != true) {
+        userPreferences[0][i].remove(userPreferences[0][i]);
+      }
+    }
+    console.log(userPreferences);
+    return Promise.all(userPreferences);
+  }
+
+  //Checks if there is a session valid, and if there is sends the user preferences as the body of the chat hook
+  const { messages, input, handleInputChange, handleSubmit } = useChat(props.session ? {
+    body: getUserPreferences(props.session)
+  } : null)
+
 
   return (
 
