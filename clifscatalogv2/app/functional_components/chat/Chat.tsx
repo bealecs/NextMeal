@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "../../globalStyles.css";
 import ChatStyles from "../../modular_css/Chat.module.css";
 import { useChat } from "ai/react";
@@ -13,28 +13,47 @@ interface Props {
 
 export default function Chat(props:Props) {
   const theme = useContext(ThemeContext);
+  const [preferencesToSend, setPreferencesToSend] = useState(null);
 
   async function getUserPreferences(session: Session) {
     const userProfile = await getUserProfile(session.user.id, session.user.accessToken);
     const userPreferences = userProfile[0].preferences;
-    //iterating through the userPreferences result to find truthy values from the boolean preferences
-    for(let i = 0; userPreferences[0].length > i; i++) {
-      if(typeof userPreferences[0][i] != "boolean") {
-        i++;
-      }
-      if(userPreferences[0][i] != true) {
-        userPreferences[0][i].remove(userPreferences[0][i]);
-      }
+
+    // Extract the object from the array and filter its keys based on truthy boolean values
+    const selectedPreferences = Object.keys(userPreferences[0]).filter(key => {
+      const preferenceValue = userPreferences[0][key];
+        
+      return typeof preferenceValue === "boolean" && preferenceValue;
+    });
+
+    //ensures that there is atleast one preference selected, otherwise return null
+    if(selectedPreferences.length > 0) {
+      return Promise.all(selectedPreferences);  
     }
-    console.log(userPreferences);
-    return Promise.all(userPreferences);
+
+    return null;
   }
+  
+  useEffect(() => {
+    if (props.session) {
+      getUserPreferences(props.session)
+        .then((preferences) => {
+          setPreferencesToSend(preferences);
+        })
+        .catch((error) => {
+          // Handle any errors here
+          console.error("Error fetching preferences:", error);
+        });
+    }
+  }, [props.session]);
 
-  //Checks if there is a session valid, and if there is sends the user preferences as the body of the chat hook
-  const { messages, input, handleInputChange, handleSubmit } = useChat(props.session ? {
-    body: getUserPreferences(props.session)
-  } : null)
-
+  //Checks if there is a session valid, and if there is sends the user preferences as the body of the chat hook (if there are userPreferences selected)
+  const { messages, input, handleInputChange, handleSubmit } = useChat(props.session && preferencesToSend !== null ? {
+    body: {
+      preferences: preferencesToSend,
+    },
+  } : { body: null }
+);
 
   return (
 

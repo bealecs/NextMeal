@@ -182,12 +182,12 @@ body {
 }
 .container_light_randomJoke {
   padding-top: 5rem;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: white;
 }
 .container_dark_randomJoke {
   padding-top: 5rem;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #0A0E14;
 }
 .container_light_randomJoke .jokeQuestion {
