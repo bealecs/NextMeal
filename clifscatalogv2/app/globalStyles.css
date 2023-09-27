@@ -51,6 +51,7 @@ body {
 .container_dark_chat {
   color: white;
   font-size: 0.8rem;
+  width: 100%;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   border-radius: 1rem;
   padding-top: 1rem;
@@ -62,7 +63,7 @@ body {
   font-size: 0.8rem;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: black;
-  width: 90%;
+  width: 100%;
   border-radius: 1rem;
   padding-top: 1rem;
   border-top-left-radius: 0;
@@ -181,12 +182,12 @@ body {
 }
 .container_light_randomJoke {
   padding-top: 5rem;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: white;
 }
 .container_dark_randomJoke {
   padding-top: 5rem;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #0A0E14;
 }
 .container_light_randomJoke .jokeQuestion {

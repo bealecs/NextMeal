@@ -22,7 +22,7 @@ export const options: NextAuthOptions = {
           async authorize(credentials, req) {
             // Add logic here to look up the user from the credentials supplied
             //swap http://localhost:3000 with https://next-meal-cookbook.vercel.app for production
-            const res = await fetch("https://next-meal-cookbook.vercel.app/api/login", {
+            const res = await fetch("http://localhost:3000/api/login", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
