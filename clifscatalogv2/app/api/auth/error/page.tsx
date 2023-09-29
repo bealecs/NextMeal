@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Error() {
   
   return (
-    <section>
+    <section style={{height:'100vh', textAlign:'center',width:'100%',margin:'auto'}}>
       <h4>Something went wrong with your sign in attempt</h4>
       <p>Please ensure you have typed the correct username & password</p>
       <br />
