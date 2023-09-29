@@ -83,6 +83,7 @@ body {
 }
 .container_dark_souschef button {
   background-color: #0A0E14;
+  color: #1877f2;
   width: fit-content;
   position: absolute;
   top: 0;
@@ -97,6 +98,7 @@ body {
 }
 .container_light_souschef button {
   background-color: transparent;
+  color: black;
   width: fit-content;
   position: absolute;
   top: 0;
