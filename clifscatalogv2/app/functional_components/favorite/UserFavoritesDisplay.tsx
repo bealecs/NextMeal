@@ -54,7 +54,7 @@ export default async function UserFavoritesDisplay(props: Props) {
 
     return (
       <>
-      {uniqueFavorites.length <= 5 && <h2 className={UserFavoritesDisplayStyles.emptyFavorites}>It is looking a little empty here... Go favorite some meals</h2>}
+      {uniqueFavorites.length <= 3 && <h2 className={UserFavoritesDisplayStyles.emptyFavorites}>It is looking a little empty here... Go favorite some meals</h2>}
       <div className={UserFavoritesDisplayStyles.resultsContainer}>
         {uniqueFavorites &&
           uniqueFavorites.map((favorite) => {
