@@ -9,19 +9,20 @@ import { Loading } from "./suspense_fallback/Loading";
 
 export default async function Home() {
   const session = await getServerSession(options);
-  
+
   return (
     <main className="main-content">
       {session ? (
         <ThemeContextProvider session={session}>
           <Suspense fallback={<Loading />}>
-          <Navigation session={session} />
-          <Main session={session} />
+            <Navigation session={session} />
+            <Main session={session} />
           </Suspense>
           {/* <Footer /> */}
         </ThemeContextProvider>
-        ) : (
-        <HeroSection />)}
+      ) : (
+        <HeroSection />
+      )}
     </main>
   );
 }

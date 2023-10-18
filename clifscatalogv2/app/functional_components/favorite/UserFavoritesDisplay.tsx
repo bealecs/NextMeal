@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Session } from "next-auth";
-import UserFavoritesDisplayStyles from '../../modular_css/UserFavoritesDisplay.module.css';
+import UserFavoritesDisplayStyles from "../../modular_css/UserFavoritesDisplay.module.css";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
 
 interface Props {
@@ -9,52 +9,61 @@ interface Props {
 }
 
 async function getUserProfile(userId: number, accessToken: string) {
-    const favoritesResponse = await fetch(`https://next-meal-cookbook.vercel.app/api/user/${userId}`, {
+  const favoritesResponse = await fetch(
+    `https://next-meal-cookbook.vercel.app/api/user/${userId}`,
+    {
       headers: {
-        "Authorization": `${accessToken}`,
+        Authorization: `${accessToken}`,
       },
-    });
-  
-    if (!favoritesResponse.ok) {
-      throw new Error("Failed to fetch your current favorite recipes.");
     }
-  
-    return favoritesResponse.json();
+  );
+
+  if (!favoritesResponse.ok) {
+    throw new Error("Failed to fetch your current favorite recipes.");
   }
 
-export default async function UserFavoritesDisplay(props: Props) {
+  return favoritesResponse.json();
+}
 
+export default async function UserFavoritesDisplay(props: Props) {
   const userProfile = await getUserProfile(
     props.session.user.id,
-    props.session.user.accessToken)
-  
-  const [profile] = await Promise.all([userProfile])
+    props.session.user.accessToken
+  );
 
+  const [profile] = await Promise.all([userProfile]);
 
-    const handleDelete = async (id: number, title: string) => {
-      try {
-        const res = await fetch("https://next-meal-cookbook.vercel.app/api/deleteFavorite", {
+  const handleDelete = async (id: number, title: string) => {
+    try {
+      const res = await fetch(
+        "https://next-meal-cookbook.vercel.app/api/deleteFavorite",
+        {
           cache: "force-cache",
           method: "POST",
           body: JSON.stringify({
             id: id,
           }),
-        });
-      } catch (error) {
-        console.log(error);
-      }
-      document.getElementById(title).remove();
-    };
-    
-    //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)
-    const uniqueFavorites = profile[0].favorites.filter(
-      (value, index, self) =>
-        self.findIndex((t) => t.title === value.title) === index
-    );
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+    document.getElementById(title).remove();
+  };
 
-    return (
-      <>
-      {uniqueFavorites.length <= 3 && <h2 className={UserFavoritesDisplayStyles.emptyFavorites}>It is looking a little empty here... Go favorite some meals</h2>}
+  //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)
+  const uniqueFavorites = profile[0].favorites.filter(
+    (value, index, self) =>
+      self.findIndex((t) => t.title === value.title) === index
+  );
+
+  return (
+    <>
+      {uniqueFavorites.length <= 3 && (
+        <h2 className={UserFavoritesDisplayStyles.emptyFavorites}>
+          It is looking a little empty here... Go favorite some meals
+        </h2>
+      )}
       <div className={UserFavoritesDisplayStyles.resultsContainer}>
         {uniqueFavorites &&
           uniqueFavorites.map((favorite) => {
@@ -67,8 +76,11 @@ export default async function UserFavoritesDisplay(props: Props) {
             const destructuredFavorite: UserFavorites = favorite;
 
             return (
-              <div id={destructuredFavorite.title} key={destructuredFavorite.id}>
-                 <table className={UserFavoritesDisplayStyles.gridTable}>
+              <div
+                id={destructuredFavorite.title}
+                key={destructuredFavorite.id}
+              >
+                <table className={UserFavoritesDisplayStyles.gridTable}>
                   <tbody>
                     <tr>
                       <td colSpan={2}>
@@ -81,15 +93,28 @@ export default async function UserFavoritesDisplay(props: Props) {
                           src={destructuredFavorite.image}
                           alt={destructuredFavorite.title}
                           width={200}
-                          height={150} />
+                          height={150}
+                        />
                       </td>
                     </tr>
                     <tr>
                       <td className={UserFavoritesDisplayStyles.showFullMeal}>
-                        <FullMealInfo mealId={destructuredFavorite.mealId} session={props.session} />
+                        <FullMealInfo
+                          mealId={destructuredFavorite.mealId}
+                          session={props.session}
+                        />
                       </td>
                       <td className={UserFavoritesDisplayStyles.removeMeal}>
-                        <button onClick={() => handleDelete(destructuredFavorite.id, destructuredFavorite.title)}>Remove Favorite</button>
+                        <button
+                          onClick={() =>
+                            handleDelete(
+                              destructuredFavorite.id,
+                              destructuredFavorite.title
+                            )
+                          }
+                        >
+                          Remove Favorite
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -98,7 +123,6 @@ export default async function UserFavoritesDisplay(props: Props) {
             );
           })}
       </div>
-      </>
-    );
-  }
-
+    </>
+  );
+}

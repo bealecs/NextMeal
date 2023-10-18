@@ -1,4 +1,3 @@
-
 .chatbotImage {
   position: fixed;
   bottom: 1rem;
@@ -45,9 +44,9 @@
   }
 }
 @media only screen and (max-width: 992px) {
-    #chatbotDiv {
-      width: 45%;
-    }
+  #chatbotDiv {
+    width: 45%;
+  }
 }
 @media only screen and (max-width: 768px) {
   #chatbotDiv {

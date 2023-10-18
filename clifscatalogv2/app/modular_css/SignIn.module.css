@@ -1,115 +1,115 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: whitesmoke;
-  }
-  .back {
-    position: absolute;
-    top: 2%;
-    left: 1%;
-    font-size: 1.3rem;
-    text-decoration: none;
-    color: black;
-    transition: all ease 0.3s;
-  }
-  .back:hover {
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #1877f2;
-    color: #1877f2;
-  }
-  .formDiv h3 {
-    font-size: 2rem;
-    text-align: center;
-    padding: 1rem;
-  }
-  .formDiv {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    font-size: 1.2rem;
-    display: block;
-    text-align: start;
-    width: 100%;
-    margin: 1rem auto;
-  }
-  
-  .form input {
-    display: block;
-    width: 90%;
-    padding: 10px;
-    margin: 0.3rem 0;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form button {
-    padding: 10px;
-    background-color: #1877f2;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin: 1rem 0;
-    width: 95%;
-    cursor: pointer;
-    transition: all ease 0.3s;
-  }
-  
-  .form button:focus {
-    outline: none;
-  }
-  
-  .form button:hover {
-    background-color: #1265cb;
-  }
-  
-  .alternate {
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  .alternate p {
-    font-size: 16px;
-    padding: 1rem;
-  }
-  .forgotPassword {
-    display: block;
-    text-align: center;
-    width: fit-content;
-    margin: 1rem auto;
-    padding-bottom: 0.5rem;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid white;
-    transition: all ease 0.3s;
-  }
-  .forgotPassword:hover {
-    color: red;
-    border-bottom: 1px solid red;
-  }
-  .signup {
-    color: black;
-    text-decoration: none;
-    border-bottom: 1px solid white;
-    transition: all ease 0.3s;
-  }
-  .signup:hover {
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid #1877f2;
-    color: #1877f2;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+.back {
+  position: absolute;
+  top: 2%;
+  left: 1%;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  transition: all ease 0.3s;
+}
+.back:hover {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #1877f2;
+  color: #1877f2;
+}
+.formDiv h3 {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+.formDiv {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  display: block;
+  text-align: start;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.form input {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin: 0.3rem 0;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form button {
+  padding: 10px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 1rem 0;
+  width: 95%;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.form button:focus {
+  outline: none;
+}
+
+.form button:hover {
+  background-color: #1265cb;
+}
+
+.alternate {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.alternate p {
+  font-size: 16px;
+  padding: 1rem;
+}
+.forgotPassword {
+  display: block;
+  text-align: center;
+  width: fit-content;
+  margin: 1rem auto;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid white;
+  transition: all ease 0.3s;
+}
+.forgotPassword:hover {
+  color: red;
+  border-bottom: 1px solid red;
+}
+.signup {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid white;
+  transition: all ease 0.3s;
+}
+.signup:hover {
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid #1877f2;
+  color: #1877f2;
+}

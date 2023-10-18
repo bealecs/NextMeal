@@ -1,80 +1,80 @@
 .modalSearchResults div {
-    border-radius: 0.5rem;
-    padding: 0.3rem;
-    transition: all ease 0.3s;
+  border-radius: 0.5rem;
+  padding: 0.3rem;
+  transition: all ease 0.3s;
 }
 .modalSearchResults div:has(h4):hover {
-    background-color: rgb(128, 128, 128, 0.3);
+  background-color: rgb(128, 128, 128, 0.3);
 }
 .modalSearchResults h4 {
-    display: block;
-    text-align: center;
-    margin: 1rem auto;
-    font-size: 1.2rem;
+  display: block;
+  text-align: center;
+  margin: 1rem auto;
+  font-size: 1.2rem;
 }
 .modalSearchResults img {
-    display: block;
-    margin: 0.5rem auto;
+  display: block;
+  margin: 0.5rem auto;
 }
 .modalSearchResults button {
-    display: block;
-    margin: auto;
-    padding: 0.3rem;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    transition: all ease 0.3s;
+  display: block;
+  margin: auto;
+  padding: 0.3rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  transition: all ease 0.3s;
 }
 .modalSearchResults button:hover {
-    background-color: #1877f2;
-    color: white;
+  background-color: #1877f2;
+  color: white;
 }
 .close:focus {
-    border: none;
-    outline: none;
+  border: none;
+  outline: none;
 }
 .close {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0.5rem;
-    transition: all ease 0.3s;
-    margin-bottom: 1rem;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5rem;
+  transition: all ease 0.3s;
+  margin-bottom: 1rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.2rem;
 }
 .close:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .title {
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 @media only screen and (max-width: 1500px) {
-    .container {
-        margin: 5rem 3.6rem 0 auto;
-    }
+  .container {
+    margin: 5rem 3.6rem 0 auto;
+  }
 }
 @media only screen and (max-width: 1200px) {
-    .container {
-        margin: 5rem 2.5rem 0 auto;
-    }
+  .container {
+    margin: 5rem 2.5rem 0 auto;
+  }
 }
 @media only screen and (max-width: 992px) {
-    .container {
-        margin: 4rem 2.5rem 0 auto;
-        width: 16.5rem;
-    }
+  .container {
+    margin: 4rem 2.5rem 0 auto;
+    width: 16.5rem;
+  }
 }
 @media only screen and (max-width: 768px) {
-    .container {
-        margin: 4rem 3rem 0 auto;
-        width: 16.5rem;
-    }
+  .container {
+    margin: 4rem 3rem 0 auto;
+    width: 16.5rem;
+  }
 }
 @media only screen and (max-width: 481px) {
-    .container {
-        margin: 4rem 4rem 0 auto;
-        width: 16.5rem;
-    }
+  .container {
+    margin: 4rem 4rem 0 auto;
+    width: 16.5rem;
+  }
 }

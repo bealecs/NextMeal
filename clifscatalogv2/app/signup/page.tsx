@@ -25,7 +25,9 @@ export default function SignUp() {
         redirect: true,
       });
     } else {
-      alert("The email you entered is already associated with another account..");
+      alert(
+        "The email you entered is already associated with another account.."
+      );
     }
   };
 
@@ -69,7 +71,9 @@ export default function SignUp() {
         </form>
         <div className={SignUpStyles.alternate}>
           <p>Already have an account?</p>
-          <Link className={SignUpStyles.signin} href="/signin">Sign in now</Link>
+          <Link className={SignUpStyles.signin} href="/signin">
+            Sign in now
+          </Link>
         </div>
       </div>
     </section>

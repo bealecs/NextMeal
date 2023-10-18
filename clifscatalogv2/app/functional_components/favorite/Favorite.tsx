@@ -9,7 +9,6 @@ interface Props {
 }
 
 export function Favorite(props: Props) {
- 
   const handleFavorite = async () => {
     try {
       await fetch("https://next-meal-cookbook.vercel.app/api/favorite", {
