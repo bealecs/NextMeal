@@ -1,16 +1,16 @@
 .container {
-    display: flex;
-    background-color: white;
-    color: black;
-    transition: all ease 0.4s;
+  display: flex;
+  background-color: white;
+  color: black;
+  transition: all ease 0.4s;
 }
 .container:hover {
-    background-color: rgba(0,0,0,0.8);
-    color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
 }
 .imageDiv {
-    margin: auto;
+  margin: auto;
 }
 .mainDiv {
-    margin: auto;
+  margin: auto;
 }

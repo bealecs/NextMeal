@@ -1,4 +1,4 @@
-import SimilarStyles from '../../modular_css/Similar.module.css';
+import SimilarStyles from "../../modular_css/Similar.module.css";
 import { useState } from "react";
 import { getSimilarMeals } from "./getSimilarMeals";
 import { FullMealInfo } from "../full_meal_info/FullMealInfo";
@@ -21,23 +21,32 @@ export const SimiliarRecipes = (props: Props) => {
 
   return (
     <div className={SimilarStyles.container}>
-      <button onClick={getSimilarRecipes} className={SimilarStyles.showSimilar}>{showSimilar ? "Hide Similar Recipes" : "Show Similar Recipes"}</button>
+      <button onClick={getSimilarRecipes} className={SimilarStyles.showSimilar}>
+        {showSimilar ? "Hide Similar Recipes" : "Show Similar Recipes"}
+      </button>
       <div className={SimilarStyles.centeredResults}>
-      {similarRecipes && showSimilar &&
-        similarRecipes.map((recipe) => {
-          interface DestructuredSimilarRecipe {
-            id: number;
-            title: string;
-          }
-          const simliarRecipe: DestructuredSimilarRecipe = recipe;
-          return (
-            <div key={similarRecipes.id} className={SimilarStyles.individualResults}>
-              <h4>{simliarRecipe.title}</h4>
-              <FullMealInfo mealId={simliarRecipe.id} session={props.session}/>
-            </div>
-          );
-        })}
-        </div>
+        {similarRecipes &&
+          showSimilar &&
+          similarRecipes.map((recipe) => {
+            interface DestructuredSimilarRecipe {
+              id: number;
+              title: string;
+            }
+            const simliarRecipe: DestructuredSimilarRecipe = recipe;
+            return (
+              <div
+                key={similarRecipes.id}
+                className={SimilarStyles.individualResults}
+              >
+                <h4>{simliarRecipe.title}</h4>
+                <FullMealInfo
+                  mealId={simliarRecipe.id}
+                  session={props.session}
+                />
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { MouseEvent, useEffect, useRef } from "react";
-import ModalStyles from '../modular_css/SearchModal.module.css';
+import ModalStyles from "../modular_css/SearchModal.module.css";
 
 const isClickInsideRectangle = (
   e: MouseEvent,
@@ -21,14 +21,9 @@ type Props = {
   children: React.ReactNode;
 };
 
-const PreferencesModal = ({
-  title,
-  isOpened,
-  onClose,
-  children,
-}: Props) => {
+const PreferencesModal = ({ title, isOpened, onClose, children }: Props) => {
   const ref = useRef<HTMLDialogElement>(null);
-  
+
   useEffect(() => {
     if (isOpened) {
       ref.current?.showModal();
@@ -50,11 +45,11 @@ const PreferencesModal = ({
         e.stopPropagation(); // Prevent the click event from propagating
       }}
     >
-      <span onClick={onClose} className={ModalStyles.close}>❌</span>
+      <span onClick={onClose} className={ModalStyles.close}>
+        ❌
+      </span>
       <h3 className={ModalStyles.title}>{title}</h3>
-      <div className={ModalStyles.modalSearchResults}>
-        {children}
-      </div>
+      <div className={ModalStyles.modalSearchResults}>{children}</div>
     </dialog>
   );
 };

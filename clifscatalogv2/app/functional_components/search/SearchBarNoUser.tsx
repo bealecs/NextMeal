@@ -26,19 +26,23 @@ export const SearchBar = (props: Props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(searchQuery) {
-    const res = await fetch(`https://next-meal-cookbook.vercel.app/api/search/${searchQuery.trim().replace(" ", "+")}`);
+    if (searchQuery) {
+      const res = await fetch(
+        `https://next-meal-cookbook.vercel.app/api/search/${searchQuery
+          .trim()
+          .replace(" ", "+")}`
+      );
 
-    if (!res.ok) {
-      console.log("There was an error");
+      if (!res.ok) {
+        console.log("There was an error");
+      }
+      const data = await res.json();
+      setSearchResult(data.results);
+      setOpenPreferences(!openPreferences);
+      setSearchQuery("");
+      return data;
     }
-    const data = await res.json();
-    setSearchResult(data.results);
-    setOpenPreferences(!openPreferences);
-    setSearchQuery("");
-    return data;
-  }
-}
+  };
   return (
     <section className={SearchBarStyles.container} id="search-recipes">
       <div className="container_light" id={SearchBarStyles.mainDiv}>
@@ -58,34 +62,36 @@ export const SearchBar = (props: Props) => {
           </button>
         </form>
         <PreferencesModal
-            title="Search Results"
-            isOpened={openPreferences}
-            onClose={() => setOpenPreferences(false)}>
-        {searchResult &&
-          searchResult.map((result) => (
-            <div key={result.id}>
-              <h4>{result.title}</h4>
-              <Image
-                src={result.image}
-                alt={result.title}
-                width={100}
-                height={100}
-              />
-              <Suspense fallback={<Loading />}>
-                <FullMealInfo mealId={result.id} session={props.session}/>
-              </Suspense>
-            </div>
-          ))}
-          
-          {searchResult != undefined && searchResult.length <= 0 &&
-          <>
-            <br />
-            <p>No results found</p>
-            <br/>
-            <p>Please try another dish</p>
-            <br />
-          </>}
-          </PreferencesModal>
+          title="Search Results"
+          isOpened={openPreferences}
+          onClose={() => setOpenPreferences(false)}
+        >
+          {searchResult &&
+            searchResult.map((result) => (
+              <div key={result.id}>
+                <h4>{result.title}</h4>
+                <Image
+                  src={result.image}
+                  alt={result.title}
+                  width={100}
+                  height={100}
+                />
+                <Suspense fallback={<Loading />}>
+                  <FullMealInfo mealId={result.id} session={props.session} />
+                </Suspense>
+              </div>
+            ))}
+
+          {searchResult != undefined && searchResult.length <= 0 && (
+            <>
+              <br />
+              <p>No results found</p>
+              <br />
+              <p>Please try another dish</p>
+              <br />
+            </>
+          )}
+        </PreferencesModal>
       </div>
     </section>
   );

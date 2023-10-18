@@ -16,7 +16,7 @@ export default function SignIn() {
       password: password,
       callbackUrl: "/",
       redirect: true,
-    })
+    });
   };
 
   return (
@@ -51,10 +51,10 @@ export default function SignIn() {
         <Link href="/resetPassword" className={SignInStyles.forgotPassword}>Forgot my password</Link>
         <hr /> */}
         <div className={SignInStyles.alternate}>
-          <p>
-            Do not have an account yet?
-          </p>
-          <Link className={SignInStyles.signup} href="/signup">Sign up now</Link>
+          <p>Do not have an account yet?</p>
+          <Link className={SignInStyles.signup} href="/signup">
+            Sign up now
+          </Link>
         </div>
       </div>
     </section>

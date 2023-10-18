@@ -1,77 +1,77 @@
 .noMessages {
-    text-align: center;
-    width: 80%;
-    margin: auto;
-    transition: all ease 0.3s;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  transition: all ease 0.3s;
 }
 .messages {
-    width: 80%;
-    line-height: 2rem;
-    padding: 0.5rem;
-    transition: all ease 0.3s;
-    display: flex;
-    flex-direction: column;
+  width: 80%;
+  line-height: 2rem;
+  padding: 0.5rem;
+  transition: all ease 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .role {
-    font-weight: bolder;
-    width: fit-content;
+  font-weight: bolder;
+  width: fit-content;
 }
 .messagesContainer {
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
-    min-height: 45vh;
-    max-height: 45vh;
-    margin: auto;
-    transition: all ease 0.3s;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 45vh;
+  max-height: 45vh;
+  margin: auto;
+  transition: all ease 0.3s;
 }
 .form {
-    text-align: center;
-    margin:auto;
+  text-align: center;
+  margin: auto;
 }
 .form input {
-    width: 60%;
-    margin: auto;
-    padding: 1rem;
-    border-radius: 1rem;
-    margin: 2rem auto;
-    margin-bottom: 0;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  margin-bottom: 0;
 }
 .form label {
-    display: block;
-    width: 100%;
-    font-weight: bolder;
-    font-size: 1.1rem;
-    width: 60%;
-    margin: auto;
+  display: block;
+  width: 100%;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  width: 60%;
+  margin: auto;
 }
 .form button {
-    position: relative;
-    margin: 1rem auto;
-    width: fit-content;
-    font-size: 1rem;
-    padding: 0.9rem;
-    transition: all ease 0.3s;
+  position: relative;
+  margin: 1rem auto;
+  width: fit-content;
+  font-size: 1rem;
+  padding: 0.9rem;
+  transition: all ease 0.3s;
 }
 .form button:hover {
-    color: #1877f2;
+  color: #1877f2;
 }
 .emojis {
-    display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
-    list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  text-decoration: none;
+  list-style: none;
 }
 .emojis li {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 @media only screen and (max-width: 768px) {
-    .messagesContainer {
-        min-height: 35vh;
-    }
-    .emojis li {
-        font-size: 3rem;
-    }
+  .messagesContainer {
+    min-height: 35vh;
+  }
+  .emojis li {
+    font-size: 3rem;
+  }
 }
