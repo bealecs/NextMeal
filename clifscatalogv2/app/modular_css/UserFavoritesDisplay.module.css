@@ -29,8 +29,13 @@
   display: block;
   margin: 0 auto;
 }
-.showFullMeal button {
+.dashboardButtonsDiv {
+  display: flex;
+  justify-content: space-between;
   font-size: 2rem;
+  padding: 2rem 0;
+}
+.showFullMeal button {
   border: none;
   background-color: transparent;
   padding: 0.4rem;
@@ -40,7 +45,6 @@
   cursor: pointer;
 }
 .removeMeal button {
-  font-size: 2rem;
   border: none;
   background-color: transparent;
   padding: 0.4rem;

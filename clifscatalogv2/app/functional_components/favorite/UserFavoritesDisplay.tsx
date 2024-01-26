@@ -98,26 +98,36 @@ export default async function UserFavoritesDisplay(props: Props) {
                       </td>
                     </tr>
                     <tr>
-                      <td className={UserFavoritesDisplayStyles.showFullMeal}>
-                        <FullMealInfo
-                          textHolder="🛈"
-                          mealId={destructuredFavorite.mealId}
-                          session={props.session}
-                        />
-                      </td>
-                      <td className={UserFavoritesDisplayStyles.removeMeal}>
-                        <button
-                          style={{border:'none',backgroundColor:'transparent',fontSize:'2rem'}}
-                          onClick={() =>
-                            handleDelete(
-                              destructuredFavorite.id,
-                              destructuredFavorite.title
-                            )
-                          }
-                        >
-                          ❌
-                        </button>
-                      </td>
+                      <div
+                        className={
+                          UserFavoritesDisplayStyles.dashboardButtonsDiv
+                        }
+                      >
+                        <td className={UserFavoritesDisplayStyles.showFullMeal}>
+                          <FullMealInfo
+                            textHolder="🛈"
+                            mealId={destructuredFavorite.mealId}
+                            session={props.session}
+                          />
+                        </td>
+                        <td className={UserFavoritesDisplayStyles.removeMeal}>
+                          <button
+                            style={{
+                              border: "none",
+                              backgroundColor: "transparent",
+                              fontSize: "2rem",
+                            }}
+                            onClick={() =>
+                              handleDelete(
+                                destructuredFavorite.id,
+                                destructuredFavorite.title
+                              )
+                            }
+                          >
+                            ❌
+                          </button>
+                        </td>
+                      </div>
                     </tr>
                   </tbody>
                 </table>
