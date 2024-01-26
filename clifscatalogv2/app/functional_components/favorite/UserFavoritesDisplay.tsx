@@ -107,6 +107,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                       </td>
                       <td className={UserFavoritesDisplayStyles.removeMeal}>
                         <button
+                          style={{border:'none',backgroundColor:'transparent',fontSize:'2rem'}}
                           onClick={() =>
                             handleDelete(
                               destructuredFavorite.id,
@@ -114,7 +115,7 @@ export default async function UserFavoritesDisplay(props: Props) {
                             )
                           }
                         >
-                          Remove Favorite
+                          ❌
                         </button>
                       </td>
                     </tr>

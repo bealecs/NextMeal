@@ -30,24 +30,24 @@
   margin: 0 auto;
 }
 .showFullMeal button {
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
   padding: 0.4rem;
   transition: all ease 0.3s;
 }
 .showFullMeal button:hover {
-  background-color: #1877f2;
-  color: white;
+  cursor: pointer;
 }
 .removeMeal button {
-  border-radius: 0.5rem;
-  border: 1px solid black;
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
   padding: 0.4rem;
   transition: all ease 0.3s;
 }
 .removeMeal button:hover {
-  background-color: red;
-  color: white;
+ cursor: pointer;
 }
 .gridTable h4 {
   max-width: 300px;
