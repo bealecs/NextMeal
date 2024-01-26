@@ -1,5 +1,5 @@
 # Next Meal 🍎🍔
-### View the build preview of the main branch [here](https://next-meal-cookbook.vercel.app/) and follow along as we build
+### View the build preview of the main branch [here](https://next-meal-cookbook.vercel.app/) and follow along as I build
 
 #### Technologies that are being leveraged:
 - React/Next.js/TypeScript
