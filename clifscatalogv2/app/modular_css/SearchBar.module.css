@@ -17,15 +17,17 @@
   margin: 1rem;
 }
 .button {
-  border-radius: 0.5rem;
-  width: fit-content;
+  border: none;
+  background-color: transparent;
+  font-size: 2.2rem;
   margin: auto;
   padding: 1rem;
   transition: all ease 0.3s;
+  color: #181818;
 }
 .button:hover {
-  background-color: #1877f2;
-  color: white;
+  color: blue;
+  cursor: pointer;
 }
 .form input {
   border-radius: 0.5rem;

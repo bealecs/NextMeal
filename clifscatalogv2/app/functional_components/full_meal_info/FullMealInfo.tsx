@@ -84,7 +84,7 @@ export const FullMealInfo = async (props: Props) => {
   if (!mealData) {
     return (
       <button onClick={setMealInfo} className={FullMealStyles.displayButton}>
-        Show Full Meal Info
+        🛈
       </button>
     );
   }

@@ -1,5 +1,6 @@
 "use client";
 import { Session } from "next-auth";
+import { useState } from "react";
 
 interface Props {
   mealId: number;
@@ -9,6 +10,7 @@ interface Props {
 }
 
 export function Favorite(props: Props) {
+  const [favoriteClicked, setFavoriteClicked] = useState(false);
   const handleFavorite = async () => {
     try {
       await fetch("https://next-meal-cookbook.vercel.app/api/favorite", {
@@ -23,6 +25,7 @@ export function Favorite(props: Props) {
           userId: props.session.user.id,
         }),
       });
+      setFavoriteClicked(true);
     } catch (error) {
       console.log(error);
     }
@@ -40,7 +43,7 @@ export function Favorite(props: Props) {
         }
       }}
     >
-      Favorite ⭐
+      {favoriteClicked ? '🌟' : '☆'}
     </button>
   );
 }

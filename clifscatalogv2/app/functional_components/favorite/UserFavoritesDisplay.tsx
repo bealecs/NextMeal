@@ -48,7 +48,7 @@ export default async function UserFavoritesDisplay(props: Props) {
     } catch (error) {
       console.log(error);
     }
-    document.getElementById(title).remove();
+    document.querySelector("#" + title).remove();
   };
 
   //checks the result from the user DB fetch call and filters out non unique values to only display favorited meals once (failsafe measure)

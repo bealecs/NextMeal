@@ -149,7 +149,7 @@ export const SearchBar = (props: Props) => {
             className={SearchBarStyles.searchBar}
           />
           <button type="submit" className={SearchBarStyles.button}>
-            Find Meal
+          ⌕
           </button>
         </form>
         <PreferencesModal
