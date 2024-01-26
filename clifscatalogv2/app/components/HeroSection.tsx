@@ -18,13 +18,10 @@ export const HeroSection = () => {
             <span className={HeroSectionStyles.nameSpan}>Next Meal</span>
           </h1>
           <h4 className={HeroSectionStyles.desktopH4}>
-            Embark on a culinary journey with{" "}
-            <span className={HeroSectionStyles.nameSpan}>Next Meal</span> -
-            explore favorite recipes, save meals and personal preferences, and
-            indulge in something new from randomly selected recipes.
+            Set up your account preferences & find new favorites
           </h4>
           <div className={HeroSectionStyles.signInOptionsDesktop}>
-            <p>Get started below</p>
+            <p style={{fontSize:'1.3rem'}}>Get started below</p>
             <div className={HeroSectionStyles.buttons}>
               <Link href={"/signup"} className={HeroSectionStyles.link}>
                 Sign up

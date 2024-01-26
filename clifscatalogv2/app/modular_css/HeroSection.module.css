@@ -13,18 +13,18 @@
   border-radius: 0.5rem;
   padding-right: 5rem;
 }
+.heroText h1 {
+  font-size: 3rem;
+}
 .heroText h4 {
   margin: 2rem 0;
   line-height: 2.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  width: fit-content;
 }
 
 .heroText h1 .nameSpan {
-  font-size: 3rem;
-  color: #1877f2;
-}
-.heroText h4 .nameSpan {
-  font-size: 2rem;
+  font-size: 4rem;
   color: #1877f2;
 }
 
@@ -181,12 +181,12 @@
     height: 55vh;
     min-height: 55vh;
     background-size: 400px;
-    margin-top: 20%;
+    margin-top: 15%;
     align-items: baseline;
   }
   .heroText {
     width: 50%;
-    padding-top: 0;
+    padding-top: 15%;
   }
   .heroText h4,
   .heroText h1 {

@@ -32,6 +32,11 @@
 }
 .displayButton {
   cursor: pointer;
+  background-color: white;
+  border: none;
+}
+.displayButton:hover {
+  color: blue;
 }
 .favoriteButton:has(button) {
   display: block;
