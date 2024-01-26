@@ -77,6 +77,7 @@ export const RandomMealButton = (props: Props) => {
                         />
                       </div>
                       <FullMealInfo
+                        textHolder="🛈"
                         mealId={destructuredRecipe.id}
                         session={props.session}
                       />

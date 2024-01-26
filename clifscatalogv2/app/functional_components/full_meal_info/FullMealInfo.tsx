@@ -9,6 +9,7 @@ import { ThemeContext } from "@/app/store/ThemeProvider";
 interface Props {
   session: Session | null;
   mealId: number;
+  textHolder: string;
 }
 
 interface DestructuredMealInfo {
@@ -84,7 +85,7 @@ export const FullMealInfo = async (props: Props) => {
   if (!mealData) {
     return (
       <button onClick={setMealInfo} className={FullMealStyles.displayButton}>
-        🛈
+        {props.textHolder}
       </button>
     );
   }
