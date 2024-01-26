@@ -40,6 +40,7 @@ export const SimiliarRecipes = (props: Props) => {
               >
                 <h4>{simliarRecipe.title}</h4>
                 <FullMealInfo
+                  textHolder="🛈"
                   mealId={simliarRecipe.id}
                   session={props.session}
                 />
