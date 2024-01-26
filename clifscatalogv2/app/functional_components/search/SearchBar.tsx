@@ -168,7 +168,7 @@ export const SearchBar = (props: Props) => {
                   height={100}
                 />
                 <Suspense fallback={<Loading />}>
-                  <FullMealInfo mealId={result.id} session={props.session} />
+                  <FullMealInfo textHolder="Show result" mealId={result.id} session={props.session} />
                 </Suspense>
               </div>
             ))}
