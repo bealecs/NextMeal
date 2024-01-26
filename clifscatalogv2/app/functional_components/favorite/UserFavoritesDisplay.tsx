@@ -100,7 +100,6 @@ export default async function UserFavoritesDisplay(props: Props) {
                     <tr>
                       <td className={UserFavoritesDisplayStyles.showFullMeal}>
                         <FullMealInfo
-                          textHolder="🛈"
                           mealId={destructuredFavorite.mealId}
                           session={props.session}
                         />
