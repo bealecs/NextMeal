@@ -31,11 +31,11 @@
 }
 .dashboardButtonsDiv {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   font-size: 2rem;
-  padding: 2rem 0;
 }
 .showFullMeal button {
+  font-size: 2rem;
   border: none;
   background-color: transparent;
   padding: 0.4rem;
