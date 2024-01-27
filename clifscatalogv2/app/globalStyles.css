@@ -23,9 +23,6 @@ body {
     background-color: #0A0E14;
     border-color: lightblue;
 }
-.container_dark button {
-  background-color: lightblue;
-}
 .container_dark_navbar {
   background-color: #0A0E14;
   color: lightblue;
