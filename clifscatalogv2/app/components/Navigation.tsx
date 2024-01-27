@@ -239,7 +239,7 @@ export const Navigation = (props: Props) => {
                 className={NavigationStyles.submitPreferences}
                 type="submit"
               >
-                Submit Preferences
+                ✓
               </button>
             </form>
           )}

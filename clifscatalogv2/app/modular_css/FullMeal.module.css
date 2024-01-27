@@ -1,3 +1,6 @@
+.container_light_fullMeal {
+  font-size: 1.3rem;
+}
 .h3MealTitle {
   display: block;
   text-align: center;
@@ -38,7 +41,7 @@
 .displayButton:hover {
   color: blue;
 }
-.favoriteButton:has(button) {
+.favoriteButton button {
   display: block;
   width: fit-content;
   margin: 0 0 1rem 1.5rem;
