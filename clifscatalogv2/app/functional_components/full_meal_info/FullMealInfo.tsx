@@ -65,14 +65,14 @@ function removeTags(string: string) {
 
 export const FullMealInfo = async (props: Props) => {
   const [mealData, setMealData] = useState<DestructuredMealInfo | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [openPreferences, setOpenPreferences] = useState(false);
   const theme = useContext(ThemeContext);
 
   const setMealInfo = async () => {
     try {
       const data = await getMealInfo(props.mealId);
+      setOpenPreferences(!openPreferences);
       setMealData(data);
-      setIsModalOpen(true);
     } catch (error) {
       console.error(error);
     }
@@ -91,16 +91,14 @@ export const FullMealInfo = async (props: Props) => {
   }
 
   return (
-    <dialog
+    <div
       key={mealData.id * 1000}
-      open={isModalOpen}
       className={
         props.session === null
           ? "container_light_fullMeal"
           : theme.themeValue + "_fullMeal"
       }
       onClick={(e) => e.stopPropagation()}
-      style={{border:'none'}}
     >
       <div className={FullMealStyles.closeFullMeal}>
         <button onClick={resetMealInfo}>
@@ -170,6 +168,6 @@ export const FullMealInfo = async (props: Props) => {
         ))}
       </ul>
       <br />
-    </dialog>
+    </div>
   );
 };
