@@ -32,7 +32,7 @@
 .dashboardButtonsDiv {
   display: flex;
   justify-content: space-evenly;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 .showFullMeal button {
   font-size: 2rem;
