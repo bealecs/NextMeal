@@ -121,16 +121,6 @@ export const FullMealInfo = async (props: Props) => {
         <p>{removeTags(mealData.summary)}</p>
       </div>
       <br />
-      {props.session && (
-        <div className={FullMealStyles.favoriteButton}>
-          <Favorite
-            session={props.session}
-            mealId={mealData.id}
-            title={mealData.title}
-            image={mealData.image}
-          />
-        </div>
-      )}
       <h3 className={FullMealStyles.headers}>Useful Information:</h3>
       <div className={FullMealStyles.splitDiv}>
         <div className={FullMealStyles.firstSplit}>
