@@ -73,12 +73,13 @@
   cursor: pointer;
   margin: 1rem;
   padding: 0.4rem;
-  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
   transition: all ease 0.3s;
 }
 .submitPreferences:hover {
-  background-color: #1877f2;
-  color: white;
+  color: #1877f2;
 }
 .userOption {
   padding: 1rem;
