@@ -34,6 +34,7 @@ export function Favorite(props: Props) {
   return (
     <button
       id="favorite-button"
+      style={{color:'gold'}}
       onClick={(e) => {
         if (props.session && props.session.user) {
           handleFavorite();
