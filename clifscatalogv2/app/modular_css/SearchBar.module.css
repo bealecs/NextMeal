@@ -23,7 +23,7 @@
   margin: auto;
   padding: 1rem;
   transition: all ease 0.3s;
-  color: #181818;
+  color: blue;
 }
 .button:hover {
   color: blue;

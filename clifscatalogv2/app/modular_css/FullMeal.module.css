@@ -35,7 +35,8 @@
 }
 .displayButton {
   cursor: pointer;
-  background-color: white;
+  background-color: transparent;
+  color: blue;
   border: none;
 }
 .displayButton:hover {
