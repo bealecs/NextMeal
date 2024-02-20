@@ -102,6 +102,7 @@ export default function Chat(props: Props) {
           id="inputGPT"
           value={input}
           autoComplete="off"
+          maximum-scale={1}
           onChange={handleInputChange}
         />
         <button type="submit">Submit</button>
