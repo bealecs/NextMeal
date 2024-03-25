@@ -60,7 +60,7 @@ export const RandomMealButton = (props: Props) => {
                       <span>Warning:</span> Double check ingredients of meals,
                       your preferences will not effect the random suggestion.
                     </p>
-                    <Image
+                    <img
                       src={destructuredRecipe.image}
                       width={400}
                       height={300}

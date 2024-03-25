@@ -31,7 +31,7 @@
 }
 .dashboardButtonsDiv {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   font-size: 1rem;
 }
 .showFullMeal button {

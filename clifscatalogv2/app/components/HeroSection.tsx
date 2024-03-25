@@ -20,8 +20,8 @@ export const HeroSection = () => {
           <h4 className={HeroSectionStyles.desktopH4}>
             Set up your account preferences & find new favorites
           </h4>
+          <p>Get started below</p>
           <div className={HeroSectionStyles.signInOptionsDesktop}>
-            <p style={{fontSize:'1.3rem'}}>Get started below</p>
             <div className={HeroSectionStyles.buttons}>
               <Link href={"/signup"} className={HeroSectionStyles.link}>
                 Sign up
