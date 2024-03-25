@@ -7,9 +7,10 @@
   background-position: center bottom;
 }
 .container h2 {
-  margin: 6rem 0 2rem 5rem;
   color: #1877f2;
   font-size: 2rem;
+  text-align: center;
+  margin: 2.5rem auto;
 }
 .preMeal {
   font-size: 1.4rem;
@@ -34,12 +35,15 @@
 }
 .populatedMealContainer {
   display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin:auto;
 }
 .instructions {
   display: flex;
   flex-direction: column;
   width: 40%;
-  margin: 2rem 10rem 2rem 5rem;
   line-height: 2rem;
 }
 .instructions h3 {
@@ -47,7 +51,6 @@
   font-size: 1.2rem;
 }
 .mealImage {
-  margin: auto;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }

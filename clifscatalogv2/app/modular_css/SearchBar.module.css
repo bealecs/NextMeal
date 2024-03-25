@@ -48,11 +48,9 @@
     margin: 1rem;
     width: fit-content;
   }
-  .container {
-    right: 5%;
-  }
-  .button {
-    padding: 0.5rem;
+  #mainDiv {
+    right: 0;
+    width: fit-content;
   }
 }
 @media only screen and (max-width: 481px) {

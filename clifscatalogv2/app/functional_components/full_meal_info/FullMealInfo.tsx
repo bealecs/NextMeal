@@ -107,7 +107,7 @@ export const FullMealInfo = async (props: Props) => {
       </div>
       <h3 className={FullMealStyles.h3MealTitle}>{mealData.title}</h3>
       <div className={FullMealStyles.imageDescriptionDiv}>
-        <Image
+        <img
           src={mealData.image}
           alt={mealData.title}
           width={400}
@@ -115,7 +115,6 @@ export const FullMealInfo = async (props: Props) => {
           style={{
             borderRadius: "0.5rem",
             display: "block",
-            margin: "1rem auto",
           }}
         />
         <p>{removeTags(mealData.summary)}</p>
