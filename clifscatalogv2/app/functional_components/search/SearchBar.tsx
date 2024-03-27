@@ -161,7 +161,7 @@ export const SearchBar = (props: Props) => {
             searchResult.map((result) => (
               <div key={result.id}>
                 <h4>{result.title}</h4>
-                <Image
+                <img
                   src={result.image}
                   alt={result.title}
                   width={100}
