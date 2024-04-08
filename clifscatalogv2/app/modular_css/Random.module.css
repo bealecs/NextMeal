@@ -56,7 +56,7 @@
 }
 .mealImage button {
   display: block;
-  margin: 1rem auto;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 0.5rem;
   transition: all ease 0.3s;
@@ -64,16 +64,12 @@
 }
 .mealButtonActions {
   display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
+  justify-content: space-evenly;
   align-items: center;
   align-content: center;
 }
 .mealButtonActions button {
   font-size: 2.5em;
-  width: max-content;
-  padding: 0;
-  margin: 0;
 }
 .newMealButton {
   color: limegreen;
@@ -103,6 +99,7 @@
   font-size: 0.8rem;
   width: 400px;
   margin: 1rem auto;
+  text-align: center;
 }
 .warning span {
   text-decoration: underline;
@@ -205,13 +202,12 @@
     line-height: 1rem;
   }
   .mealButtonActions {
-    justify-content: space-between;
-    width: 90%;
+    justify-content: center;
   }
   .mealButtonActions button {
     height: max-content;
     width: fit-content;
-    margin: 1rem auto;
+    margin: 1rem;
   }
 }
 @media only screen and (max-width: 481px) {
@@ -238,18 +234,8 @@
     width: 250px;
     height: 200px;
   }
-  .mealButtonActions {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-  }
   .instructions h3 {
     line-height: 1rem;
-  }
-  .mealButtonActions button {
-    height: max-content;
-    width: fit-content;
   }
 }
 @media only screen and (max-width: 300px) {

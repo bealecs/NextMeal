@@ -65,7 +65,7 @@ export const RandomMealButton = (props: Props) => {
                       width={400}
                       height={300}
                       alt={destructuredRecipe.summary}
-                      style={{ borderRadius: "2rem" }}
+                      style={{ borderRadius: "2rem", margin:"auto" }}
                     />
                     <div className={RandomStyles.mealButtonActions}>
                       <div className={RandomStyles.favoriteButton}>
