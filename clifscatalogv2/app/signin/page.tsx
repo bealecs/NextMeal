@@ -8,6 +8,7 @@ import SignInStyles from "../modular_css/SignIn.module.css";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [signInLoader, setSignInLoader] = useState("Sign In");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,6 +19,17 @@ export default function SignIn() {
       redirect: true,
     });
   };
+
+  const handleLoadingSignIn = () => {
+    if(signInLoader === "Sign In") {
+      setSignInLoader("Signing In...");
+      setTimeout(() => {
+        setSignInLoader("Sign In");
+      }, 2000);
+    } else {
+      setSignInLoader("Sign In");
+    }
+  }
 
   return (
     <section className={SignInStyles.container}>
@@ -45,7 +57,7 @@ export default function SignIn() {
               required
             />
           </label>
-          <button type="submit">Sign In</button>
+          <button type="submit" onClick={handleLoadingSignIn}>{signInLoader}</button>
         </form>
         {/* I am leaving this piece out for now because I need to buy a domain to set up the email service 
         <Link href="/resetPassword" className={SignInStyles.forgotPassword}>Forgot my password</Link>

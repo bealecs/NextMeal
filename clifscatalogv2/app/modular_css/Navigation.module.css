@@ -42,6 +42,9 @@
   font-weight: bold;
   transition: all 0.3s ease;
 }
+.preferenceLabel {
+  margin-right: 1rem;
+}
 .closeButton {
   border: none;
   background-color: transparent;

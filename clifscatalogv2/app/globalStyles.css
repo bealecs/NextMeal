@@ -22,6 +22,7 @@ body {
     color: lightblue;
     background-color: #0A0E14;
     border-color: lightblue;
+    min-height: 100vh;
 }
 .container_dark_navbar {
   background-color: #0A0E14;

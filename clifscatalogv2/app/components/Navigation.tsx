@@ -155,7 +155,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference1">Dark Mode</label>
+                <label className="preferenceLabel" htmlFor="preference1">Dark Mode</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -166,7 +166,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference2">No Dairy</label>
+                <label className="preferenceLabel" htmlFor="preference2">No Dairy</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -178,7 +178,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference3">Nut Allergy</label>
+                <label className="preferenceLabel" htmlFor="preference3">Nut Allergy</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -189,7 +189,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference4">Fish Allergy</label>
+                <label className="preferenceLabel" htmlFor="preference4">Fish Allergy</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -200,7 +200,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference5">Vegan</label>
+                <label className="preferenceLabel" htmlFor="preference5">Vegan</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -211,7 +211,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference6">Vegetarian</label>
+                <label className="preferenceLabel" htmlFor="preference6">Vegetarian</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -222,7 +222,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference7">No Red Meat</label>
+                <label className="preferenceLabel" htmlFor="preference7">No Red Meat</label>
               </div>
               <div className={NavigationStyles.checkboxDiv}>
                 <input
@@ -233,7 +233,7 @@ export const Navigation = (props: Props) => {
                   className={NavigationStyles.inputCheckbox}
                   onChange={handleFormChange}
                 />
-                <label htmlFor="preference8">No Pork</label>
+                <label className="preferenceLabel" htmlFor="preference8">No Pork</label>
               </div>
               <button
                 className={NavigationStyles.submitPreferences}
